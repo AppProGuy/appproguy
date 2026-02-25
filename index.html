@@ -354,6 +354,85 @@ nav.dark .nav-cta { background: var(--white); color: var(--black); }
   border-right: 1px solid rgba(255,255,255,0.08);
 }
 
+.split-col.left-col,
+.split-col.right-col {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.split-col.left-col::before,
+.split-col.right-col::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+}
+
+.split-col.left-col::before {
+  background: radial-gradient(circle at 50% 30%, rgba(255, 70, 70, 0.4), rgba(255, 70, 70, 0) 65%);
+}
+
+.split-col.right-col::before {
+  background: radial-gradient(circle at 50% 30%, rgba(50, 214, 97, 0.45), rgba(50, 214, 97, 0) 65%);
+}
+
+.service-card {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.service-card:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+
+.service-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.service-summary::-webkit-details-marker { display: none; }
+
+.service-card .service-summary::after {
+  content: '+';
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.service-card[open] .service-summary::after { content: '−'; }
+
+.service-detail {
+  padding: 0 0 18px;
+  color: rgba(247,246,242,0.72);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.service-detail strong { color: var(--white); }
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.contact-btn {
+  border: 1px solid rgba(8,8,8,0.2);
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--black);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contact-btn:hover { background: var(--black); color: var(--white); }
+
 /* arrow between */
 .split-arrow {
   font-size: 32px;
@@ -663,7 +742,7 @@ footer {
   </div>
   <div class="nav-right">
     <span class="nav-tag">Johannesburg, ZA</span>
-    <a href="mailto:lufuno@appproguy.com" class="nav-cta">Get in touch</a>
+    <a href="#contactMethods" class="nav-cta">Get in touch</a>
   </div>
 </nav>
 
@@ -731,7 +810,7 @@ footer {
         <div class="split-arrow" id="splitArrow" style="opacity:0; transform: scale(0.5);">→</div>
 
         <!-- RIGHT col (after) -->
-        <div class="split-col" id="colRight" style="opacity:0; transform: translateX(40px);">
+        <div class="split-col right-col" id="colRight" style="opacity:0; transform: translateX(40px);">
           <div class="big-pct" id="pctRight">80%</div>
           <div class="pct-word" id="wordRight">Revenue Work</div>
           <div class="pct-sub bright" id="subRight">20% admin</div>
@@ -770,12 +849,30 @@ footer {
     </h2>
   </div>
   <div class="invert-right">
-    <div class="service-row"><span class="service-name">Admin Automation</span><span class="service-tag">Core</span></div>
-    <div class="service-row"><span class="service-name">Custom AI Workflows</span><span class="service-tag">Bespoke</span></div>
-    <div class="service-row"><span class="service-name">Document Processing</span><span class="service-tag">AI</span></div>
-    <div class="service-row"><span class="service-name">Client Communication</span><span class="service-tag">Automated</span></div>
-    <div class="service-row"><span class="service-name">SaaS Development</span><span class="service-tag">Custom</span></div>
-    <div class="service-row"><span class="service-name">Reporting & Scheduling</span><span class="service-tag">Hands-free</span></div>
+    <details class="service-card">
+      <summary class="service-summary"><span class="service-name">Admin Automation</span><span class="service-tag">Core</span></summary>
+      <p class="service-detail">Automate repetitive admin like filing, follow-ups, and task updates. <strong>Typical saving:</strong> 10–20 hours per week.</p>
+    </details>
+    <details class="service-card">
+      <summary class="service-summary"><span class="service-name">Custom AI Workflows</span><span class="service-tag">Bespoke</span></summary>
+      <p class="service-detail">Build tailored AI flows for your exact process (sales, ops, delivery). <strong>Typical impact:</strong> 20–40% faster team output.</p>
+    </details>
+    <details class="service-card">
+      <summary class="service-summary"><span class="service-name">Document Processing</span><span class="service-tag">AI</span></summary>
+      <p class="service-detail">Extract, summarize, and route data from PDFs/forms/contracts automatically. <strong>Typical saving:</strong> 5–15 hours weekly and fewer manual errors.</p>
+    </details>
+    <details class="service-card">
+      <summary class="service-summary"><span class="service-name">Client Communication</span><span class="service-tag">Automated</span></summary>
+      <p class="service-detail">Automate replies, reminders, and lead nurturing across channels. <strong>Typical result:</strong> faster response times and more booked calls.</p>
+    </details>
+    <details class="service-card">
+      <summary class="service-summary"><span class="service-name">SaaS Development</span><span class="service-tag">Custom</span></summary>
+      <p class="service-detail">Build lightweight tools/dashboards that remove friction from your workflow. <strong>Typical impact:</strong> reduce software overhead and unlock new recurring revenue.</p>
+    </details>
+    <details class="service-card">
+      <summary class="service-summary"><span class="service-name">Reporting & Scheduling</span><span class="service-tag">Hands-free</span></summary>
+      <p class="service-detail">Auto-generate reports and schedule updates without manual chasing. <strong>Typical saving:</strong> 4–8 hours weekly plus cleaner visibility for decisions.</p>
+    </details>
   </div>
 
   <!-- Scroll arrow -->
@@ -786,12 +883,12 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section class="contact-section">
+<section class="contact-section" id="contactSection">
   <div class="contact-left">
     <p class="big-label">02 — Let's talk</p>
     <h2>Ready to<br><em>flip it?</em></h2>
   </div>
-  <div class="contact-right">
+  <div class="contact-right" id="contactMethods">
     <div class="contact-item">
       <span class="contact-item-label">Email</span>
       <a href="mailto:lufuno@appproguy.com" class="contact-item-value">lufuno@appproguy.com</a>
@@ -801,8 +898,17 @@ footer {
       <a href="tel:0810829487" class="contact-item-value">081 082 9487</a>
     </div>
     <div class="contact-item">
+      <span class="contact-item-label">WhatsApp</span>
+      <a href="https://wa.me/27810829487" class="contact-item-value" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+    <div class="contact-item">
       <span class="contact-item-label">Web</span>
       <span class="contact-item-value">appproguy.com</span>
+    </div>
+    <div class="contact-actions">
+      <a class="contact-btn" href="tel:0810829487">Call now</a>
+      <a class="contact-btn" href="mailto:lufuno@appproguy.com">Email now</a>
+      <a class="contact-btn" href="https://wa.me/27810829487" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
