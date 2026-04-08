@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>App Pro Guy â Custom Software Systems For Your Business</title>
+<title>App Pro Guy — Custom Software Systems For Your Business</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -49,15 +49,20 @@
   .layer{position:absolute;inset:52px 0 0 0;transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1),filter .7s}
   .before{opacity:1;transform:scale(1);filter:blur(0)}
   .after{opacity:0;transform:scale(1.04);background:#0a0a0b;color:#fff}
-  .morph:hover .before{opacity:0;transform:scale(.96);filter:blur(4px)}
-  .morph:hover .after{opacity:1;transform:scale(1)}
+  .morph:hover .before,.morph.flip .before{opacity:0;transform:scale(.96);filter:blur(4px)}
+  .morph:hover .after,.morph.flip .after{opacity:1;transform:scale(1)}
+  .morph:hover .label .state,.morph.flip .label .state{opacity:1;color:var(--lime)}
+  .flip-hint{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:25;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;background:var(--black);color:var(--white);padding:7px 12px;border:1px solid var(--black);display:none;pointer-events:none;animation:hintPulse 1.8s ease-in-out infinite}
+  .flip-hint::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);margin-right:7px;vertical-align:middle;box-shadow:0 0 8px var(--lime)}
+  @keyframes hintPulse{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-3px)}}
+  @media(hover:none){.flip-hint{display:inline-block}.morph{cursor:pointer}}
 
   /* shake animation for chaos */
   @keyframes shakey{0%,100%{transform:translate(0,0) rotate(-3deg)}50%{transform:translate(1px,-1px) rotate(-3.5deg)}}
   @keyframes flash{0%,100%{background:#ffeaea}50%{background:#ffd6d6}}
   @keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
 
-  /* ============ BEFORE 1 Â· EXCEL CHAOS ============ */
+  /* ============ BEFORE 1 · EXCEL CHAOS ============ */
   .excel{font-family:Arial,sans-serif;font-size:9.5px;background:#fff}
   .excel .xbar{background:#107c41;color:#fff;padding:5px 10px;font-weight:700;font-size:10px;display:flex;justify-content:space-between;align-items:center}
   .excel .xbar .xdots{font-size:12px;opacity:.8}
@@ -80,7 +85,7 @@
   .excel .scroll{max-height:430px;overflow:hidden}
   .excel .badge{position:absolute;top:44px;right:10px;background:#c00;color:#fff;font-size:8px;padding:2px 5px;border-radius:8px;font-weight:700;animation:pop .6s}
 
-  /* ============ BEFORE 2 Â· WHATSAPP PANIC ============ */
+  /* ============ BEFORE 2 · WHATSAPP PANIC ============ */
   .wa{background:#e5ddd5;font-family:-apple-system,sans-serif;font-size:11px;padding:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='%23e5ddd5'/%3E%3Cpath d='M15 15l5 5M40 20l3 3M25 40l4 4' stroke='%23d4cac0' stroke-width='1'/%3E%3C/svg%3E")}
   .wa .whead{background:#075e54;color:#fff;padding:8px 12px;display:flex;align-items:center;gap:10px}
   .wa .whead .av{width:30px;height:30px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
@@ -103,9 +108,9 @@
   .wa .typing{align-self:flex-start;background:#fff;padding:6px 10px;border-radius:6px;font-size:9px;color:#888;font-style:italic}
   .wa .m img{display:inline-block;vertical-align:middle}
   .wa .voice{background:#fff;padding:6px 10px;border-radius:6px;font-size:10px;display:flex;align-items:center;gap:6px;align-self:flex-start;color:#555}
-  .wa .voice::before{content:'â¶';color:#25d366;font-size:12px}
+  .wa .voice::before{content:'▶';color:#25d366;font-size:12px}
 
-  /* ============ BEFORE 3 Â· GMAIL INBOX ANXIETY ============ */
+  /* ============ BEFORE 3 · GMAIL INBOX ANXIETY ============ */
   .gm{background:#fff;font-family:Arial,sans-serif;font-size:11px}
   .gm .gtop{background:#f2f2f2;padding:7px 12px;border-bottom:1px solid #ddd;display:flex;align-items:center;gap:8px}
   .gm .gtop .logo-g{color:#c5221f;font-weight:700;font-size:14px;font-family:'Product Sans',Arial,sans-serif}
@@ -130,7 +135,7 @@
   .gm .notif{position:absolute;top:44px;right:10px;background:#fff;border-left:4px solid #c5221f;padding:6px 10px;font-size:9px;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:3;max-width:170px;animation:pop .5s}
   .gm .notif b{color:#c5221f;display:block;font-size:9px}
 
-  /* ============ AFTER 1 Â· OPS COCKPIT (lime) ============ */
+  /* ============ AFTER 1 · OPS COCKPIT (lime) ============ */
   .d1{padding:0;font-family:'Inter','IBM Plex Mono',monospace;display:flex;flex-direction:column;background:#0a0a0b;color:#fff;overflow:hidden}
   .d1::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(184,255,92,.08),transparent 60%);pointer-events:none}
   .d1 .top{padding:10px 14px;border-bottom:1px solid #1f1f24;display:flex;justify-content:space-between;align-items:center;font-size:9px}
@@ -167,7 +172,7 @@
   .d1 .arow .st{font-size:8px;opacity:.5;font-family:'IBM Plex Mono',monospace}
   .d1 .arow .st.g{color:var(--lime);opacity:1}
 
-  /* ============ AFTER 2 Â· FLEET COMMAND (cyan + map) ============ */
+  /* ============ AFTER 2 · FLEET COMMAND (cyan + map) ============ */
   .d2{padding:0;font-family:'Inter','IBM Plex Mono',monospace;display:flex;flex-direction:column;background:#050812;color:#fff;overflow:hidden}
   .d2::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(92,240,255,.08),transparent 60%);pointer-events:none}
   .d2 .top{padding:10px 14px;border-bottom:1px solid #15202e;display:flex;justify-content:space-between;align-items:center;font-size:9px}
@@ -204,7 +209,7 @@
   .d2 .trow .st.ok{color:var(--lime);opacity:1}
   .d2 .trow .st.wr{color:var(--amber);opacity:1}
 
-  /* ============ AFTER 3 Â· CLIENTS COMMAND (editorial mono) ============ */
+  /* ============ AFTER 3 · CLIENTS COMMAND (editorial mono) ============ */
   .d3{padding:0;font-family:'Inter','IBM Plex Mono',monospace;display:flex;flex-direction:column;background:#0d0a08;color:#fff;overflow:hidden}
   .d3::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,184,77,.08),transparent 60%);pointer-events:none}
   .d3 .top{padding:10px 14px;border-bottom:1px solid #1f1915;display:flex;justify-content:space-between;align-items:center}
@@ -320,8 +325,8 @@
   <div class="hero-inner">
     <div class="eyebrow">Custom Software Systems For Your Business</div>
     <h1>Your business <span class="ol">is already</span><br>running on software.<br><span class="it">Just the wrong kind.</span></h1>
-    <p class="hero-sub">Excel. WhatsApp. Gmail. They're holding your company together â until they don't. We replace the duct tape with one live Command Centre, built for how you actually work.</p>
-    <div class="instruct"><span class="blink"></span>Hover any panel below â watch your chaos become a Command Centre</div>
+    <p class="hero-sub">Excel. WhatsApp. Gmail. They're holding your company together — until they don't. We replace the duct tape with one live Command Centre, built for how you actually work.</p>
+    <div class="instruct"><span class="blink"></span>Hover any panel below → watch your chaos become a Command Centre</div>
   </div>
 </header>
 
@@ -329,13 +334,13 @@
   <div class="showcase-inner">
     <div class="morph-grid reveal-stagger">
 
-      <!-- ============ CARD 1: EXCEL â OPS ============ -->
-      <div class="morph" data-n="01 Â· HOVER">
+      <!-- ============ CARD 1: EXCEL → OPS ============ -->
+      <div class="morph" data-n="01"><span class="flip-hint">TAP TO FLIP</span>
         <div class="layer before excel">
-          <div class="xbar"><span>Jobs_MASTER_v7_FINAL_use_this_REAL_FINAL(2).xlsx</span><span class="xdots">â â¡ Ã</span></div>
+          <div class="xbar"><span>Jobs_MASTER_v7_FINAL_use_this_REAL_FINAL(2).xlsx</span><span class="xdots">— □ ×</span></div>
           <div class="xribbon"><span class="act">File</span><span>Home</span><span>Insert</span><span>Formulas</span><span>Data</span><span>Review</span><span>View</span></div>
-          <div class="xtabs">â <b>Jobs</b> Â· Jobs(old) Â· Jobs(OLDER) Â· Backup Â· Backup2 Â· Pricing??? Â· Sheet47 Â· +</div>
-          <div class="xfx">fx: =VLOOKUP(A4,'Jobs(old)'!$A:$F,6,FALSE)  â #N/A</div>
+          <div class="xtabs">◀ <b>Jobs</b> · Jobs(old) · Jobs(OLDER) · Backup · Backup2 · Pricing??? · Sheet47 · +</div>
+          <div class="xfx">fx: =VLOOKUP(A4,'Jobs(old)'!$A:$F,6,FALSE)  → #N/A</div>
           <div class="xhead"><div></div><div>Client</div><div>Status</div><div>Amount</div><div>Paid</div><div>Who</div></div>
           <div class="scroll">
             <div class="xrow"><div class="num">1</div><div>Naledi Props</div><div>Done</div><div>R 12,400</div><div>Yes</div><div>Sipho</div></div>
@@ -343,14 +348,14 @@
             <div class="xrow"><div class="num">3</div><div>Kgosi Logistics</div><div>Done</div><div>R 15,000</div><div>NO</div><div>Thabo</div></div>
             <div class="xrow err"><div class="num">4</div><div>#REF!</div><div>#VALUE!</div><div>#N/A</div><div>#REF!</div><div>#NAME?</div></div>
             <div class="xrow grn"><div class="num">5</div><div>Moloi Waste</div><div>Done</div><div>R 9,800</div><div>Yes</div><div>Sipho</div></div>
-            <div class="xrow"><div class="num">6</div><div>Thulani J.</div><div>Quote</div><div>R 22,000</div><div></div><div>â</div></div>
+            <div class="xrow"><div class="num">6</div><div>Thulani J.</div><div>Quote</div><div>R 22,000</div><div></div><div>—</div></div>
             <div class="xrow yel"><div class="num">7</div><div>Bontle Solar</div><div>WIP</div><div>R 48,500</div><div>Partial</div><div>Lerato</div></div>
             <div class="xrow err"><div class="num">8</div><div>#REF!</div><div></div><div>#DIV/0!</div><div></div><div></div></div>
             <div class="xrow"><div class="num">9</div><div>Dlamini Bros</div><div>Done</div><div>R 6,400</div><div>Yes</div><div>Sipho</div></div>
             <div class="xrow"><div class="num">10</div><div>Maseko Fleet</div><div>Done</div><div>R 31,200</div><div>?</div><div>Thabo</div></div>
             <div class="xrow yel"><div class="num">11</div><div>Tumi (cash??)</div><div>Done?</div><div>R 3,500</div><div>Cash</div><div>??</div></div>
             <div class="xrow err"><div class="num">12</div><div>#REF!</div><div>#REF!</div><div>#REF!</div><div>#REF!</div><div>#REF!</div></div>
-            <div class="xrow"><div class="num">13</div><div>â blank â</div><div></div><div></div><div></div><div></div></div>
+            <div class="xrow"><div class="num">13</div><div>— blank —</div><div></div><div></div><div></div><div></div></div>
             <div class="xrow"><div class="num">14</div><div>Motsepe G.</div><div>Done</div><div>R 88,200</div><div>???</div><div>Lerato</div></div>
             <div class="xrow yel"><div class="num">15</div><div>ZZZ IGNORE</div><div>test</div><div>R 999</div><div>test</div><div>me</div></div>
             <div class="xrow err"><div class="num">16</div><div>#N/A</div><div>#N/A</div><div>#N/A</div><div>#N/A</div><div>#N/A</div></div>
@@ -358,8 +363,8 @@
             <div class="xrow"><div class="num">18</div><div>???</div><div>???</div><div>???</div><div>???</div><div>???</div></div>
           </div>
           <div class="badge">3 UNSAVED</div>
-          <div class="note">ask Craig<br>about row 4 + 8<br>it broke AGAIN ð­<br>DO NOT TOUCH!</div>
-          <div class="note2">â  last backup:<br>"2 weeks ago"<br>Sipho has v6?</div>
+          <div class="note">ask Craig<br>about row 4 + 8<br>it broke AGAIN 😭<br>DO NOT TOUCH!</div>
+          <div class="note2">⚠ last backup:<br>"2 weeks ago"<br>Sipho has v6?</div>
         </div>
 
         <!-- AFTER 1: OPS COCKPIT -->
@@ -367,10 +372,10 @@
           <svg width="0" height="0"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b8ff5c" stop-opacity=".5"/><stop offset="100%" stop-color="#b8ff5c" stop-opacity="0"/></linearGradient></defs></svg>
           <div class="top">
             <div class="tl"><div class="dots"><i></i><i></i><i></i></div><div class="crumb">APG / OPS / <b>LIVE</b></div></div>
-            <div class="live"><span class="dot"></span>LIVE Â· 08:14</div>
+            <div class="live"><span class="dot"></span>LIVE · 08:14</div>
           </div>
           <div class="hero-metric">
-            <div class="hm-label">Revenue Â· Month to Date</div>
+            <div class="hm-label">Revenue · Month to Date</div>
             <div class="hm-val">R1.28M<em>+18%</em></div>
             <svg class="spark" viewBox="0 0 140 46" preserveAspectRatio="none">
               <path class="f" d="M0,38 L14,32 L28,34 L42,26 L56,28 L70,20 L84,22 L98,14 L112,16 L126,8 L140,6 L140,46 L0,46 Z"/>
@@ -385,39 +390,39 @@
           </div>
           <div class="attn">
             <div class="h">// ATTENTION QUEUE</div>
-            <div class="arow"><div class="av">NP</div><div class="nm">Naledi Props Â· invoice sent</div><div class="st g">PAID</div></div>
-            <div class="arow"><div class="av">BS</div><div class="nm">Bontle Solar Â· phase 2 quote</div><div class="st g">SENT</div></div>
-            <div class="arow"><div class="av">KF</div><div class="nm">Khumalo Farms Â· scheduled</div><div class="st">MON</div></div>
+            <div class="arow"><div class="av">NP</div><div class="nm">Naledi Props · invoice sent</div><div class="st g">PAID</div></div>
+            <div class="arow"><div class="av">BS</div><div class="nm">Bontle Solar · phase 2 quote</div><div class="st g">SENT</div></div>
+            <div class="arow"><div class="av">KF</div><div class="nm">Khumalo Farms · scheduled</div><div class="st">MON</div></div>
           </div>
         </div>
-        <div class="label"><span class="name">From: Excel Chaos</span><span class="state">â Ops Cockpit</span></div>
+        <div class="label"><span class="name">From: Excel Chaos</span><span class="state">→ Ops Cockpit</span></div>
       </div>
 
-      <!-- ============ CARD 2: WHATSAPP â FLEET ============ -->
-      <div class="morph" data-n="02 Â· HOVER">
+      <!-- ============ CARD 2: WHATSAPP → FLEET ============ -->
+      <div class="morph" data-n="02"><span class="flip-hint">TAP TO FLIP</span>
         <div class="layer before wa">
           <div class="counter">+98</div>
           <div class="whead">
             <div class="av">O</div>
-            <div class="meta"><div class="t">Ops Team ð¨ð¥</div><div class="s">24 participants Â· typing...</div></div>
-            <div class="icons">â®</div>
+            <div class="meta"><div class="t">Ops Team 🚨🔥</div><div class="s">24 participants · typing...</div></div>
+            <div class="icons">⋮</div>
           </div>
           <div class="msgs">
-            <div class="unread">â 98 UNREAD MESSAGES â</div>
-            <div class="m mi"><b>Sipho</b><br>boss truck 3 broke down AGAIN<div class="time">06:42 ââ</div></div>
+            <div class="unread">— 98 UNREAD MESSAGES —</div>
+            <div class="m mi"><b>Sipho</b><br>boss truck 3 broke down AGAIN<div class="time">06:42 ✓✓</div></div>
             <div class="m mi b2"><b>Thabo</b><br>where am I supposed to go??<div class="time">06:44</div></div>
-            <div class="m mi b3"><b>Lerato</b><br>client in sandton FURIOUS ð¡ð¡ð¡<div class="time">06:51</div></div>
+            <div class="m mi b3"><b>Lerato</b><br>client in sandton FURIOUS 😡😡😡<div class="time">06:51</div></div>
             <div class="m mi b2"><b>Thabo</b><br>hello???<div class="time">06:53</div></div>
             <div class="m mo">which client lerato<div class="time">07:12</div></div>
             <div class="m mi b3"><b>Lerato</b><br>the one from yesterday<div class="time">07:13</div></div>
             <div class="m mi b3"><b>Lerato</b><br>or maybe last week idk<div class="time">07:13</div></div>
             <div class="m mi"><b>Sipho</b><br>DIESEL<div class="time">07:19</div></div>
             <div class="m mi"><b>Sipho</b><br>we need diesel<div class="time">07:19</div></div>
-            <div class="m mi b4"><b>Driver 7</b><br>ð *location pin shared*<div class="time">07:31</div></div>
+            <div class="m mi b4"><b>Driver 7</b><br>📍 *location pin shared*<div class="time">07:31</div></div>
             <div class="m mi b2"><b>Thabo</b><br>BOSS<div class="time">07:44</div></div>
             <div class="m mi b2"><b>Thabo</b><br>BOSSSSS<div class="time">07:45</div></div>
             <div class="m mi b3"><b>Lerato</b><br>client phoning again<div class="time">07:51</div></div>
-            <div class="voice">voice note 1:42 Â· Sipho</div>
+            <div class="voice">voice note 1:42 · Sipho</div>
             <div class="m mi b4"><b>Driver 7</b><br>sorry wrong chat<div class="time">07:58</div></div>
             <div class="typing">Lerato is typing...</div>
           </div>
@@ -426,8 +431,8 @@
         <!-- AFTER 2: FLEET COMMAND -->
         <div class="layer after d2">
           <div class="top">
-            <div class="tl">Fleet Â· <em style="font-style:italic;opacity:.6">command</em></div>
-            <div class="live"><span class="dot"></span>14 UNITS Â· LIVE</div>
+            <div class="tl">Fleet · <em style="font-style:italic;opacity:.6">command</em></div>
+            <div class="live"><span class="dot"></span>14 UNITS · LIVE</div>
           </div>
           <div class="map">
             <svg class="route" viewBox="0 0 400 150" preserveAspectRatio="none" style="width:100%;height:100%">
@@ -440,7 +445,7 @@
             <div class="pin" style="left:48%;top:55%"></div>
             <div class="pinlabel" style="left:48%;top:55%">T-02</div>
             <div class="pin warn" style="left:72%;top:25%"></div>
-            <div class="pinlabel" style="left:72%;top:25%" >T-03 â </div>
+            <div class="pinlabel" style="left:72%;top:25%" >T-03 ⚠</div>
             <div class="pin" style="left:85%;top:65%"></div>
             <div class="pinlabel" style="left:85%;top:65%">T-11</div>
             <div class="pin" style="left:35%;top:75%"></div>
@@ -453,54 +458,54 @@
             <div class="kpi2"><div class="k">Alerts</div><div class="v">1</div><div class="d">diesel</div></div>
           </div>
           <div class="trucks">
-            <div class="h">// FLEET Â· LIVE</div>
-            <div class="trow"><div class="id">T-07</div><div class="drv">Driver 7 Â· Sandton</div><div class="prog"><b style="width:78%"></b></div><div class="st ok">ARR</div></div>
-            <div class="trow"><div class="id">T-02</div><div class="drv">Thabo Â· Midrand</div><div class="prog"><b style="width:52%"></b></div><div class="st">RT</div></div>
-            <div class="trow"><div class="id">T-03</div><div class="drv">Sipho Â· Depot</div><div class="prog"><b style="width:22%"></b></div><div class="st wr">DSL</div></div>
-            <div class="trow"><div class="id">T-11</div><div class="drv">Lerato Â· Centurion</div><div class="prog"><b style="width:91%"></b></div><div class="st ok">ARR</div></div>
+            <div class="h">// FLEET · LIVE</div>
+            <div class="trow"><div class="id">T-07</div><div class="drv">Driver 7 · Sandton</div><div class="prog"><b style="width:78%"></b></div><div class="st ok">ARR</div></div>
+            <div class="trow"><div class="id">T-02</div><div class="drv">Thabo · Midrand</div><div class="prog"><b style="width:52%"></b></div><div class="st">RT</div></div>
+            <div class="trow"><div class="id">T-03</div><div class="drv">Sipho · Depot</div><div class="prog"><b style="width:22%"></b></div><div class="st wr">DSL</div></div>
+            <div class="trow"><div class="id">T-11</div><div class="drv">Lerato · Centurion</div><div class="prog"><b style="width:91%"></b></div><div class="st ok">ARR</div></div>
           </div>
         </div>
-        <div class="label"><span class="name">From: WhatsApp Panic</span><span class="state">â Fleet Command</span></div>
+        <div class="label"><span class="name">From: WhatsApp Panic</span><span class="state">→ Fleet Command</span></div>
       </div>
 
-      <!-- ============ CARD 3: GMAIL â CLIENTS ============ -->
-      <div class="morph" data-n="03 Â· HOVER">
+      <!-- ============ CARD 3: GMAIL → CLIENTS ============ -->
+      <div class="morph" data-n="03"><span class="flip-hint">TAP TO FLIP</span>
         <div class="layer before gm">
           <div class="gtop">
             <div class="logo-g">Gmail</div>
             <div class="sb">Search mail</div>
             <div class="badge">247</div>
           </div>
-          <div class="toolbar"><b>Inbox (247 unread)</b> Â· Primary Â· Promotions Â· Social Â· Updates</div>
+          <div class="toolbar"><b>Inbox (247 unread)</b> · Primary · Promotions · Social · Updates</div>
           <div class="list">
-            <div class="gm-row unr"><div class="star">â</div><div class="imp">Â»</div><div class="from">Naledi @ Standard Bank</div><div class="sub"><span class="chip">URGENT</span>RE: RE: RE: FWD: Payment not reflecting<span class="gs"> â This is now the fourth timeâ¦</span></div><div class="date">06:11</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp">Â»</div><div class="from">client@kgosi.co.za</div><div class="sub"><span class="chip">2ND REQ</span>Where is my invoice?? Account dept asking<span class="gs"> â We have been waiting since</span></div><div class="date">06:34</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp"></div><div class="from">SARS eFiling</div><div class="sub"><span class="chip o">ACTION</span>VAT201 â action required before 25th<span class="gs"> â Please log in to submit</span></div><div class="date">06:58</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp">Â»</div><div class="from">Thulani Malatji</div><div class="sub">Quote for Phase 2 â you promised yesterday<span class="gs"> â Hi, I am still waiting</span></div><div class="date">07:02</div></div>
-            <div class="gm-row"><div class="star">â</div><div class="imp"></div><div class="from">Zendesk</div><div class="sub">Ticket #8842 reassigned <span class="gs">â and 3 more in Support</span></div><div class="date">07:15</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp">Â»</div><div class="from">Bontle Solar (accounts)</div><div class="sub"><span class="chip">FINAL</span>Overdue notice â please settle<span class="gs"> â Final demand before handover</span></div><div class="date">07:21</div></div>
-            <div class="gm-row"><div class="star">â</div><div class="imp"></div><div class="from">LinkedIn</div><div class="sub"><span class="chip b">SOCIAL</span>5 people viewed your profile<span class="gs"> â See who's interested</span></div><div class="date">07:30</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp">Â»</div><div class="from">Dlamini Holdings</div><div class="sub"><span class="chip">3RD REQ</span>Proposal follow-up (3)<span class="gs"> â We really need an update</span></div><div class="date">07:44</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp"></div><div class="from">noreply@xero</div><div class="sub"><span class="chip p">XERO</span>Reconciliation waiting â 14 items<span class="gs"> â Match these transactions</span></div><div class="date">07:51</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp">Â»</div><div class="from">Moloi Waste Accounts</div><div class="sub"><span class="chip">URGENT</span>Statement dispute â where is R4,200<span class="gs"> â Missing line item</span></div><div class="date">07:58</div></div>
-            <div class="gm-row"><div class="star">â</div><div class="imp"></div><div class="from">Google Calendar</div><div class="sub">â° You have 4 overlapping meetings today<span class="gs"> â Starting 09:00</span></div><div class="date">08:02</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp">Â»</div><div class="from">Chauke &amp; Sons</div><div class="sub"><span class="chip">CHASE</span>Follow up #7 â please reply<span class="gs"> â If I don't hear back today</span></div><div class="date">08:04</div></div>
-            <div class="gm-row unr"><div class="star">â</div><div class="imp"></div><div class="from">Motsepe Group (PA)</div><div class="sub">Reschedule request â Mr M available only</div><div class="date">08:09</div></div>
+            <div class="gm-row unr"><div class="star">★</div><div class="imp">»</div><div class="from">Naledi @ Standard Bank</div><div class="sub"><span class="chip">URGENT</span>RE: RE: RE: FWD: Payment not reflecting<span class="gs"> — This is now the fourth time…</span></div><div class="date">06:11</div></div>
+            <div class="gm-row unr"><div class="star">★</div><div class="imp">»</div><div class="from">client@kgosi.co.za</div><div class="sub"><span class="chip">2ND REQ</span>Where is my invoice?? Account dept asking<span class="gs"> — We have been waiting since</span></div><div class="date">06:34</div></div>
+            <div class="gm-row unr"><div class="star">☆</div><div class="imp"></div><div class="from">SARS eFiling</div><div class="sub"><span class="chip o">ACTION</span>VAT201 — action required before 25th<span class="gs"> — Please log in to submit</span></div><div class="date">06:58</div></div>
+            <div class="gm-row unr"><div class="star">★</div><div class="imp">»</div><div class="from">Thulani Malatji</div><div class="sub">Quote for Phase 2 — you promised yesterday<span class="gs"> — Hi, I am still waiting</span></div><div class="date">07:02</div></div>
+            <div class="gm-row"><div class="star">☆</div><div class="imp"></div><div class="from">Zendesk</div><div class="sub">Ticket #8842 reassigned <span class="gs">— and 3 more in Support</span></div><div class="date">07:15</div></div>
+            <div class="gm-row unr"><div class="star">★</div><div class="imp">»</div><div class="from">Bontle Solar (accounts)</div><div class="sub"><span class="chip">FINAL</span>Overdue notice — please settle<span class="gs"> — Final demand before handover</span></div><div class="date">07:21</div></div>
+            <div class="gm-row"><div class="star">☆</div><div class="imp"></div><div class="from">LinkedIn</div><div class="sub"><span class="chip b">SOCIAL</span>5 people viewed your profile<span class="gs"> — See who's interested</span></div><div class="date">07:30</div></div>
+            <div class="gm-row unr"><div class="star">★</div><div class="imp">»</div><div class="from">Dlamini Holdings</div><div class="sub"><span class="chip">3RD REQ</span>Proposal follow-up (3)<span class="gs"> — We really need an update</span></div><div class="date">07:44</div></div>
+            <div class="gm-row unr"><div class="star">☆</div><div class="imp"></div><div class="from">noreply@xero</div><div class="sub"><span class="chip p">XERO</span>Reconciliation waiting — 14 items<span class="gs"> — Match these transactions</span></div><div class="date">07:51</div></div>
+            <div class="gm-row unr"><div class="star">★</div><div class="imp">»</div><div class="from">Moloi Waste Accounts</div><div class="sub"><span class="chip">URGENT</span>Statement dispute — where is R4,200<span class="gs"> — Missing line item</span></div><div class="date">07:58</div></div>
+            <div class="gm-row"><div class="star">☆</div><div class="imp"></div><div class="from">Google Calendar</div><div class="sub">⏰ You have 4 overlapping meetings today<span class="gs"> — Starting 09:00</span></div><div class="date">08:02</div></div>
+            <div class="gm-row unr"><div class="star">★</div><div class="imp">»</div><div class="from">Chauke &amp; Sons</div><div class="sub"><span class="chip">CHASE</span>Follow up #7 — please reply<span class="gs"> — If I don't hear back today</span></div><div class="date">08:04</div></div>
+            <div class="gm-row unr"><div class="star">☆</div><div class="imp"></div><div class="from">Motsepe Group (PA)</div><div class="sub">Reschedule request — Mr M available only</div><div class="date">08:09</div></div>
           </div>
-          <div class="notif"><b>â  3 NEW Â· FINAL NOTICE</b>Bontle Solar Â· R48,500 overdue</div>
+          <div class="notif"><b>⚠ 3 NEW · FINAL NOTICE</b>Bontle Solar · R48,500 overdue</div>
         </div>
 
         <!-- AFTER 3: CLIENTS COMMAND -->
         <div class="layer after d3">
           <div class="top">
-            <div class="tl">Clients Â· <span style="opacity:.6">pipeline</span></div>
-            <div class="live"><span class="dot"></span>ALL CLEAR Â· SLA OK</div>
+            <div class="tl">Clients · <span style="opacity:.6">pipeline</span></div>
+            <div class="live"><span class="dot"></span>ALL CLEAR · SLA OK</div>
           </div>
           <div class="bignum">
             <div>
-              <div class="l">Open Threads Â· SLA</div>
+              <div class="l">Open Threads · SLA</div>
               <div class="v">0<span style="font-size:20px;opacity:.4">/247</span></div>
-              <div class="sub">avg response Â· 2h 11m (target &lt; 4h)</div>
+              <div class="sub">avg response · 2h 11m (target &lt; 4h)</div>
             </div>
             <div class="donut">
               <svg width="70" height="70" viewBox="0 0 70 70">
@@ -511,7 +516,7 @@
             </div>
           </div>
           <div class="funnel">
-            <div class="h">// PIPELINE Â· 30 DAYS</div>
+            <div class="h">// PIPELINE · 30 DAYS</div>
             <div class="frow"><div class="lbl">LEAD</div><div class="bar"><b style="width:100%"></b></div><div class="n">47</div></div>
             <div class="frow"><div class="lbl">QUOTE</div><div class="bar"><b style="width:68%"></b></div><div class="n">32</div></div>
             <div class="frow"><div class="lbl">WON</div><div class="bar"><b style="width:38%"></b></div><div class="n">18</div></div>
@@ -519,12 +524,12 @@
           </div>
           <div class="threads">
             <div class="h">// TOP ACCOUNTS</div>
-            <div class="thr"><div class="cn">Bontle Solar<em>phase 2 Â· settled 08:12</em></div><div class="val">R48K</div><div class="tag ok">PAID</div></div>
-            <div class="thr"><div class="cn">Dlamini Holdings<em>proposal Â· auto-sent</em></div><div class="val">R120K</div><div class="tag ok">SENT</div></div>
-            <div class="thr"><div class="cn">Motsepe Group<em>reschedule Â· confirmed</em></div><div class="val">R88K</div><div class="tag">WED</div></div>
+            <div class="thr"><div class="cn">Bontle Solar<em>phase 2 · settled 08:12</em></div><div class="val">R48K</div><div class="tag ok">PAID</div></div>
+            <div class="thr"><div class="cn">Dlamini Holdings<em>proposal · auto-sent</em></div><div class="val">R120K</div><div class="tag ok">SENT</div></div>
+            <div class="thr"><div class="cn">Motsepe Group<em>reschedule · confirmed</em></div><div class="val">R88K</div><div class="tag">WED</div></div>
           </div>
         </div>
-        <div class="label"><span class="name">From: Inbox Anxiety</span><span class="state">â Clients Pipeline</span></div>
+        <div class="label"><span class="name">From: Inbox Anxiety</span><span class="state">→ Clients Pipeline</span></div>
       </div>
 
     </div>
@@ -535,9 +540,9 @@
 <section class="ai-sec">
   <div class="ai-inner">
     <div class="ai-left">
-      <div class="ai-eyebrow">// POWERED BY AI Â· BUILT TO CATCH WHAT YOU MISS</div>
+      <div class="ai-eyebrow">// POWERED BY AI · BUILT TO CATCH WHAT YOU MISS</div>
       <h2 class="ai-h">Humans forget.<br><em>Your Command Centre doesn't.</em></h2>
-      <p class="ai-sub">Every dashboard runs on AI that watches your data in real time â flagging errors, chasing late invoices, rerouting drivers, and drafting replies before you even see them. The mistakes that cost you money? They never make it past the machine.</p>
+      <p class="ai-sub">Every dashboard runs on AI that watches your data in real time — flagging errors, chasing late invoices, rerouting drivers, and drafting replies before you even see them. The mistakes that cost you money? They never make it past the machine.</p>
     </div>
     <div class="ai-stats reveal-stagger">
       <div class="ai-stat"><div class="asn" data-count="97">0<em>%</em></div><div class="asl">Fewer Data Errors</div><div class="asd">vs. Excel / WhatsApp workflows</div></div>
@@ -575,7 +580,7 @@
 <!-- MOBILE SHOWCASE -->
 <section class="mobile-sec" id="mobile">
   <div class="mobile-inner">
-    <div class="mob-eyebrow">// YOUR COMMAND CENTRE Â· IN YOUR POCKET</div>
+    <div class="mob-eyebrow">// YOUR COMMAND CENTRE · IN YOUR POCKET</div>
     <h2 class="mob-h">Work wherever<br><em>you are.</em></h2>
     <p class="mob-sub">Every dashboard is built mobile-first. Approve a quote in the Uber. Check fleet status from the airport. Sign off invoices from bed. Your business, one tap away.</p>
 
@@ -583,10 +588,10 @@
       <div class="phone">
         <div class="notch"></div>
         <div class="screen p1">
-          <div class="psb"><span>9:41</span><span>â² â â®â®â®</span></div>
-          <div class="pnav"><span class="bk">â</span><span class="ti">Ops Â· Live</span><span class="dt">â</span></div>
+          <div class="psb"><span>9:41</span><span>▲ ◉ ▮▮▮</span></div>
+          <div class="pnav"><span class="bk">←</span><span class="ti">Ops · Live</span><span class="dt">●</span></div>
           <div class="phero">
-            <div class="phl">REVENUE Â· MTD</div>
+            <div class="phl">REVENUE · MTD</div>
             <div class="phv">R1.28M <em>+18%</em></div>
             <svg viewBox="0 0 200 40" preserveAspectRatio="none" style="width:100%;height:36px;margin-top:6px">
               <defs><linearGradient id="pg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b8ff5c" stop-opacity=".5"/><stop offset="100%" stop-color="#b8ff5c" stop-opacity="0"/></linearGradient></defs>
@@ -601,15 +606,15 @@
             <div class="pli"><i>BS</i><span>Bontle Solar</span><em class="g">SENT</em></div>
             <div class="pli"><i>KF</i><span>Khumalo Farms</span><em>MON</em></div>
           </div>
-          <div class="ptab"><span>â</span><span>â¡</span><span>â</span><span>â</span></div>
+          <div class="ptab"><span>◉</span><span>≡</span><span>⊕</span><span>○</span></div>
         </div>
       </div>
 
       <div class="phone">
         <div class="notch"></div>
         <div class="screen p2">
-          <div class="psb"><span>9:41</span><span>â² â â®â®â®</span></div>
-          <div class="pnav"><span class="bk">â</span><span class="ti" style="color:#5cf0ff">Fleet Â· Command</span><span class="dt" style="color:#5cf0ff">â</span></div>
+          <div class="psb"><span>9:41</span><span>▲ ◉ ▮▮▮</span></div>
+          <div class="pnav"><span class="bk">←</span><span class="ti" style="color:#5cf0ff">Fleet · Command</span><span class="dt" style="color:#5cf0ff">●</span></div>
           <div class="pmap">
             <svg viewBox="0 0 200 90" preserveAspectRatio="none" style="width:100%;height:100%">
               <defs><pattern id="gr" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M 18 0 L 0 0 0 18" fill="none" stroke="rgba(92,240,255,.08)" stroke-width="1"/></pattern></defs>
@@ -624,24 +629,24 @@
           </div>
           <div class="pkp c"><div><span>ROUTE</span><b class="c">12/14</b></div><div><span>STOPS</span><b>119</b></div></div>
           <div class="plist">
-            <div class="pli c"><i>T07</i><span>Driver 7 Â· Sandton</span><em class="g">ARR</em></div>
-            <div class="pli c"><i>T02</i><span>Thabo Â· Midrand</span><em>52%</em></div>
-            <div class="pli c"><i>T03</i><span>Sipho Â· Depot</span><em class="w">DSL</em></div>
-            <div class="pli c"><i>T11</i><span>Lerato Â· Centurion</span><em class="g">ARR</em></div>
+            <div class="pli c"><i>T07</i><span>Driver 7 · Sandton</span><em class="g">ARR</em></div>
+            <div class="pli c"><i>T02</i><span>Thabo · Midrand</span><em>52%</em></div>
+            <div class="pli c"><i>T03</i><span>Sipho · Depot</span><em class="w">DSL</em></div>
+            <div class="pli c"><i>T11</i><span>Lerato · Centurion</span><em class="g">ARR</em></div>
           </div>
-          <div class="ptab"><span>â</span><span>â¡</span><span>â</span><span>â</span></div>
+          <div class="ptab"><span>◉</span><span>≡</span><span>⊕</span><span>○</span></div>
         </div>
       </div>
 
       <div class="phone">
         <div class="notch"></div>
         <div class="screen p3">
-          <div class="psb"><span>9:41</span><span>â² â â®â®â®</span></div>
-          <div class="pnav"><span class="bk">â</span><span class="ti" style="color:#ffb84d">Clients Â· Pipeline</span><span class="dt" style="color:#ffb84d">â</span></div>
+          <div class="psb"><span>9:41</span><span>▲ ◉ ▮▮▮</span></div>
+          <div class="pnav"><span class="bk">←</span><span class="ti" style="color:#ffb84d">Clients · Pipeline</span><span class="dt" style="color:#ffb84d">●</span></div>
           <div class="pbig">
-            <div class="pbl">OPEN Â· SLA</div>
+            <div class="pbl">OPEN · SLA</div>
             <div class="pbv">0<em>/247</em></div>
-            <div class="pbs">avg 2h 11m Â· target &lt; 4h</div>
+            <div class="pbs">avg 2h 11m · target &lt; 4h</div>
           </div>
           <div class="pfun">
             <div class="pf"><span>LEAD</span><div class="pfb"><b style="width:100%"></b></div><em>47</em></div>
@@ -653,12 +658,12 @@
             <div class="pli a"><i>BS</i><span>Bontle Solar</span><em class="g">R48K</em></div>
             <div class="pli a"><i>DH</i><span>Dlamini Holdings</span><em class="g">R120K</em></div>
           </div>
-          <div class="ptab"><span>â</span><span>â¡</span><span>â</span><span>â</span></div>
+          <div class="ptab"><span>◉</span><span>≡</span><span>⊕</span><span>○</span></div>
         </div>
       </div>
     </div>
 
-    <div class="mob-foot">Approve Â· assign Â· escalate Â· sign off â without opening a laptop.</div>
+    <div class="mob-foot">Approve · assign · escalate · sign off — without opening a laptop.</div>
   </div>
 </section>
 
@@ -741,36 +746,36 @@
   <div class="int-inner">
     <div class="int-eyebrow">// CONNECTS TO EVERYTHING YOU ALREADY USE</div>
     <h2 class="int-h">Your clients get a login.<br><em>Your maps go live.</em><br>Your WhatsApp <em>gets smart.</em></h2>
-    <p class="int-sub">Every Command Centre we build plugs straight into the tools your business already runs on â so nothing gets left behind, and nothing gets re-invented.</p>
+    <p class="int-sub">Every Command Centre we build plugs straight into the tools your business already runs on — so nothing gets left behind, and nothing gets re-invented.</p>
 
     <div class="int-grid reveal-stagger">
 
       <!-- CUSTOMER PORTAL LOGIN -->
       <div class="int-card">
-        <div class="int-tag">01 Â· CLIENT PORTAL</div>
+        <div class="int-tag">01 · CLIENT PORTAL</div>
         <div class="int-demo portal">
-          <div class="prt-top"><span class="prt-dots"><i></i><i></i><i></i></span><span class="prt-url">ð portal.yourbusiness.co.za</span></div>
+          <div class="prt-top"><span class="prt-dots"><i></i><i></i><i></i></span><span class="prt-url">🔒 portal.yourbusiness.co.za</span></div>
           <div class="prt-body">
             <div class="prt-logo">Your Logo</div>
             <div class="prt-welcome">Welcome back,<br><em>Naledi.</em></div>
             <div class="prt-form">
               <div class="prt-field"><label>EMAIL</label><div class="prt-inp">naledi@naledi-props.co.za</div></div>
-              <div class="prt-field"><label>PASSWORD</label><div class="prt-inp">â¢â¢â¢â¢â¢â¢â¢â¢â¢â¢â¢â¢</div></div>
-              <button class="prt-btn">Sign in â</button>
-              <div class="prt-or">â or continue with â</div>
+              <div class="prt-field"><label>PASSWORD</label><div class="prt-inp">••••••••••••</div></div>
+              <button class="prt-btn">Sign in →</button>
+              <div class="prt-or">— or continue with —</div>
               <div class="prt-sso"><span>G</span>Sign in with Google</div>
             </div>
-            <div class="prt-foot">Your quotes Â· invoices Â· job status Â· 24/7</div>
+            <div class="prt-foot">Your quotes · invoices · job status · 24/7</div>
           </div>
         </div>
-        <div class="int-meta"><b>Clients log in. You don't answer "where's my invoice?" again.</b><p>Every customer gets their own branded portal â quotes, invoices, job tracking, statements. Self-serve, auto-updated.</p></div>
+        <div class="int-meta"><b>Clients log in. You don't answer "where's my invoice?" again.</b><p>Every customer gets their own branded portal — quotes, invoices, job tracking, statements. Self-serve, auto-updated.</p></div>
       </div>
 
       <!-- GOOGLE MAPS -->
       <div class="int-card">
-        <div class="int-tag">02 Â· GOOGLE MAPS</div>
+        <div class="int-tag">02 · GOOGLE MAPS</div>
         <div class="int-demo gmap">
-          <div class="gm-top"><span class="gm-search">ð Search Google Maps</span><span class="gm-av">LM</span></div>
+          <div class="gm-top"><span class="gm-search">🔍 Search Google Maps</span><span class="gm-av">LM</span></div>
           <div class="gm-canvas">
             <svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;position:absolute;inset:0">
               <defs><pattern id="gmg" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M 26 0 L 0 0 0 26" fill="none" stroke="#d5e3d5" stroke-width="1"/></pattern></defs>
@@ -788,40 +793,40 @@
               <text x="200" y="100" font-family="Arial" font-size="8" fill="#666">Midrand</text>
               <text x="60" y="175" font-family="Arial" font-size="8" fill="#666">Fourways</text>
             </svg>
-            <div class="gm-pin g" style="left:38%;top:42%"><div class="gm-bub">T-07 Â· Driver 7<br><em>ETA 12 min</em></div></div>
+            <div class="gm-pin g" style="left:38%;top:42%"><div class="gm-bub">T-07 · Driver 7<br><em>ETA 12 min</em></div></div>
             <div class="gm-pin b" style="left:68%;top:55%"></div>
             <div class="gm-pin b" style="left:20%;top:75%"></div>
             <div class="gm-pin o" style="left:55%;top:25%"></div>
             <svg class="gm-route" viewBox="0 0 300 200" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
               <path d="M60,160 Q120,120 150,80 T220,60" stroke="#1a73e8" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="6,4"/>
             </svg>
-            <div class="gm-zoom"><span>+</span><span>â</span></div>
+            <div class="gm-zoom"><span>+</span><span>−</span></div>
           </div>
         </div>
-        <div class="int-meta"><b>Live fleet tracking on real Google Maps.</b><p>Routes, ETAs, geofencing, auto-assign nearest driver. Your customers get live "your job is 4 stops away" updates â pulled straight from the map.</p></div>
+        <div class="int-meta"><b>Live fleet tracking on real Google Maps.</b><p>Routes, ETAs, geofencing, auto-assign nearest driver. Your customers get live "your job is 4 stops away" updates — pulled straight from the map.</p></div>
       </div>
 
       <!-- WHATSAPP INTEGRATION -->
       <div class="int-card">
-        <div class="int-tag">03 Â· WHATSAPP BUSINESS</div>
+        <div class="int-tag">03 · WHATSAPP BUSINESS</div>
         <div class="int-demo wa-int">
           <div class="wai-top">
             <div class="wai-av">APG</div>
-            <div class="wai-meta"><div class="wai-name">App Pro Guy Â· Bot</div><div class="wai-st">â online Â· auto-reply</div></div>
-            <div class="wai-icons">ð â®</div>
+            <div class="wai-meta"><div class="wai-name">App Pro Guy · Bot</div><div class="wai-st">● online · auto-reply</div></div>
+            <div class="wai-icons">📞 ⋮</div>
           </div>
           <div class="wai-body">
             <div class="wai-sys">TODAY</div>
-            <div class="wai-m wai-in"><b>Naledi Â· Naledi Props</b><br>Hi, can I get a quote for 2 bins collection next week?<div class="wai-t">08:14 ââ</div></div>
-            <div class="wai-m wai-out">Hi Naledi ð I've pulled up your account. Based on your last 3 jobs, quote for 2 bins is <b>R 2,400</b>.<div class="wai-t">08:14</div></div>
+            <div class="wai-m wai-in"><b>Naledi · Naledi Props</b><br>Hi, can I get a quote for 2 bins collection next week?<div class="wai-t">08:14 ✓✓</div></div>
+            <div class="wai-m wai-out">Hi Naledi 👋 I've pulled up your account. Based on your last 3 jobs, quote for 2 bins is <b>R 2,400</b>.<div class="wai-t">08:14</div></div>
             <div class="wai-m wai-out">Shall I book you in for Wednesday 09:00? Reply <b>YES</b> to confirm.<div class="wai-t">08:14</div></div>
-            <div class="wai-m wai-in">YES please<div class="wai-t">08:15 ââ</div></div>
-            <div class="wai-m wai-out">â Booked. Driver <b>T-07</b> will arrive Wed 09:00.<br>ð Invoice sent to your email.<div class="wai-t">08:15</div></div>
-            <div class="wai-bot"><span class="wai-bd">â BOT ACTION</span>Job created Â· Invoice #8842 sent Â· SMS reminder scheduled</div>
+            <div class="wai-m wai-in">YES please<div class="wai-t">08:15 ✓✓</div></div>
+            <div class="wai-m wai-out">✅ Booked. Driver <b>T-07</b> will arrive Wed 09:00.<br>📄 Invoice sent to your email.<div class="wai-t">08:15</div></div>
+            <div class="wai-bot"><span class="wai-bd">● BOT ACTION</span>Job created · Invoice #8842 sent · SMS reminder scheduled</div>
           </div>
-          <div class="wai-input"><span>ð</span><div class="wai-box">Type a message</div><span>ð¤</span></div>
+          <div class="wai-input"><span>🙂</span><div class="wai-box">Type a message</div><span>🎤</span></div>
         </div>
-        <div class="int-meta"><b>Your bot quotes, books, invoices â 24/7.</b><p>Plugged into WhatsApp Business API. Customers chat like always. Your Command Centre handles the rest â quotes, confirmations, invoicing, reminders.</p></div>
+        <div class="int-meta"><b>Your bot quotes, books, invoices — 24/7.</b><p>Plugged into WhatsApp Business API. Customers chat like always. Your Command Centre handles the rest — quotes, confirmations, invoicing, reminders.</p></div>
       </div>
 
     </div>
@@ -920,22 +925,22 @@
 <section class="value" id="why">
   <div class="value-inner">
     <h2>You don't need<br>more <em>apps.</em><br>You need one<br><em>Command Centre.</em></h2>
-    <p class="lead">Every business already runs on software. The question is whether it's software that works for you â or software that punishes you every Monday morning.</p>
+    <p class="lead">Every business already runs on software. The question is whether it's software that works for you — or software that punishes you every Monday morning.</p>
     <div class="pillars reveal-stagger">
       <div class="pillar">
-        <div class="pn">01 Â· Built For You</div>
+        <div class="pn">01 · Built For You</div>
         <h3>Not a <em>template.</em></h3>
-        <p>We map how your business actually runs â then build the cockpit around it. Not a SaaS you bend into shape.</p>
+        <p>We map how your business actually runs — then build the cockpit around it. Not a SaaS you bend into shape.</p>
       </div>
       <div class="pillar">
-        <div class="pn">02 Â· Delivered In Phases</div>
+        <div class="pn">02 · Delivered In Phases</div>
         <h3>Live in <em>weeks.</em></h3>
-        <p>Phase 1 goes live in 6â8 weeks. You use it. We iterate. Payments tied to delivery milestones, not promises.</p>
+        <p>Phase 1 goes live in 6–8 weeks. You use it. We iterate. Payments tied to delivery milestones, not promises.</p>
       </div>
       <div class="pillar">
-        <div class="pn">03 Â· One Source Of Truth</div>
+        <div class="pn">03 · One Source Of Truth</div>
         <h3>No more <em>guessing.</em></h3>
-        <p>Operations, finance, people, customers, assets â connected, live, and visible from any device, anywhere.</p>
+        <p>Operations, finance, people, customers, assets — connected, live, and visible from any device, anywhere.</p>
       </div>
     </div>
   </div>
@@ -943,9 +948,9 @@
 
 <section class="cta-sec" id="book">
   <h2>Let's see what your<br><em>Command Centre</em> looks like.</h2>
-  <p>A 30-minute walkthrough, tailored to your industry and your biggest headache. No obligation, no pitch deck theatre â just your business, on one screen. One Command Centre.</p>
+  <p>A 30-minute walkthrough, tailored to your industry and your biggest headache. No obligation, no pitch deck theatre — just your business, on one screen. One Command Centre.</p>
   <div class="btns">
-    <a href="mailto:lufuno@appproguy.com?subject=Book a Pitch" class="btn p">Book a Pitch â</a>
+    <a href="mailto:lufuno@appproguy.com?subject=Book a Pitch" class="btn p">Book a Pitch →</a>
     <a href="pitch.html" class="btn g">See the full pitch</a>
   </div>
 </section>
@@ -953,7 +958,7 @@
 <footer>
   <div class="f-logo">App Pro Guy</div>
   <div class="f-mid">The No.1 Bespoke AI Automation Company</div>
-  <div class="f-right">Â© 2026 App Pro Guy<br>Muthala Marketplace (Pty) Ltd</div>
+  <div class="f-right">© 2026 App Pro Guy<br>Muthala Marketplace (Pty) Ltd</div>
 </footer>
 
 <!-- Lenis smooth scroll -->
@@ -991,6 +996,33 @@
   },{threshold:.5});
   document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
+  // Mobile: auto-cycle morph cards + tap to toggle
+  const isTouch=window.matchMedia('(hover:none)').matches;
+  if(isTouch){
+    document.querySelectorAll('.morph').forEach(card=>{
+      let timer=null;let visible=false;
+      const cycle=()=>{
+        if(!visible)return;
+        card.classList.add('flip');
+        timer=setTimeout(()=>{
+          card.classList.remove('flip');
+          timer=setTimeout(cycle,1400);
+        },2800);
+      };
+      const mio=new IntersectionObserver((es)=>{
+        es.forEach(e=>{
+          visible=e.isIntersecting;
+          if(visible){clearTimeout(timer);timer=setTimeout(cycle,900);}
+          else{clearTimeout(timer);card.classList.remove('flip');}
+        });
+      },{threshold:.4});
+      mio.observe(card);
+      card.addEventListener('click',()=>{
+        clearTimeout(timer);
+        card.classList.toggle('flip');
+      });
+    });
+  }
   // Magnetic CTA buttons
   document.querySelectorAll('.btn,.cta').forEach(btn=>{
     btn.addEventListener('mousemove',e=>{
