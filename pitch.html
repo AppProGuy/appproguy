@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software Systems For Your Business â App Pro Guy</title>
-  <meta name="description" content="APG builds a custom business operating system for your company. One cockpit for operations, finance, people, customers and assets â live, in one place." />
+  <title>Software Systems For Your Business — App Pro Guy</title>
+  <meta name="description" content="APG builds a custom business operating system for your company. One cockpit for operations, finance, people, customers and assets — live, in one place." />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--black:#080808;--white:#f7f6f2;--dim:rgba(8,8,8,0.55);--line:rgba(8,8,8,0.1)}
+    :root{--black:#0a0a0a;--white:#cfe8ff;--dim:rgba(10,10,10,0.6);--line:rgba(10,10,10,0.15);--accent:#ff5a3c;--accent2:#0047ff;--good:#00b86b;--bad:#e5342b}
     html{scroll-behavior:smooth}
     body{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;overflow-x:hidden;cursor:crosshair}
     body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.032;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;mix-blend-mode:multiply}
     a{color:inherit;text-decoration:none}
 
-    /* NAV â matches main site */
+    /* NAV — matches main site */
     nav{position:fixed;top:0;left:0;right:0;z-index:500;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--white);border-bottom:2px solid var(--black)}
     .nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;letter-spacing:-0.02em}
     .nav-logo em{font-style:italic}
@@ -51,7 +51,7 @@
     h2 em{font-style:italic;color:transparent;-webkit-text-stroke:2px var(--black)}
     .sec-head p{margin-top:24px;font-size:18px;line-height:1.6;opacity:0.55;max-width:620px}
 
-    /* COCKPIT / PHILOSOPHY â inverted */
+    /* COCKPIT / PHILOSOPHY — inverted */
     .invert{background:var(--black);color:var(--white);border-top:2px solid var(--black);border-bottom:2px solid var(--black)}
     .invert::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:32px 32px}
     .invert .wrap{position:relative;z-index:1}
@@ -61,13 +61,13 @@
     @media(max-width:900px){.cockpit-grid{grid-template-columns:1fr;gap:48px}}
     .quote{font-family:'Playfair Display',serif;font-size:clamp(22px,2.6vw,32px);font-style:italic;line-height:1.4;font-weight:700;margin:32px 0 28px;padding-left:28px;border-left:3px solid var(--white);opacity:0.9}
     .cockpit-panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.15);padding:36px;position:relative}
-    .cockpit-panel::before{content:'â LIVE COCKPIT Â· SAMPLE';position:absolute;top:-12px;left:24px;background:var(--black);padding:0 12px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.25em;color:rgba(255,255,255,0.5)}
+    .cockpit-panel::before{content:'◆ LIVE COCKPIT · SAMPLE';position:absolute;top:-12px;left:24px;background:var(--black);padding:0 12px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.25em;color:rgba(255,255,255,0.5)}
     .c-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px dashed rgba(255,255,255,0.08);font-size:14px}
     .c-row:last-child{border:0}
     .c-row .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.15em;opacity:0.5;text-transform:uppercase}
     .c-row .v{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600}
-    .c-row .v.green{color:#6dff99}
-    .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#6dff99;box-shadow:0 0 8px #6dff99;margin-right:8px;animation:p 2s infinite}
+    .c-row .v.green{color:var(--accent)}
+    .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);margin-right:8px;animation:p 2s infinite}
     @keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
 
     /* INDUSTRIES */
@@ -85,14 +85,14 @@
     @media(max-width:780px){.ba-card.before{border-right:0;border-bottom:1px solid var(--black)}}
     .ba-card.after{background:rgba(50,180,90,0.05)}
     .ba-card h4{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.3em;margin:0 0 24px;text-transform:uppercase;font-weight:600}
-    .ba-card.before h4{color:#c42323}
-    .ba-card.after h4{color:#2a8d3d}
+    .ba-card.before h4{color:var(--bad)}
+    .ba-card.after h4{color:var(--good)}
     .ba-card ul{list-style:none;padding:0;margin:0}
     .ba-card li{padding:14px 0 14px 28px;position:relative;font-size:16px;line-height:1.5;border-bottom:1px dashed var(--line)}
     .ba-card li:last-child{border:0}
     .ba-card.before li{opacity:0.7}
-    .ba-card.before li::before{content:'Ã';position:absolute;left:0;top:12px;color:#c42323;font-size:22px;font-weight:600}
-    .ba-card.after li::before{content:'â';position:absolute;left:0;top:14px;color:#2a8d3d;font-size:16px;font-weight:700}
+    .ba-card.before li::before{content:'×';position:absolute;left:0;top:12px;color:var(--bad);font-size:22px;font-weight:600}
+    .ba-card.after li::before{content:'→';position:absolute;left:0;top:14px;color:var(--good);font-size:16px;font-weight:700}
 
     /* SEGMENTS */
     .seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(255,255,255,0.1)}
@@ -131,14 +131,14 @@
     .contact-meta .lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.35}
     .contact-meta .val{font-size:18px}
     form{background:var(--white);border:2px solid var(--black);padding:40px;display:flex;flex-direction:column;gap:20px}
-    form label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;display:blocj}
+    form label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;display:block}
     form input,form textarea,form select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;font-family:'Barlow Condensed',sans-serif;font-size:17px;color:var(--black);transition:border .2s}
     form input:focus,form textarea:focus,form select:focus{outline:none;border-bottom-color:var(--black)}
     form textarea{resize:vertical;min-height:90px}
     form select{cursor:crosshair}
     form button{margin-top:12px;align-self:flex-start;cursor:crosshair}
 
-    /* FOOTER â matches main */
+    /* FOOTER — matches main */
     footer{background:var(--black);color:var(--white);padding:28px 48px;display:flex;align-items:center;justify-content:space-between}
     .footer-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;opacity:0.5}
     .footer-mid{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;opacity:0.3}
@@ -178,10 +178,10 @@
     <div class="eyebrow">Software Systems For Your Business</div>
     <h1>Your business<br>deserves a<br><span class="italic">cockpit.</span></h1>
     <p class="hero-sub">
-      Most companies run on instinct, WhatsApp, and spreadsheets. That works â until it doesn't. We build a custom digital operating system for your entire business: operations, finance, people, customers, assets. All connected. All live. In one place.
+      Most companies run on instinct, WhatsApp, and spreadsheets. That works — until it doesn't. We build a custom digital operating system for your entire business: operations, finance, people, customers, assets. All connected. All live. In one place.
     </p>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Book a Pitch â</a>
+      <a href="#contact" class="btn btn-primary">Book a Pitch →</a>
       <a href="#industries" class="btn btn-ghost">See Your Industry</a>
     </div>
   </div>
@@ -192,17 +192,17 @@
   <div class="wrap">
     <div class="cockpit-grid">
       <div class="reveal">
-        <span class="sec-label" style="opacity:.5">01 â The Philosophy</span>
+        <span class="sec-label" style="opacity:.5">01 — The Philosophy</span>
         <h2>Every airline has a cockpit.<br><em>Yours should too.</em></h2>
         <p class="quote">The pilot doesn't run the plane by walking around asking staff what's happening. They look at one screen and they know everything. That's what we're building for you.</p>
         <p style="opacity:.55;font-size:17px;line-height:1.6;max-width:520px">No more chasing updates. No more end-of-month surprises. No more staff saying "I didn't know." You and your leadership team get a live view of everything, from any device, at any time.</p>
       </div>
       <div class="cockpit-panel reveal">
         <div class="c-row"><span class="k">Operations</span><span class="v green"><span class="pulse"></span>42 JOBS ACTIVE</span></div>
-        <div class="c-row"><span class="k">Revenue Â· MTD</span><span class="v">R 1,284,500</span></div>
+        <div class="c-row"><span class="k">Revenue · MTD</span><span class="v">R 1,284,500</span></div>
         <div class="c-row"><span class="k">Outstanding</span><span class="v">R 218,900</span></div>
-        <div class="c-row"><span class="k">Fleet Â· On Route</span><span class="v">12 / 14</span></div>
-        <div class="c-row"><span class="k">Staff Â· On Duty</span><span class="v">38 / 41</span></div>
+        <div class="c-row"><span class="k">Fleet · On Route</span><span class="v">12 / 14</span></div>
+        <div class="c-row"><span class="k">Staff · On Duty</span><span class="v">38 / 41</span></div>
         <div class="c-row"><span class="k">SLA Compliance</span><span class="v green">98.2%</span></div>
         <div class="c-row"><span class="k">Open Tickets</span><span class="v">7</span></div>
       </div>
@@ -214,9 +214,9 @@
 <section id="industries">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-label">02 â Built For Your Industry</span>
+      <span class="sec-label">02 — Built For Your Industry</span>
       <h2>From fleet to<br>forecourt. <em>Same cockpit.</em></h2>
-      <p>Every industry runs the hard way â until someone builds them something better. Pick yours.</p>
+      <p>Every industry runs the hard way — until someone builds them something better. Pick yours.</p>
     </div>
     <div class="ind-tabs reveal" id="indTabs"></div>
     <div class="reveal">
@@ -224,11 +224,11 @@
       <p class="ind-sub" id="indSub"></p>
       <div class="ba">
         <div class="ba-card before">
-          <h4>â¼ Before APG</h4>
+          <h4>▼ Before APG</h4>
           <ul id="beforeList"></ul>
         </div>
         <div class="ba-card after">
-          <h4>â² After APG</h4>
+          <h4>▲ After APG</h4>
           <ul id="afterList"></ul>
         </div>
       </div>
@@ -240,7 +240,7 @@
 <section class="invert" id="segments">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-label" style="opacity:.5">03 â Six Segments, One OS</span>
+      <span class="sec-label" style="opacity:.5">03 — Six Segments, One OS</span>
       <h2>One platform.<br><em>Every part of your business.</em></h2>
       <p style="opacity:.55">You don't buy six systems. You get one. Built for how <em>you</em> actually work, delivered in phases, paid on milestones.</p>
     </div>
@@ -252,14 +252,14 @@
 <section id="pitch">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-label">04 â The Promise, In Plain Words</span>
-      <h2>If we were sitting<br>across from youâ¦</h2>
+      <span class="sec-label">04 — The Promise, In Plain Words</span>
+      <h2>If we were sitting<br>across from you…</h2>
     </div>
     <div class="pitch-box reveal">
-      <p><span class="ph">Your Company</span> is running a business that works â but it's running it the hard way.</p>
-      <p>Right now, your team is managing operations through a mix of phone calls, spreadsheets, WhatsApp groups, and paper records. It works. But it's costing you â in time, in errors, in missed opportunities, and in management energy that should be going elsewhere.</p>
+      <p><span class="ph">Your Company</span> is running a business that works — but it's running it the hard way.</p>
+      <p>Right now, your team is managing operations through a mix of phone calls, spreadsheets, WhatsApp groups, and paper records. It works. But it's costing you — in time, in errors, in missed opportunities, and in management energy that should be going elsewhere.</p>
       <p>What we're proposing is simple: we build you a single, custom-built digital operating system for your entire business. We call it <span class="ph">Your Company OS</span>.</p>
-      <p>It covers every part of your business â operations, finance, people, customers, assets â all connected, all live, all in one place. We build in phases, so you're not waiting a year for results. The first phase goes live in weeks, not months. Payments are tied to delivery milestones â you only pay as we deliver.</p>
+      <p>It covers every part of your business — operations, finance, people, customers, assets — all connected, all live, all in one place. We build in phases, so you're not waiting a year for results. The first phase goes live in weeks, not months. Payments are tied to delivery milestones — you only pay as we deliver.</p>
       <p class="closer">The question isn't whether your business needs this. The question is: how long can you afford to run without it?</p>
     </div>
   </div>
@@ -269,13 +269,13 @@
 <section id="process" style="background:rgba(8,8,8,0.03)">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-label">05 â How We Build</span>
+      <span class="sec-label">05 — How We Build</span>
       <h2>Phased delivery.<br><em>Milestone payments.</em></h2>
     </div>
     <div class="process reveal">
-      <div class="phase"><div class="n">01</div><h4>Discover</h4><p>We sit with you and your team. We map how your business actually runs â not how you think it runs.</p></div>
+      <div class="phase"><div class="n">01</div><h4>Discover</h4><p>We sit with you and your team. We map how your business actually runs — not how you think it runs.</p></div>
       <div class="phase"><div class="n">02</div><h4>Design</h4><p>We show you exact screens, flows, and data models before we write a single line of code.</p></div>
-      <div class="phase"><div class="n">03</div><h4>Deliver</h4><p>Phase 1 goes live in 6â8 weeks. You use it. We iterate. Each phase builds on the last.</p></div>
+      <div class="phase"><div class="n">03</div><h4>Deliver</h4><p>Phase 1 goes live in 6–8 weeks. You use it. We iterate. Each phase builds on the last.</p></div>
       <div class="phase"><div class="n">04</div><h4>Scale</h4><p>Once the cockpit is flying, we add altitude: automation, AI, reporting, integrations.</p></div>
     </div>
   </div>
@@ -286,7 +286,7 @@
   <div class="wrap">
     <div class="contact-grid">
       <div class="reveal">
-        <span class="sec-label">06 â Book a Pitch</span>
+        <span class="sec-label">06 — Book a Pitch</span>
         <h2>Let's see what your<br><em>cockpit looks like.</em></h2>
         <p style="margin-top:24px;font-size:17px;line-height:1.6;opacity:0.55;max-width:440px">Tell us about your business. We'll come back within 48 hours with a no-obligation walkthrough, tailored to your industry and your biggest headache.</p>
         <div class="contact-meta">
@@ -302,7 +302,7 @@
         <div><label>Email</label><input name="email" type="email" required placeholder="jane@acme.com"></div>
         <div><label>Industry</label>
           <select name="industry" required>
-            <option value="">Selectâ¦</option>
+            <option value="">Select…</option>
             <option>Waste Collection</option>
             <option>Solar / Energy</option>
             <option>Car Dealership</option>
@@ -313,7 +313,7 @@
           </select>
         </div>
         <div><label>Biggest Headache Right Now</label><textarea name="pain" placeholder="What keeps you up at night?"></textarea></div>
-        <button type="submit" class="btn btn-primary">Send â Book My Pitch</button>
+        <button type="submit" class="btn btn-primary">Send → Book My Pitch</button>
       </form>
     </div>
   </div>
@@ -322,28 +322,28 @@
 <footer>
   <div class="footer-logo">App Pro Guy</div>
   <div class="footer-mid">The No.1 Bespoke AI Automation Company</div>
-  <div class="footer-right">Â© 2026 App Pro Guy<br>Muthala Marketplace (Pty) Ltd</div>
+  <div class="footer-right">© 2026 App Pro Guy<br>Muthala Marketplace (Pty) Ltd</div>
 </footer>
 
 <script>
   const INDUSTRIES = [
     {id:"waste",label:"Waste",headline:"From missed bins to live fleet routing.",sub:"Waste companies lose money on routes nobody tracks, bins nobody confirms, and invoices nobody chases. APG closes every leak.",
-      before:["Drivers phoned in at the end of the day â if at all","Missed bins turned into angry calls you couldn't trace","Fleet fuel and mileage logged on paper, or not at all","Invoices drafted from memory a week after the job"],
-      after:["Live fleet map â every truck, every bin, every route","Proof-of-collection photos auto-attached to the client record","Fuel, mileage and maintenance tracked per vehicle","Invoices generated the moment the route closes"]},
+      before:["Drivers phoned in at the end of the day — if at all","Missed bins turned into angry calls you couldn't trace","Fleet fuel and mileage logged on paper, or not at all","Invoices drafted from memory a week after the job"],
+      after:["Live fleet map — every truck, every bin, every route","Proof-of-collection photos auto-attached to the client record","Fuel, mileage and maintenance tracked per vehicle","Invoices generated the moment the route closes"]},
     {id:"solar",label:"Solar",headline:"From sales quote to live generation.",sub:"Solar installers juggle quotes, surveys, stock, installs and aftercare across five apps. APG merges them into one pipeline.",
       before:["Quotes in Word, leads in WhatsApp, stock in a spreadsheet","Site survey photos scattered across technicians' phones","No visibility on panel stock until the truck is empty","Post-install support lost in personal inboxes"],
-      after:["Unified pipeline: enquiry â survey â install â aftercare","Live stock and component tracking tied to every project","Technician app with photos, checklists and sign-off","Client portal showing system status and service history"]},
+      after:["Unified pipeline: enquiry → survey → install → aftercare","Live stock and component tracking tied to every project","Technician app with photos, checklists and sign-off","Client portal showing system status and service history"]},
     {id:"dealership",label:"Dealership",headline:"Every car. Every lead. Every deal.",sub:"Dealerships win on speed and memory. APG gives you both: a live floor, live leads, and full history on every customer.",
-      before:["Leads on sticky notes and WhatsApp â forgotten in a week","Sales team guessing which cars are still on the floor","Finance paperwork chased across departments","Sales and service with no shared customer view"],
-      after:["Live stock board with photos, pricing, days-on-floor","CRM with every lead, touchpoint, follow-up reminder","Deal pipeline: test-drive â finance â delivery","One client profile shared across sales, finance, service"]},
-    {id:"property",label:"Property",headline:"From listings to leases â no lost paperwork.",sub:"Property managers drown in leases, maintenance tickets and rent chases. APG turns the chaos into a clean dashboard.",
+      before:["Leads on sticky notes and WhatsApp — forgotten in a week","Sales team guessing which cars are still on the floor","Finance paperwork chased across departments","Sales and service with no shared customer view"],
+      after:["Live stock board with photos, pricing, days-on-floor","CRM with every lead, touchpoint, follow-up reminder","Deal pipeline: test-drive → finance → delivery","One client profile shared across sales, finance, service"]},
+    {id:"property",label:"Property",headline:"From listings to leases — no lost paperwork.",sub:"Property managers drown in leases, maintenance tickets and rent chases. APG turns the chaos into a clean dashboard.",
       before:["Lease docs scattered across drives, inboxes and cabinets","Maintenance requests lost between tenant and contractor","Rent arrears noticed weeks after they started","Owner reports hand-built every month in Excel"],
-      after:["Central lease vault with renewal alerts and e-signing","Maintenance ticketing with photos, quotes, job tracking","Live rent roll with automated arrears reminders","Owner dashboards â self-service, 24/7"]},
-    {id:"construction",label:"Construction",headline:"Site, office, and books â finally in sync.",sub:"On construction sites, the real numbers live in the foreman's head. APG pulls them onto a live dashboard, before the project slips.",
-      before:["Progress updates over phone â if the foreman remembers","Material orders in notebooks, invoices in the truck","Variation orders argued about months later","Project P&L only visible once the job is done"],
-      after:["Daily site logs with photos, hours and material usage","Live project budget vs actual â flagged before it slips","Variations captured, priced and signed on site","Gantt view shared with site, office and client"]},
-    {id:"security",label:"Security",headline:"Guards, patrols, incidents â auditable.",sub:"Security contracts live and die on accountability. APG gives you proof, every shift, every patrol, every site.",
-      before:["Patrols recorded on paper â or not at all","Incident reports lost between sites and head office","Rosters on a whiteboard; no-shows discovered too late","Client complaints with no evidence trail"],
+      after:["Central lease vault with renewal alerts and e-signing","Maintenance ticketing with photos, quotes, job tracking","Live rent roll with automated arrears reminders","Owner dashboards — self-service, 24/7"]},
+    {id:"construction",label:"Construction",headline:"Site, office, and books — finally in sync.",sub:"On construction sites, the real numbers live in the foreman's head. APG pulls them onto a live dashboard, before the project slips.",
+      before:["Progress updates over phone — if the foreman remembers","Material orders in notebooks, invoices in the truck","Variation orders argued about months later","Project P&L only visible once the job is done"],
+      after:["Daily site logs with photos, hours and material usage","Live project budget vs actual — flagged before it slips","Variations captured, priced and signed on site","Gantt view shared with site, office and client"]},
+    {id:"security",label:"Security",headline:"Guards, patrols, incidents — auditable.",sub:"Security contracts live and die on accountability. APG gives you proof, every shift, every patrol, every site.",
+      before:["Patrols recorded on paper — or not at all","Incident reports lost between sites and head office","Rosters on a whiteboard; no-shows discovered too late","Client complaints with no evidence trail"],
       after:["Geo-verified patrol check-ins with time stamps","Incident reports with photos and supervisor sign-off","Live roster with shift swaps and no-show alerts","Client portal with a complete audit trail"]},
   ];
   const tabs=document.getElementById('indTabs'),indH=document.getElementById('indHeadline'),indS=document.getElementById('indSub'),bL=document.getElementById('beforeList'),aL=document.getElementById('afterList');
@@ -352,17 +352,17 @@
   render(INDUSTRIES[0]);
 
   const SEGMENTS=[
-    {n:"01",title:"Operations Intelligence",body:"A live operations hub â every job, every task, every person, tracked in real time. Your managers see exactly what's happening on the ground, from anywhere.",tag:"Fewer mistakes Â· Faster turnaround"},
-    {n:"02",title:"Financial Control",body:"A live financial dashboard â invoices, payments, costs, and margins all in one place. You see where every rand is, the moment it moves.",tag:"No month-end surprises"},
-    {n:"03",title:"People & HR",body:"A staff system â hiring, onboarding, leave, performance, payroll inputs â all digital, all in one place. Your people know exactly where they stand.",tag:"Less admin Â· Less conflict"},
-    {n:"04",title:"Customer Command Centre",body:"Every interaction, every contract, every complaint and compliment â stored and searchable. Your team knows the full picture before picking up the phone.",tag:"Clients who feel remembered"},
-    {n:"05",title:"Asset & Inventory",body:"A live asset register â every piece of equipment, vehicle, or tool tracked, with service schedules, location logs and depreciation built in.",tag:"Nothing goes missing"},
-    {n:"06",title:"Executive Reporting",body:"A live CEO dashboard â the 10 numbers that matter most, updating automatically, visible on your phone or laptop at any time.",tag:"Decisions on today's reality"},
+    {n:"01",title:"Operations Intelligence",body:"A live operations hub — every job, every task, every person, tracked in real time. Your managers see exactly what's happening on the ground, from anywhere.",tag:"Fewer mistakes · Faster turnaround"},
+    {n:"02",title:"Financial Control",body:"A live financial dashboard — invoices, payments, costs, and margins all in one place. You see where every rand is, the moment it moves.",tag:"No month-end surprises"},
+    {n:"03",title:"People & HR",body:"A staff system — hiring, onboarding, leave, performance, payroll inputs — all digital, all in one place. Your people know exactly where they stand.",tag:"Less admin · Less conflict"},
+    {n:"04",title:"Customer Command Centre",body:"Every interaction, every contract, every complaint and compliment — stored and searchable. Your team knows the full picture before picking up the phone.",tag:"Clients who feel remembered"},
+    {n:"05",title:"Asset & Inventory",body:"A live asset register — every piece of equipment, vehicle, or tool tracked, with service schedules, location logs and depreciation built in.",tag:"Nothing goes missing"},
+    {n:"06",title:"Executive Reporting",body:"A live CEO dashboard — the 10 numbers that matter most, updating automatically, visible on your phone or laptop at any time.",tag:"Decisions on today's reality"},
   ];
   const segGrid=document.getElementById('segGrid');
-  SEGMENTS.forEach(s=>{const d=document.createElement('div');d.className='seg';d.innerHTML=`<div class="seg-num">${s.n}</div><h3>${s.title}</h3><p>${s.body}</p><span class="seg-tag">â ${s.tag}</span>`;segGrid.appendChild(d);});
+  SEGMENTS.forEach(s=>{const d=document.createElement('div');d.className='seg';d.innerHTML=`<div class="seg-num">${s.n}</div><h3>${s.title}</h3><p>${s.body}</p><span class="seg-tag">→ ${s.tag}</span>`;segGrid.appendChild(d);});
 
-  function sendLead(e){e.preventDefault();const f=e.target;const subject=encodeURIComponent(`APG Pitch Request â ${f.company.value}`);const body=encodeURIComponent(`Name: ${f.name.value}\nCompany: ${f.company.value}\nEmail: ${f.email.value}\nIndustry: ${f.industry.value}\n\nBiggest headache:\n${f.pain.value}\n\nâ Sent from appproguy.com/pitch`);window.location.href=`mailto:lufuno@appproguy.com?subject=${subject}&body=${body}`;return false;}
+  function sendLead(e){e.preventDefault();const f=e.target;const subject=encodeURIComponent(`APG Pitch Request — ${f.company.value}`);const body=encodeURIComponent(`Name: ${f.name.value}\nCompany: ${f.company.value}\nEmail: ${f.email.value}\nIndustry: ${f.industry.value}\n\nBiggest headache:\n${f.pain.value}\n\n— Sent from appproguy.com/pitch`);window.location.href=`mailto:lufuno@appproguy.com?subject=${subject}&body=${body}`;return false;}
 
   const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
