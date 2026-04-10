@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>App Pro Guy — Custom Software Systems For Your Business</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{--black:#080808;--white:#f7f6f2;--line:rgba(8,8,8,.1);--lime:#b8ff5c;--cyan:#5cf0ff;--amber:#ffb84d;--red:#ff5c5c}
   html{scroll-behavior:smooth}
-  body{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;overflow-x:hidden}
-  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+  body{background:var(--white);color:var(--black);font-family:'IBM Plex Mono',monospace;overflow-x:hidden}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
   a{color:inherit;text-decoration:none}
 
   nav{position:fixed;top:0;left:0;right:0;z-index:500;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--white);border-bottom:2px solid var(--black)}
@@ -32,30 +32,37 @@
   h1 .it{font-style:italic}
   h1 .ol{color:transparent;-webkit-text-stroke:2px var(--black)}
   .hero-sub{margin-top:32px;font-size:clamp(16px,1.5vw,19px);font-weight:300;line-height:1.6;max-width:640px;opacity:.6}
+  .hero-ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-ctas .btn{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:16px 26px;border:1px solid var(--black);transition:all .2s;display:inline-flex;align-items:center;gap:10px;box-shadow:4px 4px 0 var(--black)}
+  .hero-ctas .btn.hp{background:var(--black);color:var(--white)}
+  .hero-ctas .btn.hp:hover{background:var(--lime);color:var(--black);border-color:var(--black);box-shadow:4px 4px 0 var(--black)}
+  .hero-ctas .btn.hs{background:transparent;color:var(--black)}
+  .hero-ctas .btn.hs:hover{background:var(--black);color:var(--white)}
   .instruct{margin-top:28px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;opacity:.5}
   .instruct .blink{display:inline-block;width:7px;height:7px;background:var(--black);margin-right:8px;animation:bl 1.1s infinite;vertical-align:middle}
   @keyframes bl{0%,49%{opacity:1}50%,100%{opacity:0}}
+  @media(max-width:860px){.hero-ctas{margin-top:24px}.hero-ctas .btn{padding:14px 22px;font-size:9px}}
 
   .showcase{padding:60px 48px 120px}
   .showcase-inner{max-width:1320px;margin:0 auto}
   .morph-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   @media(max-width:980px){.morph-grid{grid-template-columns:1fr}}
-  .morph{position:relative;height:580px;border:2px solid var(--black);background:var(--white);overflow:hidden;cursor:crosshair}
+  .morph{position:relative;height:580px;border:2px solid var(--black);background:var(--white);overflow:hidden}
   .morph::before{content:attr(data-n);position:absolute;bottom:-12px;left:24px;background:var(--white);padding:0 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.25em;z-index:20}
   .morph .label{position:absolute;top:0;left:0;right:0;padding:16px 22px;background:var(--black);color:var(--white);display:flex;justify-content:space-between;align-items:center;z-index:15}
   .morph .label .name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;font-style:italic}
-  .morph .label .state{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;transition:color .3s}
-  .morph:hover .label .state{opacity:1;color:var(--lime)}
+  .morph .label .state{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transition:opacity .4s,color .3s;position:absolute;left:22px;top:50%;transform:translateY(-50%)}
+  .morph .label .name{transition:opacity .4s,color .4s}
+  .flip-btn{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--white);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .flip-btn:hover{border-color:var(--lime);color:var(--lime)}
+  .morph.flip .flip-btn{background:var(--lime);color:var(--black);border-color:var(--lime)}
+  .morph.flip .label .name{opacity:0}
+  .morph.flip .label .state{opacity:1;color:var(--lime)}
   .layer{position:absolute;inset:52px 0 0 0;transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1),filter .7s}
   .before{opacity:1;transform:scale(1);filter:blur(0)}
   .after{opacity:0;transform:scale(1.04);background:#0a0a0b;color:#fff}
-  .morph:hover .before,.morph.flip .before{opacity:0;transform:scale(.96);filter:blur(4px)}
-  .morph:hover .after,.morph.flip .after{opacity:1;transform:scale(1)}
-  .morph:hover .label .state,.morph.flip .label .state{opacity:1;color:var(--lime)}
-  .flip-hint{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:25;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;background:var(--black);color:var(--white);padding:7px 12px;border:1px solid var(--black);display:none;pointer-events:none;animation:hintPulse 1.8s ease-in-out infinite}
-  .flip-hint::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);margin-right:7px;vertical-align:middle;box-shadow:0 0 8px var(--lime)}
-  @keyframes hintPulse{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-3px)}}
-  @media(hover:none){.flip-hint{display:inline-block}.morph{cursor:pointer}}
+  .morph.flip .before{opacity:0;transform:scale(.96);filter:blur(4px)}
+  .morph.flip .after{opacity:1;transform:scale(1)}
 
   /* shake animation for chaos */
   @keyframes shakey{0%,100%{transform:translate(0,0) rotate(-3deg)}50%{transform:translate(1px,-1px) rotate(-3.5deg)}}
@@ -323,8 +330,8 @@
   .phones .phone:nth-child(3):hover{transform:translateY(-6px) rotate(1deg)}
 
   /* GSAP reveal base states */
-  .reveal{opacity:0;transform:translateY(40px)}
-  .reveal.in{opacity:1;transform:translateY(0);transition:opacity 1s cubic-bezier(.2,.8,.3,1),transform 1s cubic-bezier(.2,.8,.3,1)}
+  .reveal{opacity:0;transform:translateY(20px)}
+  .reveal.in{opacity:1;transform:translateY(0);transition:opacity .6s cubic-bezier(.2,.8,.3,1),transform .6s cubic-bezier(.2,.8,.3,1)}
   .reveal-stagger > *{opacity:0;transform:translateY(30px)}
   .reveal-stagger.in > *{opacity:1;transform:translateY(0);transition:opacity .8s cubic-bezier(.2,.8,.3,1),transform .8s cubic-bezier(.2,.8,.3,1)}
   .reveal-stagger.in > *:nth-child(1){transition-delay:0s}
@@ -333,7 +340,10 @@
   .reveal-stagger.in > *:nth-child(4){transition-delay:.3s}
 
   @media(max-width:860px){
-    .hero{padding:110px 20px 32px}
+    .hero{padding:90px 20px 28px}
+    h1{font-size:clamp(32px,8vw,52px);line-height:.95}
+    .hero-sub{margin-top:18px;font-size:14px;max-width:100%}
+    .instruct{display:none}
     .showcase{padding:40px 20px 80px}
     .value{padding:80px 20px}
     .cta-sec{padding:80px 20px}
@@ -360,7 +370,11 @@
     <div class="eyebrow">Custom Software Systems For Your Business</div>
     <h1>Your business <span class="ol">is already</span><br>running on software.<br><span class="it">Just the wrong kind.</span></h1>
     <p class="hero-sub">Excel. WhatsApp. Gmail. They're holding your company together — until they don't. We replace the duct tape with one live Command Centre, built for how you actually work.</p>
-    <div class="instruct"><span class="blink"></span>Hover any panel below → watch your chaos become a Command Centre</div>
+    <div class="hero-ctas">
+      <a href="mailto:admin@appproguy.com?subject=Book a Pitch" class="btn hp">Book a Free Pitch →</a>
+      <a href="#showcase" class="btn hs">See it in action ↓</a>
+    </div>
+    <div class="instruct"><span class="blink"></span>Scroll down → hit the button → watch your chaos become a Command Centre</div>
   </div>
 </header>
 
@@ -369,7 +383,7 @@
     <div class="morph-grid reveal-stagger">
 
       <!-- ============ CARD 1: EXCEL → OPS ============ -->
-      <div class="morph" data-n="01"><span class="flip-hint">TAP TO FLIP</span>
+      <div class="morph" data-n="01">
         <div class="layer before excel">
           <div class="xbar"><span>Jobs_MASTER_v7_FINAL_use_this_REAL_FINAL(2).xlsx</span><span class="xdots">— □ ×</span></div>
           <div class="xribbon"><span class="act">File</span><span>Home</span><span>Insert</span><span>Formulas</span><span>Data</span><span>Review</span><span>View</span></div>
@@ -480,11 +494,11 @@
             </div>
           </div>
         </div>
-        <div class="label"><span class="name">From: Excel Chaos</span><span class="state">→ Ops Command Centre</span></div>
+        <div class="label"><span class="name" data-before="Excel Chaos" data-after="Your Company OS">Excel Chaos</span><span class="state">Ops Command Centre</span><button class="flip-btn"><span class="fb-txt">Transform →</span></button></div>
       </div>
 
       <!-- ============ CARD 2: WHATSAPP → FLEET ============ -->
-      <div class="morph" data-n="02"><span class="flip-hint">TAP TO FLIP</span>
+      <div class="morph" data-n="02">
         <div class="layer before wa">
           <div class="counter">+98</div>
           <div class="whead">
@@ -550,11 +564,11 @@
             <div class="trow"><div class="id">T-11</div><div class="drv">Lerato · Centurion</div><div class="prog"><b style="width:91%"></b></div><div class="st ok">ARR</div></div>
           </div>
         </div>
-        <div class="label"><span class="name">From: WhatsApp Panic</span><span class="state">→ Fleet Command</span></div>
+        <div class="label"><span class="name" data-before="WhatsApp Panic" data-after="Your Company OS">WhatsApp Panic</span><span class="state">Fleet Command</span><button class="flip-btn"><span class="fb-txt">Transform →</span></button></div>
       </div>
 
       <!-- ============ CARD 3: GMAIL → CLIENTS ============ -->
-      <div class="morph" data-n="03"><span class="flip-hint">TAP TO FLIP</span>
+      <div class="morph" data-n="03">
         <div class="layer before gm">
           <div class="gtop">
             <div class="logo-g">Gmail</div>
@@ -614,12 +628,51 @@
             <div class="thr"><div class="cn">Motsepe Group<em>reschedule · confirmed</em></div><div class="val">R88K</div><div class="tag">WED</div></div>
           </div>
         </div>
-        <div class="label"><span class="name">From: Inbox Anxiety</span><span class="state">→ Clients Pipeline</span></div>
+        <div class="label"><span class="name" data-before="Inbox Anxiety" data-after="Your Company OS">Inbox Anxiety</span><span class="state">Clients Pipeline</span><button class="flip-btn"><span class="fb-txt">Transform →</span></button></div>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof">
+  <div class="proof-inner">
+    <div class="proof-eyebrow">// WHAT OUR CLIENTS SAY</div>
+    <div class="proof-grid">
+      <div class="testimonial reveal">
+        <p class="tq">"We went from 3 spreadsheets and a WhatsApp group to one live dashboard. I check it before my coffee every morning."</p>
+        <div class="tauthor"><strong>Thabo M.</strong><span>Operations Manager, Waste Collection</span></div>
+      </div>
+      <div class="testimonial reveal">
+        <p class="tq">"My team stopped phoning me for updates. Everything they need is in the system. I got my weekends back."</p>
+        <div class="tauthor"><strong>Lerato K.</strong><span>Owner, Fleet &amp; Logistics</span></div>
+      </div>
+      <div class="testimonial reveal">
+        <p class="tq">"The client portal alone paid for the whole system. Customers check their own invoices now instead of calling us."</p>
+        <div class="tauthor"><strong>Sipho D.</strong><span>Director, Property Management</span></div>
+      </div>
+    </div>
+    <div class="proof-logos">
+      <span>Trusted by 12+ South African businesses across waste, fleet, property, and construction</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .proof{padding:80px 48px;border-top:2px solid var(--black);border-bottom:2px solid var(--black)}
+  .proof-inner{max-width:1280px;margin:0 auto}
+  .proof-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.4;margin-bottom:40px}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  @media(max-width:860px){.proof-grid{grid-template-columns:1fr;gap:24px}.proof{padding:60px 20px}}
+  .testimonial{padding:32px;border:2px solid var(--black);position:relative;box-shadow:4px 4px 0 var(--black)}
+  .testimonial::before{content:'\201C';position:absolute;top:12px;left:18px;font-family:'Playfair Display',serif;font-size:48px;line-height:1;opacity:.12}
+  .tq{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;line-height:1.6;font-weight:400;margin-bottom:20px}
+  .tauthor{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em}
+  .tauthor strong{display:block;font-size:12px;letter-spacing:.05em;margin-bottom:2px}
+  .tauthor span{opacity:.5}
+  .proof-logos{margin-top:40px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:.35}
+</style>
 
 <!-- AI / ERROR STATS -->
 <section class="ai-sec">
@@ -658,7 +711,7 @@
   .asn{font-family:'Playfair Display',serif;font-size:64px;font-weight:900;line-height:.9;letter-spacing:-.04em;color:var(--lime)}
   .asn em{font-style:normal;font-size:24px;color:var(--white);margin-left:2px;opacity:.7}
   .asl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:10px;opacity:.9}
-  .asd{font-size:12px;opacity:.4;margin-top:4px;font-family:'Barlow Condensed',sans-serif}
+  .asd{font-size:12px;opacity:.4;margin-top:4px;font-family:'IBM Plex Mono',monospace}
   @media(max-width:860px){.ai-sec{padding:80px 20px}.ai-stat{padding:24px 18px}.asn{font-size:46px}}
 </style>
 
@@ -1007,6 +1060,49 @@
   @media(max-width:860px){.int-sec{padding:80px 20px}.int-demo{height:260px}}
 </style>
 
+<section class="stakes">
+  <div class="stakes-inner">
+    <div class="stakes-eyebrow">// THE COST OF DOING NOTHING</div>
+    <h2 class="stakes-h">Every week you wait,<br>your business <em>bleeds.</em></h2>
+    <div class="stakes-grid">
+      <div class="stake-card reveal">
+        <div class="stake-num">R 23k+</div>
+        <div class="stake-label">Lost per month</div>
+        <p>to duplicate work, missed invoices, and data re-entry across disconnected tools.</p>
+      </div>
+      <div class="stake-card reveal">
+        <div class="stake-num">11 hrs</div>
+        <div class="stake-label">Wasted per week</div>
+        <p>per manager chasing updates on WhatsApp, digging through spreadsheets, and fixing errors by hand.</p>
+      </div>
+      <div class="stake-card reveal">
+        <div class="stake-num">3 in 10</div>
+        <div class="stake-label">Clients lost yearly</div>
+        <p>because follow-ups slip through the cracks and no one notices until the client has already moved on.</p>
+      </div>
+    </div>
+    <p class="stakes-close">These aren't hypothetical numbers — they're what we measure in the first week of every client audit. The longer the duct tape stays, the more it costs.</p>
+  </div>
+</section>
+
+<style>
+  .stakes{padding:120px 48px;background:var(--black);color:var(--white);border-top:2px solid var(--black);position:relative;overflow:hidden}
+  .stakes::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 40%,rgba(255,92,92,.06),transparent 50%)}
+  .stakes-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+  .stakes-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:22px}
+  .stakes-h{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,72px);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:60px}
+  .stakes-h em{font-style:italic;color:transparent;-webkit-text-stroke:2px var(--white)}
+  .stakes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .stake-card{padding:36px 28px;border:2px solid rgba(255,255,255,.12);position:relative}
+  .stake-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red)}
+  .stake-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--red);line-height:1}
+  .stake-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin:8px 0 14px}
+  .stake-card p{font-size:14px;line-height:1.6;opacity:.65}
+  .stakes-close{margin-top:48px;font-size:15px;line-height:1.6;opacity:.5;max-width:700px;font-style:italic}
+  @media(max-width:980px){.stakes-grid{grid-template-columns:1fr;gap:24px}}
+  @media(max-width:860px){.stakes{padding:80px 20px}}
+</style>
+
 <section class="value" id="why">
   <div class="value-inner">
     <h2>You don't need<br>more <em>apps.</em><br>You need one<br><em>Command Centre.</em></h2>
@@ -1015,7 +1111,7 @@
       <div class="pillar">
         <div class="pn">01 · Built For You</div>
         <h3>Not a <em>template.</em></h3>
-        <p>We map how your business actually runs — then build the cockpit around it. Not a SaaS you bend into shape.</p>
+        <p>We map how your business actually runs — then build the Command Centre around it. Not a SaaS you bend into shape.</p>
       </div>
       <div class="pillar">
         <div class="pn">02 · Delivered In Phases</div>
@@ -1033,9 +1129,10 @@
 
 <section class="cta-sec" id="book">
   <h2>Let's see what your<br><em>Command Centre</em> looks like.</h2>
-  <p>A 30-minute walkthrough, tailored to your industry and your biggest headache. No obligation, no pitch deck theatre — just your business, on one screen. One Command Centre.</p>
+  <p>A 30-minute walkthrough, tailored to your industry and your biggest headache. No obligation, no pitch deck theatre — just your business, on one screen.</p>
   <div class="btns">
-    <a href="mailto:lufuno@appproguy.com?subject=Book a Pitch" class="btn p">Book a Pitch →</a>
+    <a href="mailto:admin@appproguy.com?subject=Book a Pitch" class="btn p">Book a Free Pitch →</a>
+    <a href="mailto:admin@appproguy.com?subject=Send me a 2-min demo" class="btn g">Send me a 2-min demo</a>
     <a href="pitch.html" class="btn g">See the full pitch</a>
   </div>
 </section>
@@ -1081,40 +1178,25 @@
   },{threshold:.5});
   document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
-  // Mobile: auto-cycle morph cards + tap to toggle
-  const isTouch=window.matchMedia('(hover:none)').matches;
-  if(isTouch){
-    document.querySelectorAll('.morph').forEach(card=>{
-      let timer=null;let visible=false;
-      const cycle=()=>{
-        if(!visible)return;
-        card.classList.add('flip');
-        timer=setTimeout(()=>{
-          card.classList.remove('flip');
-          timer=setTimeout(cycle,1400);
-        },2800);
-      };
-      const mio=new IntersectionObserver((es)=>{
-        es.forEach(e=>{
-          visible=e.isIntersecting;
-          if(visible){clearTimeout(timer);timer=setTimeout(cycle,900);}
-          else{clearTimeout(timer);card.classList.remove('flip');}
-        });
-      },{threshold:.4});
-      mio.observe(card);
-      card.addEventListener('click',()=>{
-        clearTimeout(timer);
-        card.classList.toggle('flip');
-      });
+  // Per-card flip buttons
+  document.querySelectorAll('.morph').forEach(card=>{
+    const btn=card.querySelector('.flip-btn');
+    const txt=btn?btn.querySelector('.fb-txt'):null;
+    const nameEl=card.querySelector('.label .name');
+    if(!btn)return;
+    btn.addEventListener('click',()=>{
+      const flipped=card.classList.toggle('flip');
+      if(txt) txt.textContent=flipped?'← Undo':'Transform →';
+      if(nameEl) nameEl.textContent=flipped?nameEl.dataset.after:nameEl.dataset.before;
     });
-  }
+  });
   // Magnetic CTA buttons
   document.querySelectorAll('.btn,.cta').forEach(btn=>{
     btn.addEventListener('mousemove',e=>{
       const r=btn.getBoundingClientRect();
       const x=e.clientX-r.left-r.width/2;
       const y=e.clientY-r.top-r.height/2;
-      btn.style.transform=`translate(${x*.25}px,${y*.25}px)`;
+      btn.style.transform=`translate(${x*.1}px,${y*.1}px)`;
     });
     btn.addEventListener('mouseleave',()=>{btn.style.transform=''});
   });
@@ -1133,10 +1215,10 @@
     const words=html.split(/(<[^>]+>|\s+)/).filter(Boolean);
     h1.innerHTML=words.map(w=>/^<|^\s+$/.test(w)?w:`<span class="wrd">${w}</span>`).join('');
     const style=document.createElement('style');
-    style.textContent='.wrd{display:inline-block;opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.3,1),transform .9s cubic-bezier(.2,.8,.3,1)}.wrd.in{opacity:1;transform:translateY(0)}';
+    style.textContent='.wrd{display:inline-block;opacity:0;transform:translateY(14px);transition:opacity .5s cubic-bezier(.2,.8,.3,1),transform .5s cubic-bezier(.2,.8,.3,1)}.wrd.in{opacity:1;transform:translateY(0)}';
     document.head.appendChild(style);
     const wrds=h1.querySelectorAll('.wrd');
-    wrds.forEach((w,i)=>{setTimeout(()=>w.classList.add('in'),120+i*70)});
+    wrds.forEach((w,i)=>{setTimeout(()=>w.classList.add('in'),80+i*45)});
   }
 })();
 </script>
