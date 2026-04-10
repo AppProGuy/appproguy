@@ -10,7 +10,7 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--black:#0a0a0a;--white:#cfe8ff;--dim:rgba(10,10,10,0.6);--line:rgba(10,10,10,0.15);--accent:#ff5a3c;--accent2:#0047ff;--good:#00b86b;--bad:#e5342b}
     html{scroll-behavior:smooth}
-    body{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;overflow-x:hidden;cursor:crosshair}
+    body{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;overflow-x:hidden}
     body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.032;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;mix-blend-mode:multiply}
     a{color:inherit;text-decoration:none}
 
@@ -72,18 +72,28 @@
 
     /* INDUSTRIES */
     .ind-tabs{display:flex;flex-wrap:wrap;gap:0;margin-bottom:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .ind-tab{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:18px 22px;background:transparent;color:var(--black);border:0;border-right:1px solid var(--line);cursor:crosshair;opacity:0.45;transition:all .2s;font-weight:600}
+    .ind-tab{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:18px 22px;background:transparent;color:var(--black);border:0;border-right:1px solid var(--line);cursor:pointer;opacity:0.45;transition:all .2s;font-weight:600}
     .ind-tab:hover{opacity:0.8}
     .ind-tab.active{opacity:1;background:var(--black);color:var(--white)}
     .ind-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,52px);font-weight:900;line-height:1;letter-spacing:-0.02em;margin-bottom:16px}
     .ind-headline em{font-style:italic}
     .ind-sub{font-size:17px;opacity:0.55;max-width:720px;line-height:1.6}
-    .ba{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:48px;border:1px solid var(--black)}
-    @media(max-width:780px){.ba{grid-template-columns:1fr}}
-    .ba-card{padding:36px;position:relative;min-height:320px}
-    .ba-card.before{border-right:1px solid var(--black);background:rgba(255,70,70,0.04)}
-    @media(max-width:780px){.ba-card.before{border-right:0;border-bottom:1px solid var(--black)}}
-    .ba-card.after{background:rgba(50,180,90,0.05)}
+    .ba{margin-top:48px;border:2px solid var(--black);position:relative;overflow:hidden}
+    .ba-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:var(--black);color:var(--white)}
+    .ba-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;font-style:italic;transition:color .4s}
+    .ba-title .ba-before-txt{transition:opacity .3s}
+    .ba-title .ba-after-txt{display:none;color:var(--good)}
+    .ba.flipped .ba-title .ba-before-txt{display:none}
+    .ba.flipped .ba-title .ba-after-txt{display:inline}
+    .ba-flip-btn{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--white);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+    .ba-flip-btn:hover{border-color:var(--good);color:var(--good)}
+    .ba.flipped .ba-flip-btn{background:var(--good);color:var(--black);border-color:var(--good)}
+    .ba-body{position:relative;overflow:hidden}
+    .ba-card{padding:36px;transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+    .ba-card.before{background:rgba(255,70,70,0.04);opacity:1;transform:scale(1)}
+    .ba-card.after{background:rgba(50,180,90,0.05);opacity:0;transform:scale(1.02);position:absolute;inset:0}
+    .ba.flipped .ba-card.before{opacity:0;transform:scale(.97);position:absolute;inset:0}
+    .ba.flipped .ba-card.after{opacity:1;transform:scale(1);position:relative}
     .ba-card h4{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.3em;margin:0 0 24px;text-transform:uppercase;font-weight:600}
     .ba-card.before h4{color:var(--bad)}
     .ba-card.after h4{color:var(--good)}
@@ -222,14 +232,20 @@
     <div class="reveal">
       <h3 class="ind-headline" id="indHeadline"></h3>
       <p class="ind-sub" id="indSub"></p>
-      <div class="ba">
-        <div class="ba-card before">
-          <h4>▼ Before APG</h4>
-          <ul id="beforeList"></ul>
+      <div class="ba" id="baBox">
+        <div class="ba-header">
+          <span class="ba-title"><span class="ba-before-txt">The Chaos</span><span class="ba-after-txt">Your Company OS</span></span>
+          <button class="ba-flip-btn" id="baFlipBtn"><span class="ba-btn-txt">Transform →</span></button>
         </div>
-        <div class="ba-card after">
-          <h4>▲ After APG</h4>
-          <ul id="afterList"></ul>
+        <div class="ba-body">
+          <div class="ba-card before">
+            <h4>▼ Before APG</h4>
+            <ul id="beforeList"></ul>
+          </div>
+          <div class="ba-card after">
+            <h4>▲ After APG</h4>
+            <ul id="afterList"></ul>
+          </div>
         </div>
       </div>
     </div>
@@ -290,7 +306,7 @@
         <h2>Let's see what your<br><em>Command Centre looks like.</em></h2>
         <p style="margin-top:24px;font-size:17px;line-height:1.6;opacity:0.55;max-width:440px">Tell us about your business. We'll come back within 48 hours with a no-obligation walkthrough, tailored to your industry and your biggest headache.</p>
         <div class="contact-meta">
-          <div class="item"><span class="lbl">Email</span><a class="val" href="mailto:lufuno@appproguy.com">lufuno@appproguy.com</a></div>
+          <div class="item"><span class="lbl">Email</span><a class="val" href="mailto:admin@appproguy.com">admin@appproguy.com</a></div>
           <div class="item"><span class="lbl">Phone</span><a class="val" href="tel:0810829487">081 082 9487</a></div>
           <div class="item"><span class="lbl">WhatsApp</span><a class="val" href="https://wa.me/27810829487">Chat on WhatsApp</a></div>
           <div class="item"><span class="lbl">Response</span><span class="val" style="opacity:.5">Within 48 hours</span></div>
@@ -347,9 +363,21 @@
       after:["Geo-verified patrol check-ins with time stamps","Incident reports with photos and supervisor sign-off","Live roster with shift swaps and no-show alerts","Client portal with a complete audit trail"]},
   ];
   const tabs=document.getElementById('indTabs'),indH=document.getElementById('indHeadline'),indS=document.getElementById('indSub'),bL=document.getElementById('beforeList'),aL=document.getElementById('afterList');
+  const baBox=document.getElementById('baBox'),baFlipBtn=document.getElementById('baFlipBtn'),baBtnTxt=baFlipBtn?baFlipBtn.querySelector('.ba-btn-txt'):null;
   INDUSTRIES.forEach((ind,i)=>{const b=document.createElement('button');b.className='ind-tab'+(i===0?' active':'');b.textContent=ind.label;b.onclick=()=>{document.querySelectorAll('.ind-tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');render(ind);};tabs.appendChild(b);});
-  function render(ind){indH.textContent=ind.headline;indS.textContent=ind.sub;bL.innerHTML=ind.before.map(x=>`<li>${x}</li>`).join('');aL.innerHTML=ind.after.map(x=>`<li>${x}</li>`).join('');}
+  function render(ind){
+    indH.textContent=ind.headline;indS.textContent=ind.sub;
+    bL.innerHTML=ind.before.map(x=>`<li>${x}</li>`).join('');
+    aL.innerHTML=ind.after.map(x=>`<li>${x}</li>`).join('');
+  }
   render(INDUSTRIES[0]);
+  // Flip button
+  if(baFlipBtn&&baBox){
+    baFlipBtn.addEventListener('click',()=>{
+      const flipped=baBox.classList.toggle('flipped');
+      if(baBtnTxt)baBtnTxt.textContent=flipped?'← Undo':'Transform →';
+    });
+  }
 
   const SEGMENTS=[
     {n:"01",title:"Operations Intelligence",body:"A live operations hub — every job, every task, every person, tracked in real time. Your managers see exactly what's happening on the ground, from anywhere.",tag:"Fewer mistakes · Faster turnaround"},
@@ -362,7 +390,7 @@
   const segGrid=document.getElementById('segGrid');
   SEGMENTS.forEach(s=>{const d=document.createElement('div');d.className='seg';d.innerHTML=`<div class="seg-num">${s.n}</div><h3>${s.title}</h3><p>${s.body}</p><span class="seg-tag">→ ${s.tag}</span>`;segGrid.appendChild(d);});
 
-  function sendLead(e){e.preventDefault();const f=e.target;const subject=encodeURIComponent(`APG Pitch Request — ${f.company.value}`);const body=encodeURIComponent(`Name: ${f.name.value}\nCompany: ${f.company.value}\nEmail: ${f.email.value}\nIndustry: ${f.industry.value}\n\nBiggest headache:\n${f.pain.value}\n\n— Sent from appproguy.com/pitch`);window.location.href=`mailto:lufuno@appproguy.com?subject=${subject}&body=${body}`;return false;}
+  function sendLead(e){e.preventDefault();const f=e.target;const subject=encodeURIComponent(`APG Pitch Request — ${f.company.value}`);const body=encodeURIComponent(`Name: ${f.name.value}\nCompany: ${f.company.value}\nEmail: ${f.email.value}\nIndustry: ${f.industry.value}\n\nBiggest headache:\n${f.pain.value}\n\n— Sent from appproguy.com/pitch`);window.location.href=`mailto:admin@appproguy.com?subject=${subject}&body=${body}`;return false;}
 
   const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
