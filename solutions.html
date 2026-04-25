@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Business Software Solutions — App Pro Guy | HR, Payroll, CRM, Fleet & More</title>
+<meta name="description" content="Replace Excel chaos with a custom Command Centre. HR systems, payroll, CRM, fleet management, invoicing — built for how your business actually works. Based in South Africa.">
+<meta name="keywords" content="custom HR system South Africa, bespoke payroll software, custom CRM small business, fleet management dashboard, replace Excel with dashboard, custom business software SA">
+<link rel="canonical" href="https://appproguy.com/solutions.html">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--black:#080808;--white:#f7f6f2;--line:rgba(8,8,8,.1);--lime:#b8ff5c;--cyan:#5cf0ff;--amber:#ffb84d;--red:#ff5c5c}
+  html{scroll-behavior:smooth}
+  body{background:var(--white);color:var(--black);font-family:'IBM Plex Mono',monospace;overflow-x:hidden}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+  a{color:inherit;text-decoration:none}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:500;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--white);border-bottom:2px solid var(--black)}
+  .logo{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;letter-spacing:-.02em}
+  .logo em{font-style:italic}
+  .nav-right{display:flex;align-items:center;gap:32px}
+  .nav-links{display:flex;gap:24px}
+  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.55;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-links a.active{opacity:1;border-bottom:2px solid var(--black);padding-bottom:2px}
+  .cta{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);background:var(--black);padding:9px 18px;border:1px solid var(--black);transition:all .2s;box-shadow:3px 3px 0 var(--black)}
+  .cta:hover{background:transparent;color:var(--black)}
+  @media(max-width:860px){nav{padding:0 20px}.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:130px 48px 60px;border-bottom:2px solid var(--black)}
+  .hero-inner{max-width:1280px;margin:0 auto}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.35em;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:'';width:28px;height:2px;background:var(--black);opacity:.4}
+  h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(40px,6vw,88px);font-weight:900;line-height:.92;letter-spacing:-.03em;max-width:1000px}
+  h1 .it{font-style:italic}
+  h1 .ol{color:transparent;-webkit-text-stroke:2px var(--black)}
+  .hero-sub{margin-top:28px;font-size:clamp(15px,1.4vw,18px);font-weight:300;line-height:1.65;max-width:680px;opacity:.6}
+  .hero-stats{margin-top:40px;display:flex;gap:48px;flex-wrap:wrap}
+  .hero-stat{text-align:left}
+  .hero-stat .hs-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;line-height:1}
+  .hero-stat .hs-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.5;margin-top:4px}
+  @media(max-width:860px){.hero{padding:90px 20px 40px}.hero-stats{gap:28px}.hero-stat .hs-num{font-size:32px}}
+
+  /* SECTION SHARED */
+  .sol-section{padding:100px 48px;border-bottom:2px solid var(--black);position:relative;overflow:hidden}
+  .sol-section:nth-child(even){background:var(--black);color:var(--white)}
+  .sol-inner{max-width:1280px;margin:0 auto}
+  .sol-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.5;margin-bottom:22px}
+  .sol-section:nth-child(even) .sol-eyebrow{color:var(--lime)}
+  .sol-h{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,60px);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:18px}
+  .sol-h em{font-style:italic;color:transparent;-webkit-text-stroke:2px var(--black)}
+  .sol-section:nth-child(even) .sol-h em{-webkit-text-stroke-color:var(--white)}
+  .sol-sub{font-size:16px;line-height:1.65;opacity:.55;max-width:640px;margin-bottom:48px}
+  @media(max-width:860px){.sol-section{padding:60px 20px}}
+
+  /* TRANSFORM CARD */
+  .sol-card{border:2px solid var(--black);position:relative;overflow:hidden;margin-bottom:48px}
+  .sol-section:nth-child(even) .sol-card{border-color:rgba(255,255,255,.2)}
+  .sol-card-header{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:var(--black);color:var(--white)}
+  .sol-card-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;font-style:italic;transition:color .4s}
+  .sol-card-title .before-txt{transition:opacity .3s}
+  .sol-card-title .after-txt{display:none;color:var(--lime)}
+  .sol-card.flipped .sol-card-title .before-txt{display:none}
+  .sol-card.flipped .sol-card-title .after-txt{display:inline}
+  .sol-flip-btn{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--white);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .sol-flip-btn:hover{border-color:var(--lime);color:var(--lime)}
+  .sol-card.flipped .sol-flip-btn{background:var(--lime);color:var(--black);border-color:var(--lime)}
+  .sol-card-body{position:relative;overflow:hidden}
+  .sol-before,.sol-after{padding:28px;transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+  .sol-before{background:rgba(255,70,70,.04);opacity:1;transform:scale(1)}
+  .sol-after{background:#0a0a0b;color:#fff;opacity:0;transform:scale(1.02);position:absolute;inset:0;overflow:auto}
+  .sol-card.flipped .sol-before{opacity:0;transform:scale(.97);position:absolute;inset:0}
+  .sol-card.flipped .sol-after{opacity:1;transform:scale(1);position:relative}
+
+  /* BEFORE CHAOS STYLES */
+  .chaos-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .chaos-list li{padding:10px 14px;background:#fff;border:1px solid #eee;font-size:12px;line-height:1.5;position:relative;padding-left:32px}
+  .chaos-list li::before{content:'⚠';position:absolute;left:10px;top:10px;font-size:12px}
+  .chaos-list .err{background:#ffeaea;border-color:#ffcccc}
+  .chaos-list .err::before{content:'✗';color:#c00}
+  .chaos-list .warn{background:#fff7cc;border-color:#eed}
+  .chaos-list .warn::before{content:'?';color:#c90;font-weight:700}
+  .sol-section:nth-child(even) .sol-before{background:rgba(255,70,70,.08)}
+
+  /* AFTER DASHBOARD STYLES */
+  .dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:860px){.dash-grid{grid-template-columns:1fr}}
+  .dash-metric{padding:16px;border:1px solid rgba(184,255,92,.15);background:rgba(184,255,92,.04)}
+  .dash-metric .dm-label{font-size:8px;letter-spacing:.2em;text-transform:uppercase;opacity:.45;margin-bottom:4px}
+  .dash-metric .dm-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--lime);line-height:1}
+  .dash-metric .dm-sub{font-size:9px;opacity:.4;margin-top:3px}
+  .dash-status{margin-top:16px;display:flex;flex-direction:column;gap:6px}
+  .dash-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:11px}
+  .dash-row .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+  .dash-row .dot.g{background:var(--lime)}
+  .dash-row .dot.c{background:var(--cyan)}
+  .dash-row .dot.a{background:var(--amber)}
+  .dash-row span{flex:1;opacity:.75}
+  .dash-row em{font-style:normal;font-size:8px;letter-spacing:.1em;opacity:.5}
+  .dash-row em.g{color:var(--lime);opacity:1}
+
+  /* FAQ SECTION */
+  .faq-block{margin-top:0}
+  .faq-block h3{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;margin-bottom:20px}
+  .faq-item{border-top:1px solid rgba(8,8,8,.1);padding:18px 0}
+  .sol-section:nth-child(even) .faq-item{border-color:rgba(255,255,255,.1)}
+  .faq-q{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;line-height:1.3}
+  .faq-q::after{content:'+';font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:300;opacity:.4;flex-shrink:0;transition:transform .3s}
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .4s;font-size:14px;line-height:1.7;opacity:.6}
+  .faq-item.open .faq-a{max-height:400px;padding-top:14px}
+
+  /* DIFFERENTIATOR SECTION */
+  .diff-sec{padding:100px 48px;background:var(--black);color:var(--white);border-bottom:2px solid var(--black);position:relative;overflow:hidden}
+  .diff-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(184,255,92,.06),transparent 50%),radial-gradient(circle at 70% 60%,rgba(92,240,255,.05),transparent 50%)}
+  .diff-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+  .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+  @media(max-width:980px){.diff-grid{grid-template-columns:1fr;gap:24px}}
+  .diff-card{padding:36px 28px;border:2px solid rgba(255,255,255,.12);position:relative}
+  .diff-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--lime)}
+  .diff-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--lime);line-height:1;margin-bottom:12px}
+  .diff-title{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+  .diff-card p{font-size:14px;line-height:1.7;opacity:.6}
+
+  /* AGENT / 24/7 SECTION */
+  .agent-sec{padding:100px 48px;border-bottom:2px solid var(--black);position:relative}
+  .agent-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  @media(max-width:980px){.agent-inner{grid-template-columns:1fr;gap:40px}}
+  .agent-visual{border:2px solid var(--black);background:var(--black);color:var(--white);padding:32px;position:relative;overflow:hidden}
+  .agent-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(184,255,92,.08),transparent 60%);pointer-events:none}
+  .agent-chat{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  .agent-msg{padding:10px 14px;border-radius:8px;font-size:12px;line-height:1.5;max-width:85%}
+  .agent-msg.user{background:rgba(255,255,255,.08);align-self:flex-end;text-align:right}
+  .agent-msg.bot{background:rgba(184,255,92,.1);border:1px solid rgba(184,255,92,.2);align-self:flex-start}
+  .agent-msg .time{font-size:8px;opacity:.4;margin-top:4px;display:block}
+  .agent-status{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;opacity:.6}
+  .agent-status .pulse{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);animation:p 2s infinite}
+  @keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* CTA SECTION */
+  .cta-sec{padding:100px 48px;text-align:center;border-bottom:2px solid var(--black)}
+  .cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,72px);font-weight:900;line-height:.95;letter-spacing:-.02em;max-width:800px;margin:0 auto 24px}
+  .cta-sec h2 em{font-style:italic;color:transparent;-webkit-text-stroke:2px var(--black)}
+  .cta-sec p{font-size:17px;line-height:1.65;opacity:.5;max-width:600px;margin:0 auto 36px}
+  .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:16px 26px;border:1px solid var(--black);transition:all .2s;display:inline-flex;align-items:center;gap:10px;box-shadow:4px 4px 0 var(--black)}
+  .btn.p{background:var(--black);color:var(--white)}
+  .btn.p:hover{background:var(--lime);color:var(--black);border-color:var(--black)}
+  .btn.g{background:transparent;color:var(--black)}
+  .btn.g:hover{background:var(--black);color:var(--white)}
+  @media(max-width:860px){.cta-sec{padding:60px 20px}.agent-sec{padding:60px 20px}.diff-sec{padding:60px 20px}}
+
+  /* FOOTER */
+  footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--black);font-size:10px;letter-spacing:.1em}
+  .f-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:16px}
+  .f-mid{opacity:.4;text-align:center;flex:1}
+  .f-right{text-align:right;opacity:.4;line-height:1.5}
+  @media(max-width:860px){footer{flex-direction:column;gap:12px;padding:24px 20px;text-align:center}.f-right{text-align:center}}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(20px)}
+  .reveal.in{opacity:1;transform:translateY(0);transition:opacity .6s cubic-bezier(.2,.8,.3,1),transform .6s cubic-bezier(.2,.8,.3,1)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">App Pro <em>Guy</em></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="solutions.html" class="active">Solutions</a>
+      <a href="pitch.html">Pitch</a>
+    </div>
+    <a href="#book" class="cta">Book a Pitch</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Every System Your Business Needs · Built Custom</div>
+    <h1>Stop paying for<br><span class="ol">10 apps</span> you<br>use <span class="it">20% of.</span></h1>
+    <p class="hero-sub">HR. Payroll. CRM. Fleet. Invoicing. Project management. You're juggling subscriptions, duct-taping spreadsheets, and losing data in WhatsApp threads. We replace all of it with one Command Centre — built around how your business actually works.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hs-num">R7.2B</div><div class="hs-label">Lost yearly by SA SMEs on admin</div></div>
+      <div class="hero-stat"><div class="hs-num">20%</div><div class="hs-label">Of features used in generic SaaS</div></div>
+      <div class="hero-stat"><div class="hs-num">24/7</div><div class="hs-label">Your dedicated tech partner on call</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- SOLUTION 1: HR SYSTEM -->
+<!-- ============================================================ -->
+<section class="sol-section" id="hr">
+  <div class="sol-inner">
+    <div class="sol-eyebrow">01 · Human Resources</div>
+    <h2 class="sol-h">Your HR is in a <em>folder</em><br>called "Staff Stuff."</h2>
+    <p class="sol-sub">Employee records in Excel. Leave requests on WhatsApp. Contracts in a drawer. Performance reviews? Never happened. A custom HR Command Centre puts every employee, every document, and every process on one screen.</p>
+
+    <div class="sol-card reveal" id="hrCard">
+      <div class="sol-card-header">
+        <span class="sol-card-title"><span class="before-txt">Your Current HR — Excel & WhatsApp</span><span class="after-txt">Your Custom HR Command Centre</span></span>
+        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+      </div>
+      <div class="sol-card-body">
+        <div class="sol-before">
+          <ul class="chaos-list">
+            <li class="err">Employee details scattered across 4 different spreadsheets — names don't match</li>
+            <li class="warn">Leave balance? Check with Thabo. He has the file. Somewhere.</li>
+            <li>Contracts signed on paper, scanned to a random Google Drive folder nobody can find</li>
+            <li class="err">New hire started 3 weeks ago — still not on payroll</li>
+            <li class="warn">"Who approved this overtime?" — nobody knows, it was a WhatsApp voice note</li>
+            <li>Performance reviews last done in 2022. Maybe.</li>
+          </ul>
+        </div>
+        <div class="sol-after">
+          <div class="dash-grid">
+            <div class="dash-metric"><div class="dm-label">Total Staff</div><div class="dm-val">47</div><div class="dm-sub">3 new this month</div></div>
+            <div class="dash-metric"><div class="dm-label">On Leave</div><div class="dm-val">4</div><div class="dm-sub">2 back Monday</div></div>
+            <div class="dash-metric"><div class="dm-label">Compliance</div><div class="dm-val" style="color:var(--lime)">100%</div><div class="dm-sub">contracts · UIF · tax</div></div>
+          </div>
+          <div class="dash-status">
+            <div class="dash-row"><span class="dot g"></span><span>Sipho M. — leave approved automatically (3 days remaining)</span><em class="g">AUTO</em></div>
+            <div class="dash-row"><span class="dot c"></span><span>New hire onboarding — Lerato K. — step 4/6 complete</span><em>IN PROGRESS</em></div>
+            <div class="dash-row"><span class="dot a"></span><span>Performance review cycle — due in 14 days — 12/47 done</span><em>REMINDER SENT</em></div>
+            <div class="dash-row"><span class="dot g"></span><span>Payroll sync — all 47 employees verified for month-end</span><em class="g">READY</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3>// Frequently Asked Questions · HR Systems</h3>
+      <div class="faq-item"><div class="faq-q">How long does it take to set up a custom HR system?</div><div class="faq-a">Phase 1 goes live in 6–8 weeks. That includes employee profiles, leave management, and document storage. We add modules like performance reviews and recruitment in later phases — so you're using the system from week one, not waiting months for a big-bang launch.</div></div>
+      <div class="faq-item"><div class="faq-q">Does your HR system handle South African labour law compliance?</div><div class="faq-a">Yes. Every system we build includes PAYE, UIF, and BCEA compliance baked in. We automate tax certificate generation, leave accrual calculations, and overtime rules specific to SA labour law. When legislation changes, we update your system — you don't need to figure it out yourself.</div></div>
+      <div class="faq-item"><div class="faq-q">Can employees access the system themselves?</div><div class="faq-a">Absolutely. Every employee gets their own login — they can view payslips, request leave, update personal details, and upload documents. This alone eliminates 70% of the HR admin that lands on your desk every morning via WhatsApp.</div></div>
+      <div class="faq-item"><div class="faq-q">Why choose a custom HR system over something like Sage or BambooHR?</div><div class="faq-a">Off-the-shelf HR tools give you 200 features — but you'll use 30 of them. You'll also spend months trying to make it fit your workflow. A custom system does exactly what your business needs, integrates with the tools you already use, and costs less than you think because you're not paying for features you'll never touch.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SOLUTION 2: PAYROLL & FINANCE -->
+<!-- ============================================================ -->
+<section class="sol-section" id="payroll">
+  <div class="sol-inner">
+    <div class="sol-eyebrow">02 · Payroll & Finance</div>
+    <h2 class="sol-h">Month-end shouldn't<br>take <em>a week.</em></h2>
+    <p class="sol-sub">You're exporting from Sage, pasting into Excel, cross-referencing with bank statements, then manually emailing payslips. Every month. A custom payroll dashboard automates the entire cycle — from calculation to payslip delivery.</p>
+
+    <div class="sol-card reveal" id="payrollCard">
+      <div class="sol-card-header">
+        <span class="sol-card-title"><span class="before-txt">Your Current Payroll — Spreadsheet Juggling</span><span class="after-txt">Your Custom Payroll Command Centre</span></span>
+        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+      </div>
+      <div class="sol-card-body">
+        <div class="sol-before">
+          <ul class="chaos-list">
+            <li class="err">Overtime captured late — 3 employees underpaid last month</li>
+            <li class="warn">PAYE calculation done manually in Excel — "I think this formula is right?"</li>
+            <li>Payslips emailed one by one — takes 2 hours every month</li>
+            <li class="err">UIF submission missed deadline — R4,200 penalty</li>
+            <li class="warn">Leave balances don't match between HR spreadsheet and payroll</li>
+            <li>Bank reconciliation — 6 hours of "why doesn't this match"</li>
+          </ul>
+        </div>
+        <div class="sol-after">
+          <div class="dash-grid">
+            <div class="dash-metric"><div class="dm-label">Payroll Status</div><div class="dm-val" style="color:var(--lime)">Ready</div><div class="dm-sub">all 47 verified</div></div>
+            <div class="dash-metric"><div class="dm-label">PAYE · This Month</div><div class="dm-val">R148K</div><div class="dm-sub">auto-calculated</div></div>
+            <div class="dash-metric"><div class="dm-label">UIF Submission</div><div class="dm-val" style="color:var(--lime)">Filed</div><div class="dm-sub">3 days early</div></div>
+          </div>
+          <div class="dash-status">
+            <div class="dash-row"><span class="dot g"></span><span>All payslips generated & delivered — 47/47 confirmed</span><em class="g">DONE</em></div>
+            <div class="dash-row"><span class="dot g"></span><span>Overtime auto-captured from timesheets — verified</span><em class="g">SYNCED</em></div>
+            <div class="dash-row"><span class="dot c"></span><span>Bank reconciliation — 2 items remaining (auto-matched 98%)</span><em>REVIEW</em></div>
+            <div class="dash-row"><span class="dot g"></span><span>Tax certificates ready for year-end — IRP5 pre-populated</span><em class="g">READY</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3>// Frequently Asked Questions · Payroll</h3>
+      <div class="faq-item"><div class="faq-q">Does your payroll system handle PAYE and UIF automatically?</div><div class="faq-a">Yes. Tax tables are built in and updated annually. The system calculates PAYE, UIF contributions, and SDL automatically for every employee. It also generates the submission files you need for SARS eFiling — no more manual calculations in Excel.</div></div>
+      <div class="faq-item"><div class="faq-q">Can it integrate with my existing accounting software?</div><div class="faq-a">We integrate with Sage, Xero, QuickBooks, and most SA accounting packages. Payroll data flows directly into your general ledger — no more export-import-reconcile loops that eat up your week.</div></div>
+      <div class="faq-item"><div class="faq-q">How much time will a custom payroll system actually save?</div><div class="faq-a">Our average client goes from 3–5 days of month-end processing to less than 4 hours. The biggest time saver is automatic overtime capture, leave deduction sync, and one-click payslip generation. The bank reconciliation alone used to take a full day — now it's 20 minutes.</div></div>
+      <div class="faq-item"><div class="faq-q">What about payroll for hourly or shift-based workers?</div><div class="faq-a">We build shift scheduling, clock-in/clock-out, and timesheet capture directly into the system. Hours flow straight into payroll — no manual data entry, no missing overtime, no disputes at month-end.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SOLUTION 3: CRM / CLIENT MANAGEMENT -->
+<!-- ============================================================ -->
+<section class="sol-section" id="crm">
+  <div class="sol-inner">
+    <div class="sol-eyebrow">03 · CRM & Client Management</div>
+    <h2 class="sol-h">Your pipeline lives<br>in someone's <em>head.</em></h2>
+    <p class="sol-sub">Leads come in via email, WhatsApp, and phone calls — then disappear. Follow-ups slip. Quotes expire. Nobody knows which clients are hot and which went cold. A custom CRM puts every client interaction on one timeline.</p>
+
+    <div class="sol-card reveal" id="crmCard">
+      <div class="sol-card-header">
+        <span class="sol-card-title"><span class="before-txt">Your Current CRM — Memory & WhatsApp</span><span class="after-txt">Your Custom Clients Command Centre</span></span>
+        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+      </div>
+      <div class="sol-card-body">
+        <div class="sol-before">
+          <ul class="chaos-list">
+            <li class="err">Lead from 2 weeks ago — "I forgot to follow up, they went with someone else"</li>
+            <li class="warn">Quote sent via email — no tracking, no idea if they opened it</li>
+            <li>Client history? Scroll back 6 months in WhatsApp to find the conversation</li>
+            <li class="err">3 salespeople contacted the same client — didn't know the others had spoken to them</li>
+            <li class="warn">"How many leads did we get this month?" — "Uh, let me check my phone"</li>
+            <li>Follow-up reminders = sticky notes on a monitor</li>
+          </ul>
+        </div>
+        <div class="sol-after">
+          <div class="dash-grid">
+            <div class="dash-metric"><div class="dm-label">Pipeline Value</div><div class="dm-val">R2.1M</div><div class="dm-sub">47 active deals</div></div>
+            <div class="dash-metric"><div class="dm-label">Win Rate</div><div class="dm-val">38%</div><div class="dm-sub">↑ from 22% last quarter</div></div>
+            <div class="dash-metric"><div class="dm-label">Avg Response</div><div class="dm-val">2h</div><div class="dm-sub">auto-chase enabled</div></div>
+          </div>
+          <div class="dash-status">
+            <div class="dash-row"><span class="dot g"></span><span>Bontle Solar — quote opened 3x — auto follow-up sent</span><em class="g">HOT</em></div>
+            <div class="dash-row"><span class="dot a"></span><span>Dlamini Holdings — no response 5 days — escalated to you</span><em>CHASE</em></div>
+            <div class="dash-row"><span class="dot c"></span><span>Khumalo Farms — meeting booked Thursday 10am</span><em>SCHEDULED</em></div>
+            <div class="dash-row"><span class="dot g"></span><span>Moloi Waste — invoice paid — R48K — auto thank-you sent</span><em class="g">WON</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3>// Frequently Asked Questions · CRM</h3>
+      <div class="faq-item"><div class="faq-q">How is a custom CRM different from HubSpot or Zoho?</div><div class="faq-a">HubSpot gives you a CRM designed for tech startups in Silicon Valley. We build a CRM designed for your business — your sales process, your follow-up cadence, your client types. No unused features cluttering the screen. No monthly subscription that scales with your contact list.</div></div>
+      <div class="faq-item"><div class="faq-q">Can the CRM integrate with WhatsApp?</div><div class="faq-a">Yes. We connect your WhatsApp Business to the CRM so messages appear on the client timeline alongside emails, calls, and quotes. Your team stops losing conversations in group chats — everything is logged against the client automatically.</div></div>
+      <div class="faq-item"><div class="faq-q">Will it automatically follow up with leads?</div><div class="faq-a">We build auto-chase sequences into every CRM. If a quote isn't opened in 48 hours, the system follows up. If a lead goes cold for 7 days, it escalates to a manager. You set the rules — the system enforces them without you lifting a finger.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SOLUTION 4: FLEET MANAGEMENT -->
+<!-- ============================================================ -->
+<section class="sol-section" id="fleet">
+  <div class="sol-inner">
+    <div class="sol-eyebrow">04 · Fleet & Logistics</div>
+    <h2 class="sol-h">You're tracking<br><em>vehicles</em> on WhatsApp.</h2>
+    <p class="sol-sub">"Where's truck 7?" gets asked 15 times a day. Drivers send location pins that expire. Fuel logs are on paper. Route planning is gut feel. A custom fleet dashboard shows every vehicle, every route, every delivery — live.</p>
+
+    <div class="sol-card reveal" id="fleetCard">
+      <div class="sol-card-header">
+        <span class="sol-card-title"><span class="before-txt">Your Current Fleet — Calls & Guesswork</span><span class="after-txt">Your Custom Fleet Command Centre</span></span>
+        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+      </div>
+      <div class="sol-card-body">
+        <div class="sol-before">
+          <ul class="chaos-list">
+            <li class="err">"Where's truck 7?" — phone call to driver — no answer — phone call to dispatcher</li>
+            <li class="warn">Fuel logs on paper — numbers don't add up — suspected theft but no proof</li>
+            <li>Route planning done in the driver's head — no optimization, no tracking</li>
+            <li class="err">Vehicle service overdue by 3 weeks — found out when it broke down on the N1</li>
+            <li class="warn">Delivery proof = WhatsApp photo that gets lost in the chat</li>
+            <li>"How many deliveries did we do this month?" — "Give me a day to count"</li>
+          </ul>
+        </div>
+        <div class="sol-after">
+          <div class="dash-grid">
+            <div class="dash-metric"><div class="dm-label">On Route</div><div class="dm-val" style="color:var(--cyan)">12/14</div><div class="dm-sub">2 at depot</div></div>
+            <div class="dash-metric"><div class="dm-label">Deliveries Today</div><div class="dm-val">119</div><div class="dm-sub">89% on-time</div></div>
+            <div class="dash-metric"><div class="dm-label">Fuel Efficiency</div><div class="dm-val" style="color:var(--lime)">94%</div><div class="dm-sub">vs target · no anomalies</div></div>
+          </div>
+          <div class="dash-status">
+            <div class="dash-row"><span class="dot g"></span><span>T-07 · Driver 7 · Sandton — 12/14 stops complete</span><em class="g">ON TIME</em></div>
+            <div class="dash-row"><span class="dot c"></span><span>T-02 · Thabo · Midrand — route 52% complete</span><em>EN ROUTE</em></div>
+            <div class="dash-row"><span class="dot a"></span><span>T-03 · Sipho · Depot — diesel alert triggered</span><em>REFUEL</em></div>
+            <div class="dash-row"><span class="dot g"></span><span>T-11 · Service due in 3 days — auto-booked at workshop</span><em class="g">SCHEDULED</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3>// Frequently Asked Questions · Fleet</h3>
+      <div class="faq-item"><div class="faq-q">Can I track my vehicles in real time?</div><div class="faq-a">Yes. We integrate with GPS tracking hardware (or use your drivers' phones) to show every vehicle on a live map. You see location, speed, route progress, and stop history — all without calling anyone.</div></div>
+      <div class="faq-item"><div class="faq-q">Does it help with fuel management and theft prevention?</div><div class="faq-a">The system tracks fuel fill-ups, calculates consumption per kilometre, and flags anomalies automatically. If a truck's fuel usage suddenly spikes or a fill-up doesn't match the expected tank level, you get an alert immediately — not at month-end when it's too late.</div></div>
+      <div class="faq-item"><div class="faq-q">Can drivers use it on their phones?</div><div class="faq-a">Every driver gets a mobile interface for route navigation, delivery confirmation, photo proof, and vehicle inspection checklists. They tap, snap, and move on. You see everything in real time on the dashboard without interrupting their route.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SOLUTION 5: INVENTORY & STOCK -->
+<!-- ============================================================ -->
+<section class="sol-section" id="inventory">
+  <div class="sol-inner">
+    <div class="sol-eyebrow">05 · Inventory & Stock Management</div>
+    <h2 class="sol-h">You only find out<br>you're out of stock <em>after</em><br>the client calls.</h2>
+    <p class="sol-sub">Stock counts on paper. Reorder points that exist in someone's memory. Products moving between warehouses with no paper trail. A custom inventory system tracks every unit, every location, every movement — and reorders before you run out.</p>
+
+    <div class="sol-card reveal" id="inventoryCard">
+      <div class="sol-card-header">
+        <span class="sol-card-title"><span class="before-txt">Your Current Inventory — Clipboard & Memory</span><span class="after-txt">Your Custom Inventory Command Centre</span></span>
+        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+      </div>
+      <div class="sol-card-body">
+        <div class="sol-before">
+          <ul class="chaos-list">
+            <li class="err">Client ordered 200 units — warehouse says we have 180 — Excel says 220</li>
+            <li class="warn">Reorder point? "When Sipho notices the shelf is empty"</li>
+            <li>Stock moved between sites — nobody updated the spreadsheet</li>
+            <li class="err">R34,000 in dead stock discovered during annual count — been sitting 11 months</li>
+            <li class="warn">Shrinkage running at 8% — industry average is 2% — no visibility into why</li>
+          </ul>
+        </div>
+        <div class="sol-after">
+          <div class="dash-grid">
+            <div class="dash-metric"><div class="dm-label">SKUs Tracked</div><div class="dm-val">1,247</div><div class="dm-sub">across 3 locations</div></div>
+            <div class="dash-metric"><div class="dm-label">Stock Accuracy</div><div class="dm-val" style="color:var(--lime)">99.2%</div><div class="dm-sub">vs 82% before</div></div>
+            <div class="dash-metric"><div class="dm-label">Auto-Reorders</div><div class="dm-val">12</div><div class="dm-sub">triggered this week</div></div>
+          </div>
+          <div class="dash-status">
+            <div class="dash-row"><span class="dot a"></span><span>Widget A-200 below reorder point — PO auto-generated to supplier</span><em>REORDERING</em></div>
+            <div class="dash-row"><span class="dot g"></span><span>Warehouse transfer JHB→PTA — 450 units — confirmed received</span><em class="g">VERIFIED</em></div>
+            <div class="dash-row"><span class="dot g"></span><span>Shrinkage this month: 0.3% — well below 2% target</span><em class="g">HEALTHY</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3>// Frequently Asked Questions · Inventory</h3>
+      <div class="faq-item"><div class="faq-q">Can it work with barcode or QR code scanning?</div><div class="faq-a">Yes. We set up barcode/QR scanning via phone cameras or dedicated scanners. Staff scan items in, scan items out, scan transfers — every movement is logged automatically. No more clipboard counts or Excel updates.</div></div>
+      <div class="faq-item"><div class="faq-q">Does it handle multiple warehouse locations?</div><div class="faq-a">The system tracks stock across unlimited locations — warehouses, vehicles, client sites. Inter-location transfers require confirmation from both sides before updating quantities, so nothing gets lost in transit.</div></div>
+      <div class="faq-item"><div class="faq-q">Can it automatically reorder stock when levels are low?</div><div class="faq-a">You set reorder points and preferred suppliers for each product. When stock drops below the threshold, the system generates a purchase order and sends it to your supplier — or flags it for your approval first, your choice.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SOLUTION 6: PROJECT MANAGEMENT -->
+<!-- ============================================================ -->
+<section class="sol-section" id="projects">
+  <div class="sol-inner">
+    <div class="sol-eyebrow">06 · Project Management</div>
+    <h2 class="sol-h">Status update?<br><em>"Let me check<br>with the team."</em></h2>
+    <p class="sol-sub">Projects tracked in email threads. Milestones in someone's notebook. Time logs that don't exist. A custom project dashboard shows every job, every task, every hour — so you know exactly where you stand without asking anyone.</p>
+
+    <div class="sol-card reveal" id="projectCard">
+      <div class="sol-card-header">
+        <span class="sol-card-title"><span class="before-txt">Your Current Projects — Emails & Notebooks</span><span class="after-txt">Your Custom Projects Command Centre</span></span>
+        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+      </div>
+      <div class="sol-card-body">
+        <div class="sol-before">
+          <ul class="chaos-list">
+            <li class="err">Project 2 weeks overdue — found out when the client called to complain</li>
+            <li class="warn">"Who's working on the Khumalo job?" — "I think Thabo, maybe Sipho?"</li>
+            <li>Time tracking = trust system — nobody logs hours, billing is guesswork</li>
+            <li class="err">Scope creep — client added 3 things "verbally" — no record, no change order</li>
+            <li class="warn">Weekly status meeting takes 2 hours because nobody has updates ready</li>
+          </ul>
+        </div>
+        <div class="sol-after">
+          <div class="dash-grid">
+            <div class="dash-metric"><div class="dm-label">Active Projects</div><div class="dm-val">18</div><div class="dm-sub">4 due this week</div></div>
+            <div class="dash-metric"><div class="dm-label">On Schedule</div><div class="dm-val" style="color:var(--lime)">94%</div><div class="dm-sub">1 project flagged</div></div>
+            <div class="dash-metric"><div class="dm-label">Billable Hours</div><div class="dm-val">342</div><div class="dm-sub">this month · auto-logged</div></div>
+          </div>
+          <div class="dash-status">
+            <div class="dash-row"><span class="dot g"></span><span>Naledi Props Phase 2 — 87% complete — on track for Friday</span><em class="g">ON TRACK</em></div>
+            <div class="dash-row"><span class="dot a"></span><span>Bontle Solar Install — 2 days behind — resource reassigned</span><em>FLAGGED</em></div>
+            <div class="dash-row"><span class="dot c"></span><span>Khumalo Farms — milestone 3 approved — invoice auto-generated</span><em>BILLED</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3>// Frequently Asked Questions · Projects</h3>
+      <div class="faq-item"><div class="faq-q">Can my team log time from their phones?</div><div class="faq-a">Yes. One tap to start, one tap to stop. Time logs against the project, task, and client automatically. At month-end, billable hours are already calculated — no timesheets to chase.</div></div>
+      <div class="faq-item"><div class="faq-q">Does it handle milestone-based billing?</div><div class="faq-a">We build your exact billing structure into the system. Hit a milestone, the system generates the invoice. Percentage-based, fixed-fee, time-and-materials — whatever your contracts say, the system enforces.</div></div>
+      <div class="faq-item"><div class="faq-q">How does it compare to Monday.com or Asana?</div><div class="faq-a">Those tools are built for tech teams managing sprints. If you're in construction, property, or services, half the features don't apply and the ones you need don't exist. We build project management that matches your actual workflow — not someone else's idea of how work should flow.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SOLUTION 7: INVOICING & ACCOUNTS -->
+<!-- ============================================================ -->
+<section class="sol-section" id="invoicing">
+  <div class="sol-inner">
+    <div class="sol-eyebrow">07 · Invoicing & Accounts</div>
+    <h2 class="sol-h">You've got R200K<br>in unpaid invoices and<br><em>no system</em> to chase them.</h2>
+    <p class="sol-sub">Invoices created in Word. Payment tracking in a spreadsheet. Late payments discovered by accident. A custom invoicing system generates, sends, tracks, and chases every invoice automatically.</p>
+
+    <div class="sol-card reveal" id="invoiceCard">
+      <div class="sol-card-header">
+        <span class="sol-card-title"><span class="before-txt">Your Current Invoicing — Word Docs & Hope</span><span class="after-txt">Your Custom Invoicing Command Centre</span></span>
+        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+      </div>
+      <div class="sol-card-body">
+        <div class="sol-before">
+          <ul class="chaos-list">
+            <li class="err">Invoice from 3 months ago — client says they never received it</li>
+            <li class="warn">R218,000 outstanding — don't know which invoices are 30/60/90 days</li>
+            <li>Copy-paste client details into a Word template — error in bank details on 2 invoices</li>
+            <li class="err">Payment received but can't match it to an invoice — amount doesn't match</li>
+            <li class="warn">"Did Bontle Solar pay?" — scroll through bank statement for 20 minutes</li>
+          </ul>
+        </div>
+        <div class="sol-after">
+          <div class="dash-grid">
+            <div class="dash-metric"><div class="dm-label">Outstanding</div><div class="dm-val" style="color:var(--amber)">R218K</div><div class="dm-sub">across 6 clients</div></div>
+            <div class="dash-metric"><div class="dm-label">Collected MTD</div><div class="dm-val" style="color:var(--lime)">R892K</div><div class="dm-sub">↑ 23% vs last month</div></div>
+            <div class="dash-metric"><div class="dm-label">Avg Days to Pay</div><div class="dm-val">14</div><div class="dm-sub">was 38 days before</div></div>
+          </div>
+          <div class="dash-status">
+            <div class="dash-row"><span class="dot g"></span><span>INV-0247 · Bontle Solar · R48,500 — paid today · auto-reconciled</span><em class="g">PAID</em></div>
+            <div class="dash-row"><span class="dot a"></span><span>INV-0241 · Chauke & Sons · R22,000 — 7 days overdue · reminder #2 sent</span><em>CHASING</em></div>
+            <div class="dash-row"><span class="dot c"></span><span>INV-0250 · Kgosi Logistics · R31,200 — sent yesterday · viewed</span><em>SENT</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3>// Frequently Asked Questions · Invoicing</h3>
+      <div class="faq-item"><div class="faq-q">Does it automatically send payment reminders?</div><div class="faq-a">Yes. You set the rules — remind at 7 days overdue, escalate at 14, flag at 30. The system sends professional reminders via email (or WhatsApp) without you touching anything. Your cash flow improves because nothing slips through the cracks.</div></div>
+      <div class="faq-item"><div class="faq-q">Can clients pay directly from the invoice?</div><div class="faq-a">We embed payment links in every invoice. Clients click, pay via EFT or card, and the system auto-reconciles the payment against the invoice. No more matching bank statements manually.</div></div>
+      <div class="faq-item"><div class="faq-q">Does it integrate with my accounting software?</div><div class="faq-a">Every invoice we generate syncs with Sage, Xero, or QuickBooks in real time. Revenue recognition, tax calculations, and aging reports update automatically — your accountant will love you for it.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SOLUTION 8: FIELD SERVICE -->
+<!-- ============================================================ -->
+<section class="sol-section" id="fieldservice">
+  <div class="sol-inner">
+    <div class="sol-eyebrow">08 · Field Service & Job Management</div>
+    <h2 class="sol-h">Jobs assigned<br>via <em>voice note.</em><br>Completed via <em>trust.</em></h2>
+    <p class="sol-sub">Technicians get jobs on WhatsApp. Site photos live in camera rolls. Job completion = "I told the boss I'm done." A custom field service system dispatches, tracks, and closes jobs — with photo proof, time logs, and client sign-off.</p>
+
+    <div class="sol-card reveal" id="fieldCard">
+      <div class="sol-card-header">
+        <span class="sol-card-title"><span class="before-txt">Your Current Jobs — WhatsApp Voice Notes</span><span class="after-txt">Your Custom Field Service Command Centre</span></span>
+        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+      </div>
+      <div class="sol-card-body">
+        <div class="sol-before">
+          <ul class="chaos-list">
+            <li class="err">Job dispatched via voice note — tech went to the wrong address</li>
+            <li class="warn">Before/after photos in the tech's personal phone — left the company, photos gone</li>
+            <li>Client says job wasn't done properly — no proof, no sign-off, word vs word</li>
+            <li class="err">3 emergency callouts overlapping — no visibility into who's closest or available</li>
+            <li class="warn">Job costing? "We'll figure it out at month-end" (spoiler: they don't)</li>
+          </ul>
+        </div>
+        <div class="sol-after">
+          <div class="dash-grid">
+            <div class="dash-metric"><div class="dm-label">Active Jobs</div><div class="dm-val">23</div><div class="dm-sub">8 dispatched today</div></div>
+            <div class="dash-metric"><div class="dm-label">Completion Rate</div><div class="dm-val" style="color:var(--lime)">96%</div><div class="dm-sub">same-day resolution</div></div>
+            <div class="dash-metric"><div class="dm-label">Client Satisfaction</div><div class="dm-val">4.8</div><div class="dm-sub">★ avg rating</div></div>
+          </div>
+          <div class="dash-status">
+            <div class="dash-row"><span class="dot g"></span><span>JOB-0892 · Naledi Props · plumbing — completed · photos + sign-off captured</span><em class="g">CLOSED</em></div>
+            <div class="dash-row"><span class="dot c"></span><span>JOB-0895 · Emergency · Sandton — Thabo dispatched (nearest) · ETA 22min</span><em>EN ROUTE</em></div>
+            <div class="dash-row"><span class="dot a"></span><span>JOB-0887 · Bontle Solar · follow-up — client rated 3★ — escalated</span><em>REVIEW</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3>// Frequently Asked Questions · Field Service</h3>
+      <div class="faq-item"><div class="faq-q">Can technicians use it on their phones in the field?</div><div class="faq-a">The entire system is mobile-first. Techs receive job details, navigate to the site, capture before/after photos, log materials used, get client sign-off, and close the job — all from their phone. No paperwork, no calls back to the office.</div></div>
+      <div class="faq-item"><div class="faq-q">Does it handle emergency dispatch and scheduling?</div><div class="faq-a">The system shows which technicians are available, where they are, and what skills they have. For emergency jobs, it recommends the closest qualified tech and dispatches with one click — the tech gets the address, client details, and job scope instantly.</div></div>
+      <div class="faq-item"><div class="faq-q">Can clients track their job status?</div><div class="faq-a">Yes. Clients get a portal or SMS updates showing job status, tech name, ETA, and completion confirmation. No more "when is someone coming?" phone calls tying up your team.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DIFFERENTIATOR SECTION -->
+<!-- ============================================================ -->
+<section class="diff-sec" id="why-custom">
+  <div class="diff-inner">
+    <div class="sol-eyebrow" style="color:var(--lime)">// Why Custom Beats Off-The-Shelf</div>
+    <h2 class="sol-h" style="color:var(--white)">You don't need <em>another app.</em><br>You need <em>your</em> app.</h2>
+    <p class="sol-sub" style="color:var(--white)">Generic SaaS tools are built for everyone — which means they're built for no one. You pay for 200 features, use 30, and spend months trying to force your workflow into someone else's software. Here's the difference.</p>
+
+    <div class="diff-grid">
+      <div class="diff-card reveal">
+        <div class="diff-num">100%</div>
+        <div class="diff-title">Built For Your Workflow</div>
+        <p>We map how your business actually runs — then build the system around it. Not a template you bend into shape. Not a SaaS you configure for 6 weeks. Your workflow, your screens, your logic.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-num">1</div>
+        <div class="diff-title">One System · Everything Connected</div>
+        <p>HR talks to payroll. CRM talks to invoicing. Fleet talks to inventory. One login, one dashboard, one source of truth. No more exporting from one app and importing into another.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-num">R0</div>
+        <div class="diff-title">No Per-Seat Subscriptions</div>
+        <p>Off-the-shelf tools charge per user, per month, forever. Your team grows, your bill grows. A custom system is yours — flat rate, no surprises, no per-seat tax on your own data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 24/7 AGENT SECTION -->
+<!-- ============================================================ -->
+<section class="agent-sec" id="agent">
+  <div class="agent-inner">
+    <div>
+      <div class="sol-eyebrow">// Your Dedicated Tech Partner</div>
+      <h2 class="sol-h">You're not buying<br>software. You're hiring<br>a <em>tech partner.</em></h2>
+      <p class="sol-sub">Every client gets a dedicated support agent — me. Not a ticket queue. Not a chatbot. Not a "we'll get back to you in 3-5 business days" email. Your system breaks at 10pm on a Sunday? I'm already on it.</p>
+      <p style="font-size:14px;line-height:1.7;opacity:.55;margin-top:16px;max-width:640px">This is the thing no SaaS company will ever give you. With Salesforce, you're ticket #48,293. With us, you have my number. I built your system — I know every screen, every workflow, every integration. When something needs changing, I change it. When something breaks, I fix it. When you have an idea at 2am, send me a voice note — it'll be in your system by morning.</p>
+    </div>
+    <div class="agent-visual">
+      <div class="agent-chat">
+        <div class="agent-msg user">Hey, the fleet report isn't showing last week's deliveries — can you check?<span class="time">Sun · 21:47</span></div>
+        <div class="agent-msg bot">Found it — the date filter was stuck on "this week." Fixed and pushed live. You should see all deliveries now. Also added a "last 30 days" default so it doesn't happen again.<span class="time">Sun · 21:52</span></div>
+        <div class="agent-msg user">That was 5 minutes. On a Sunday night. 🤝<span class="time">Sun · 21:53</span></div>
+        <div class="agent-msg bot">That's the deal. Your system, your schedule. I'll also run a check on the other reports in the morning to make sure they're all pulling correctly.<span class="time">Sun · 21:54</span></div>
+      </div>
+      <div class="agent-status"><span class="pulse"></span>YOUR AGENT · ONLINE · RESPONSE TIME: ~5 MIN</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CTA SECTION -->
+<!-- ============================================================ -->
+<section class="cta-sec" id="book">
+  <h2>Let's build your<br><em>Command Centre.</em></h2>
+  <p>Tell me what your business runs on today — I'll show you what it could look like on one screen. 30 minutes. No obligation. No pitch deck theatre.</p>
+  <div class="btns">
+    <a href="mailto:admin@appproguy.com?subject=Book a Pitch" class="btn p">Book a Free Pitch →</a>
+    <a href="mailto:admin@appproguy.com?subject=Send me a 2-min demo" class="btn g">Send me a 2-min demo</a>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">App Pro Guy</div>
+  <div class="f-mid">The No.1 Bespoke AI Automation Company</div>
+  <div class="f-right">© 2026 App Pro Guy<br>Muthala Marketplace (Pty) Ltd</div>
+</footer>
+
+<!-- FAQ Schema Markup for Google Rich Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How long does it take to set up a custom HR system?","acceptedAnswer":{"@type":"Answer","text":"Phase 1 goes live in 6–8 weeks. That includes employee profiles, leave management, and document storage. We add modules like performance reviews and recruitment in later phases — so you're using the system from week one, not waiting months for a big-bang launch."}},
+    {"@type":"Question","name":"Does your HR system handle South African labour law compliance?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every system we build includes PAYE, UIF, and BCEA compliance baked in. We automate tax certificate generation, leave accrual calculations, and overtime rules specific to SA labour law. When legislation changes, we update your system."}},
+    {"@type":"Question","name":"Can employees access the system themselves?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Every employee gets their own login — they can view payslips, request leave, update personal details, and upload documents. This alone eliminates 70% of the HR admin that lands on your desk every morning via WhatsApp."}},
+    {"@type":"Question","name":"Why choose a custom HR system over something like Sage or BambooHR?","acceptedAnswer":{"@type":"Answer","text":"Off-the-shelf HR tools give you 200 features — but you'll use 30 of them. A custom system does exactly what your business needs, integrates with the tools you already use, and costs less than you think because you're not paying for features you'll never touch."}},
+    {"@type":"Question","name":"Does your payroll system handle PAYE and UIF automatically?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tax tables are built in and updated annually. The system calculates PAYE, UIF contributions, and SDL automatically for every employee. It also generates the submission files you need for SARS eFiling."}},
+    {"@type":"Question","name":"Can it integrate with my existing accounting software?","acceptedAnswer":{"@type":"Answer","text":"We integrate with Sage, Xero, QuickBooks, and most SA accounting packages. Payroll data flows directly into your general ledger — no more export-import-reconcile loops."}},
+    {"@type":"Question","name":"How much time will a custom payroll system actually save?","acceptedAnswer":{"@type":"Answer","text":"Our average client goes from 3–5 days of month-end processing to less than 4 hours. The biggest time saver is automatic overtime capture, leave deduction sync, and one-click payslip generation."}},
+    {"@type":"Question","name":"How is a custom CRM different from HubSpot or Zoho?","acceptedAnswer":{"@type":"Answer","text":"HubSpot gives you a CRM designed for tech startups in Silicon Valley. We build a CRM designed for your business — your sales process, your follow-up cadence, your client types. No unused features cluttering the screen."}},
+    {"@type":"Question","name":"Can the CRM integrate with WhatsApp?","acceptedAnswer":{"@type":"Answer","text":"Yes. We connect your WhatsApp Business to the CRM so messages appear on the client timeline alongside emails, calls, and quotes. Your team stops losing conversations in group chats."}},
+    {"@type":"Question","name":"Can I track my vehicles in real time?","acceptedAnswer":{"@type":"Answer","text":"Yes. We integrate with GPS tracking hardware or use your drivers' phones to show every vehicle on a live map. You see location, speed, route progress, and stop history — all without calling anyone."}},
+    {"@type":"Question","name":"Does fleet management help with fuel theft prevention?","acceptedAnswer":{"@type":"Answer","text":"The system tracks fuel fill-ups, calculates consumption per kilometre, and flags anomalies automatically. If a truck's fuel usage spikes or a fill-up doesn't match the expected tank level, you get an alert immediately."}},
+    {"@type":"Question","name":"Can inventory automatically reorder stock when levels are low?","acceptedAnswer":{"@type":"Answer","text":"You set reorder points and preferred suppliers for each product. When stock drops below the threshold, the system generates a purchase order and sends it to your supplier — or flags it for your approval first."}},
+    {"@type":"Question","name":"Does project management handle milestone-based billing?","acceptedAnswer":{"@type":"Answer","text":"We build your exact billing structure into the system. Hit a milestone, the system generates the invoice. Percentage-based, fixed-fee, time-and-materials — whatever your contracts say, the system enforces."}},
+    {"@type":"Question","name":"Does invoicing automatically send payment reminders?","acceptedAnswer":{"@type":"Answer","text":"Yes. You set the rules — remind at 7 days overdue, escalate at 14, flag at 30. The system sends professional reminders via email or WhatsApp without you touching anything."}},
+    {"@type":"Question","name":"Can field service technicians use it on their phones?","acceptedAnswer":{"@type":"Answer","text":"The entire system is mobile-first. Techs receive job details, navigate to the site, capture before/after photos, log materials used, get client sign-off, and close the job — all from their phone."}},
+    {"@type":"Question","name":"Does the field service system handle emergency dispatch?","acceptedAnswer":{"@type":"Answer","text":"The system shows which technicians are available, where they are, and what skills they have. For emergency jobs, it recommends the closest qualified tech and dispatches with one click."}}
+  ]
+}
+</script>
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "App Pro Guy",
+  "alternateName": "APG",
+  "url": "https://appproguy.com",
+  "description": "Custom business software and dashboard systems for South African SMEs. We replace Excel, WhatsApp, and email chaos with bespoke Command Centre dashboards.",
+  "areaServed": {"@type": "Country", "name": "South Africa"},
+  "knowsAbout": ["Custom Software Development","Business Dashboards","HR Systems","Payroll Software","CRM Systems","Fleet Management","Inventory Management","Field Service Management"]
+}
+</script>
+
+<script>
+(function(){
+  // IntersectionObserver reveals
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Transform card flip buttons
+  document.querySelectorAll('.sol-card').forEach(card=>{
+    const btn=card.querySelector('.sol-flip-btn');
+    const txt=btn?btn.querySelector('.fb-txt'):null;
+    if(!btn)return;
+    btn.addEventListener('click',()=>{
+      const flipped=card.classList.toggle('flipped');
+      if(txt) txt.textContent=flipped?'← Undo':'Transform →';
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;
+      const wasOpen=item.classList.contains('open');
+      // Close all in same block
+      item.parentElement.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
