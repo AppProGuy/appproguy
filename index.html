@@ -24,10 +24,16 @@
   .nav-links a:hover{opacity:1}
   .cta{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);background:var(--black);padding:9px 18px;border:1px solid var(--black);transition:all .2s}
   .cta:hover{background:transparent;color:var(--black)}
-  @media(max-width:860px){nav{padding:0 20px}.nav-links{display:none}}
+  .menu-toggle{display:none;align-items:center;justify-content:center;border:1px solid var(--black);background:var(--white);color:var(--black);padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;box-shadow:3px 3px 0 var(--black);cursor:pointer}
+  .menu-toggle:hover{background:var(--lime)}
+  @media(max-width:860px){nav{padding:0 20px}.nav-right{gap:12px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-bottom:2px solid var(--black);padding:14px 20px;box-shadow:0 8px 0 rgba(8,8,8,.12)}.nav-links.is-open{display:flex}.nav-links a{padding:14px 0;border-bottom:1px solid var(--line);opacity:1}.nav-links a:last-child{border-bottom:0}.cta{padding:9px 14px}}
 
-  .hero{padding:130px 48px 40px;border-bottom:2px solid var(--black)}
-  .hero-inner{max-width:1280px;margin:0 auto}
+  .hero{padding:130px 48px 40px;border-bottom:2px solid var(--black);position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(184,255,92,.16),rgba(92,240,255,.05) 36%,transparent 58%),var(--white)}
+  .hero::before{content:'';position:absolute;top:56px;bottom:0;left:-14vw;width:44vw;background:linear-gradient(180deg,rgba(8,8,8,.1),rgba(8,8,8,0));transform:skewX(-12deg);pointer-events:none}
+  .hero::after{content:'';position:absolute;right:-12vw;top:74px;width:38vw;height:38vw;border-radius:50%;background:radial-gradient(circle,rgba(184,255,92,.36),rgba(184,255,92,.08) 42%,transparent 68%);filter:blur(2px);pointer-events:none}
+  .hero-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+  .hero-ai-label{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--black);background:var(--lime);border:1px solid var(--black);box-shadow:4px 4px 0 var(--black);padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em;text-transform:uppercase}
+  .hero-ai-label::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--black);box-shadow:0 0 0 4px rgba(8,8,8,.08)}
   .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.35em;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:14px}
   .eyebrow::before{content:'';width:28px;height:2px;background:var(--black);opacity:.4}
   h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(44px,7vw,104px);font-weight:900;line-height:.92;letter-spacing:-.03em;max-width:1100px}
@@ -64,16 +70,26 @@
   @media(max-width:980px){.morph-grid{grid-template-columns:1fr}}
   .morph{position:relative;height:580px;border:2px solid var(--black);background:var(--white);overflow:hidden}
   .morph::before{content:attr(data-n);position:absolute;bottom:-12px;left:24px;background:var(--white);padding:0 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.25em;z-index:20}
-  .morph .label{position:absolute;top:0;left:0;right:0;padding:16px 22px;background:var(--black);color:var(--white);display:flex;justify-content:space-between;align-items:center;z-index:15}
+  .morph .label{position:absolute;top:0;left:0;right:0;min-height:92px;padding:16px 22px;background:var(--black);color:var(--white);display:flex;justify-content:space-between;align-items:center;z-index:15}
   .morph .label .name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;font-style:italic}
   .morph .label .state{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transition:opacity .4s,color .3s;position:absolute;left:22px;top:50%;transform:translateY(-50%)}
   .morph .label .name{transition:opacity .4s,color .4s}
-  .flip-btn{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--white);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-  .flip-btn:hover{border-color:var(--lime);color:var(--lime)}
-  .morph.flip .flip-btn{background:var(--lime);color:var(--black);border-color:var(--lime)}
+  .flip-btn{position:relative;z-index:2;font-family:'IBM Plex Mono',monospace;font-size:8.4px;letter-spacing:.22em;text-transform:uppercase;padding:12px 22px;border:1px solid var(--lime);background:rgba(184,255,92,.18);color:var(--lime);cursor:pointer;transition:background .2s,color .2s,border-color .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;isolation:isolate;box-shadow:0 0 0 1px rgba(184,255,92,.38),0 0 24px rgba(184,255,92,.5),0 0 48px rgba(184,255,92,.22);animation:buttonPulse 1.45s ease-in-out infinite}
+  .flip-btn::before,.flip-btn::after{content:'';position:absolute;pointer-events:none;z-index:-1}
+  .flip-btn::before{inset:-12px;background:radial-gradient(circle,rgba(184,255,92,.48),rgba(184,255,92,.16) 42%,transparent 72%);filter:blur(7px);opacity:.95;animation:buttonAura 1.45s ease-in-out infinite}
+  .flip-btn::after{inset:-9px;border:2px solid rgba(184,255,92,.72);box-shadow:0 0 26px rgba(184,255,92,.6);opacity:.9;animation:buttonRing 1.45s ease-out infinite}
+  .flip-btn .fb-txt{position:relative;z-index:1}
+  .flip-btn:hover{background:var(--lime);border-color:var(--lime);color:var(--black);box-shadow:0 0 0 2px rgba(184,255,92,.54),0 0 34px rgba(184,255,92,.7),0 0 60px rgba(184,255,92,.34)}
+  .flip-btn:hover::before{opacity:1}
+  .flip-btn:hover::after{opacity:.9}
+  .morph.flip .flip-btn{background:var(--lime);color:var(--black);border-color:var(--lime);box-shadow:0 0 0 2px rgba(184,255,92,.44),0 0 30px rgba(184,255,92,.62),0 0 54px rgba(184,255,92,.28)}
+  @keyframes buttonPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 1px rgba(184,255,92,.38),0 0 24px rgba(184,255,92,.5),0 0 48px rgba(184,255,92,.22)}50%{transform:scale(1.075);box-shadow:0 0 0 3px rgba(184,255,92,.64),0 0 44px rgba(184,255,92,.82),0 0 74px rgba(184,255,92,.42)}}
+  @keyframes buttonAura{0%,100%{transform:scale(.92);opacity:.62}50%{transform:scale(1.15);opacity:1}}
+  @keyframes buttonRing{0%{transform:scale(.9);opacity:.95}68%{transform:scale(1.32);opacity:.16}100%{transform:scale(1.38);opacity:0}}
+  @media (prefers-reduced-motion: reduce){.flip-btn,.flip-btn::before,.flip-btn::after{animation:none}}
   .morph.flip .label .name{opacity:0}
   .morph.flip .label .state{opacity:1;color:var(--lime)}
-  .layer{position:absolute;inset:52px 0 0 0;transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1),filter .7s}
+  .layer{position:absolute;inset:92px 0 0 0;transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1),filter .7s}
   .before{opacity:1;transform:scale(1);filter:blur(0)}
   .after{opacity:0;transform:scale(1.04);background:#0a0a0b;color:#fff}
   .morph.flip .before{opacity:0;transform:scale(.96);filter:blur(4px)}
@@ -377,18 +393,20 @@
 <nav>
   <a href="#" class="logo">App Pro <em>Guy</em></a>
   <div class="nav-right">
-    <div class="nav-links">
+    <div class="nav-links" id="site-menu">
       <a href="#showcase">The Shift</a>
       <a href="/solutions">Solutions</a>
       <a href="#why">Why APG</a>
       <a href="/pitch">Pitch</a>
     </div>
     <a href="#book" class="cta">Book Audit</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
   </div>
 </nav>
 
 <header class="hero">
   <div class="hero-inner">
+    <div class="hero-ai-label">Powered by AI, built to catch what you miss</div>
     <div class="eyebrow">Custom Software Systems For Your Business</div>
     <h1>Custom software for businesses that have <span class="it">outgrown spreadsheets.</span></h1>
     <p class="hero-sub">We build Command Centres: custom dashboards, workflow apps, portals, automations, and AI systems that connect your operations, finance, customers, staff, and assets in one live system.</p>
@@ -679,16 +697,16 @@
     <div class="proof-eyebrow">// WHAT OUR CLIENTS SAY</div>
     <div class="proof-grid">
       <div class="testimonial reveal">
-        <p class="tq">"We went from 3 spreadsheets and a WhatsApp group to one live dashboard. I check it before my coffee every morning."</p>
-        <div class="tauthor"><strong>Thabo M.</strong><span>Operations Manager, Waste Collection</span></div>
+        <p class="tq">"We went from 3 spreadsheets and a WhatsApp group to one live dashboard. Now the whole team works from the same view."</p>
+        <div class="tauthor"><strong>Michael Jacobs</strong><span>Operations Manager, Waste Collection</span></div>
       </div>
       <div class="testimonial reveal">
-        <p class="tq">"My team stopped phoning me for updates. Everything they need is in the system. I got my weekends back."</p>
-        <div class="tauthor"><strong>Lerato K.</strong><span>Owner, Fleet &amp; Logistics</span></div>
+        <p class="tq">"My team stopped phoning me for updates. Everything they need is in the system, live and ready before the morning stand-up."</p>
+        <div class="tauthor"><strong>Pieter van der Merwe</strong><span>Owner, Fleet &amp; Logistics</span></div>
       </div>
       <div class="testimonial reveal">
         <p class="tq">"The client portal alone paid for the whole system. Customers check their own invoices now instead of calling us."</p>
-        <div class="tauthor"><strong>Sipho D.</strong><span>Director, Property Management</span></div>
+        <div class="tauthor"><strong>Naledi Mokoena</strong><span>Director, Property Management</span></div>
       </div>
     </div>
     <div class="proof-logos">
@@ -716,7 +734,7 @@
 <section class="ai-sec">
   <div class="ai-inner">
     <div class="ai-left">
-      <div class="ai-eyebrow">// POWERED BY AI · BUILT TO CATCH WHAT YOU MISS</div>
+      <div class="ai-eyebrow">// AI AGENTS WATCHING YOUR WORKFLOWS</div>
       <h2 class="ai-h">Humans forget.<br><em>Your Command Centre doesn't.</em></h2>
       <p class="ai-sub">Every dashboard runs on AI that watches your data in real time — flagging errors, chasing late invoices, rerouting drivers, and drafting replies before you even see them. The mistakes that cost you money? They never make it past the machine.</p>
     </div>
@@ -1164,6 +1182,20 @@
     function raf(t){lenis.raf(t);requestAnimationFrame(raf)}
     requestAnimationFrame(raf);
   }catch(e){}
+
+  // Mobile menu
+  document.querySelectorAll('.menu-toggle').forEach(btn=>{
+    const menu=document.getElementById(btn.getAttribute('aria-controls'));
+    if(!menu)return;
+    btn.addEventListener('click',()=>{
+      const open=menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded',String(open));
+    });
+    menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+      menu.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+    }));
+  });
 
   // IntersectionObserver reveals
   const io=new IntersectionObserver((entries)=>{

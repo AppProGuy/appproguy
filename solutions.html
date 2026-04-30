@@ -27,7 +27,9 @@
   .nav-links a.active{opacity:1;border-bottom:2px solid var(--black);padding-bottom:2px}
   .cta{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);background:var(--black);padding:9px 18px;border:1px solid var(--black);transition:all .2s;box-shadow:3px 3px 0 var(--black)}
   .cta:hover{background:transparent;color:var(--black)}
-  @media(max-width:860px){nav{padding:0 20px}.nav-links{display:none}}
+  .menu-toggle{display:none;align-items:center;justify-content:center;border:1px solid var(--black);background:var(--white);color:var(--black);padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;box-shadow:3px 3px 0 var(--black);cursor:pointer}
+  .menu-toggle:hover{background:var(--lime)}
+  @media(max-width:860px){nav{padding:0 20px}.nav-right{gap:12px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-bottom:2px solid var(--black);padding:14px 20px;box-shadow:0 8px 0 rgba(8,8,8,.12)}.nav-links.is-open{display:flex}.nav-links a{padding:14px 0;border-bottom:1px solid var(--line);opacity:1}.nav-links a:last-child{border-bottom:0}.cta{padding:9px 14px}}
 
   /* HERO */
   .hero{padding:130px 48px 60px;border-bottom:2px solid var(--black)}
@@ -170,12 +172,13 @@
 <nav>
   <a href="/" class="logo">App Pro <em>Guy</em></a>
   <div class="nav-right">
-    <div class="nav-links">
+    <div class="nav-links" id="site-menu">
       <a href="/">Home</a>
       <a href="/solutions" class="active">Solutions</a>
       <a href="/pitch">Pitch</a>
     </div>
     <a href="#book" class="cta">Book a Pitch</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
   </div>
 </nav>
 
@@ -729,6 +732,20 @@
 
 <script>
 (function(){
+  // Mobile menu
+  document.querySelectorAll('.menu-toggle').forEach(btn=>{
+    const menu=document.getElementById(btn.getAttribute('aria-controls'));
+    if(!menu)return;
+    btn.addEventListener('click',()=>{
+      const open=menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded',String(open));
+    });
+    menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+      menu.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+    }));
+  });
+
   // IntersectionObserver reveals
   const io=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
