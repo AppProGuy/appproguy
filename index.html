@@ -14,6 +14,8 @@
     <meta name="twitter:title" content="Custom Business Software, Dashboards &amp; AI Automations | App Pro Guy">
     <meta name="twitter:description" content="Custom software systems, dashboards, workflow apps and AI automations for businesses replacing spreadsheets, WhatsApp and manual admin with one live operating system.">
 <link rel="canonical" href="https://www.appproguy.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -394,20 +396,57 @@
     .cta-sec{padding:80px 20px}
     .morph{height:520px}
   }
-</style>
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.appproguy.com/#organization",
+      "name": "App Pro Guy",
+      "alternateName": "APG",
+      "legalName": "Muthala Marketplace (Pty) Ltd",
+      "url": "https://www.appproguy.com/",
+      "email": "admin@appproguy.com",
+      "telephone": "+27810829487",
+      "areaServed": { "@type": "Country", "name": "South Africa" },
+      "description": "Custom software systems, dashboards, workflow apps and AI automations for businesses replacing spreadsheets, WhatsApp and manual admin with one live operating system."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.appproguy.com/#website",
+      "url": "https://www.appproguy.com/",
+      "name": "App Pro Guy",
+      "publisher": { "@id": "https://www.appproguy.com/#organization" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.appproguy.com/#professionalservice",
+      "name": "App Pro Guy",
+      "url": "https://www.appproguy.com/",
+      "email": "admin@appproguy.com",
+      "telephone": "+27810829487",
+      "areaServed": { "@type": "Country", "name": "South Africa" },
+      "serviceType": "Custom business software, dashboards, workflow apps and AI automation",
+      "description": "App Pro Guy builds custom Command Centres, dashboards, workflow apps, portals, automations and AI systems for owner-led and operations-heavy businesses."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <nav>
-  <a href="#" class="logo">App Pro <em>Guy</em></a>
+  <a href="/" class="logo">App Pro <em>Guy</em></a>
   <div class="nav-right">
     <div class="nav-links" id="site-menu">
       <a href="#showcase">The Shift</a>
-      <a href="/solutions">Solutions</a>
+      <a href="/solutions" data-event="solutions_nav_click">Solutions</a>
       <a href="#why">Why APG</a>
-      <a href="/pitch">Pitch</a>
+      <a href="/pitch" data-event="workflow_audit_click">Pitch</a>
     </div>
-    <a href="#book" class="cta">Book Audit</a>
+    <a href="#book" class="cta" data-event="workflow_audit_click">Book Audit</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
   </div>
 </nav>
@@ -420,7 +459,7 @@
     <p class="hero-sub">We build Command Centres: custom dashboards, workflow apps, portals, automations, and AI systems that connect your operations, finance, customers, staff, and assets in one live system.</p>
     <p class="hero-sub">If your team runs on Excel, WhatsApp, Gmail, and memory, we turn that chaos into one system your business can actually run from. Phase 1 is usually live in 6–8 weeks.</p>
     <div class="hero-ctas">
-      <a href="mailto:admin@appproguy.com?subject=Book a 30-minute workflow audit" class="btn hp">Book a 30-minute workflow audit →</a>
+      <a href="mailto:admin@appproguy.com?subject=Book a 30-minute workflow audit" class="btn hp" data-event="workflow_audit_click">Book a 30-minute workflow audit →</a>
       <a href="#showcase" class="btn hs">See example systems ↓</a>
     </div>
     <p class="cta-support">No obligation. We'll map your biggest bottleneck and show what Phase 1 could look like.</p>
@@ -436,7 +475,7 @@
     </div>
     <div class="fit-note">
       <strong>Phase 1 qualifier</strong>
-      <span>Best fit when missed jobs, delayed invoices, spreadsheet errors, and manual admin cost real money every week. Phase 1 builds are usually live in 6–8 weeks. Most projects start from R180k–R450k depending on scope.</span>
+      <span>Best fit when missed jobs, delayed invoices, spreadsheet errors, and manual admin cost real money every week. Phase 1 builds are usually live in 6–8 weeks. Start with <a href="/services/replace-excel" data-event="service_internal_link_click">Replace Excel</a>, compare the <a href="/services/command-centre" data-event="service_internal_link_click">Command Centre</a>, browse <a href="/solutions" data-event="solutions_nav_click">solutions</a>, or <a href="/pitch" data-event="workflow_audit_click">book a pitch</a>.</span>
     </div>
   </div>
 </section>
@@ -558,7 +597,7 @@
             </div>
           </div>
         </div>
-        <div class="label"><span class="name" data-before="Excel Chaos" data-after="Your Company OS">Excel Chaos</span><span class="state">Ops Command Centre</span><button class="flip-btn"><span class="fb-txt">Transform →</span></button></div>
+        <div class="label"><span class="name" data-before="Excel Chaos" data-after="Your Company OS">Excel Chaos</span><span class="state">Ops Command Centre</span><button class="flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button></div>
       </div>
 
       <!-- ============ CARD 2: WHATSAPP → FLEET ============ -->
@@ -628,7 +667,7 @@
             <div class="trow"><div class="id">T-11</div><div class="drv">Lerato · Centurion</div><div class="prog"><b style="width:91%"></b></div><div class="st ok">ARR</div></div>
           </div>
         </div>
-        <div class="label"><span class="name" data-before="WhatsApp Panic" data-after="Your Company OS">WhatsApp Panic</span><span class="state">Fleet Command</span><button class="flip-btn"><span class="fb-txt">Transform →</span></button></div>
+        <div class="label"><span class="name" data-before="WhatsApp Panic" data-after="Your Company OS">WhatsApp Panic</span><span class="state">Fleet Command</span><button class="flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button></div>
       </div>
 
       <!-- ============ CARD 3: GMAIL → CLIENTS ============ -->
@@ -692,7 +731,7 @@
             <div class="thr"><div class="cn">Motsepe Group<em>reschedule · confirmed</em></div><div class="val">R88K</div><div class="tag">WED</div></div>
           </div>
         </div>
-        <div class="label"><span class="name" data-before="Inbox Anxiety" data-after="Your Company OS">Inbox Anxiety</span><span class="state">Clients Pipeline</span><button class="flip-btn"><span class="fb-txt">Transform →</span></button></div>
+        <div class="label"><span class="name" data-before="Inbox Anxiety" data-after="Your Company OS">Inbox Anxiety</span><span class="state">Clients Pipeline</span><button class="flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button></div>
       </div>
 
     </div>
@@ -1169,8 +1208,8 @@
     </div>
   </div>
   <div class="btns">
-    <a href="mailto:admin@appproguy.com?subject=Book a 30-minute workflow audit" class="btn p">Book a 30-minute workflow audit →</a>
-    <a href="mailto:admin@appproguy.com?subject=Show me example systems" class="btn g">Show me example systems</a>
+    <a href="mailto:admin@appproguy.com?subject=Book a 30-minute workflow audit" class="btn p" data-event="workflow_audit_click">Book a 30-minute workflow audit →</a>
+    <a href="mailto:admin@appproguy.com?subject=Show me example systems" class="btn g" data-event="email_click">Show me example systems</a>
   </div>
 </section>
 
@@ -1238,6 +1277,7 @@
     btn.addEventListener('click',()=>{
       const flipped=card.classList.toggle('flip');
       if(txt) txt.textContent=flipped?'← Undo':'Transform →';
+      btn.dataset.event=flipped?'demo_undo_click':'transform_demo_click';
       if(nameEl) nameEl.textContent=flipped?nameEl.dataset.after:nameEl.dataset.before;
     });
   });

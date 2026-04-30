@@ -15,6 +15,8 @@
     <meta name="twitter:description" content="Explore custom software solutions for operations, CRM, finance, fleet, portals, dashboards and AI automation built for growing businesses.">
 <meta name="keywords" content="AI business automation South Africa, custom HR system South Africa, bespoke payroll software, custom CRM small business, AI for small business, fleet management dashboard, replace Excel with dashboard, custom business software SA, how to use AI in my business">
 <link rel="canonical" href="https://www.appproguy.com/solutions">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -182,10 +184,10 @@
   <div class="nav-right">
     <div class="nav-links" id="site-menu">
       <a href="/">Home</a>
-      <a href="/solutions" class="active">Solutions</a>
-      <a href="/pitch">Pitch</a>
+      <a href="/solutions" class="active" data-event="solutions_nav_click">Solutions</a>
+      <a href="/pitch" data-event="workflow_audit_click">Pitch</a>
     </div>
-    <a href="#book" class="cta">Book a Pitch</a>
+    <a href="#book" class="cta" data-event="workflow_audit_click">Book a Pitch</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
   </div>
 </nav>
@@ -215,7 +217,7 @@
     <div class="sol-card reveal" id="hrCard">
       <div class="sol-card-header">
         <span class="sol-card-title"><span class="before-txt">Your Current HR — Excel & WhatsApp</span><span class="after-txt">Your Custom HR Command Centre</span></span>
-        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+        <button class="sol-flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button>
       </div>
       <div class="sol-card-body">
         <div class="sol-before">
@@ -266,7 +268,7 @@
     <div class="sol-card reveal" id="payrollCard">
       <div class="sol-card-header">
         <span class="sol-card-title"><span class="before-txt">Your Current Payroll — Spreadsheet Juggling</span><span class="after-txt">Your Custom Payroll Command Centre</span></span>
-        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+        <button class="sol-flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button>
       </div>
       <div class="sol-card-body">
         <div class="sol-before">
@@ -317,7 +319,7 @@
     <div class="sol-card reveal" id="crmCard">
       <div class="sol-card-header">
         <span class="sol-card-title"><span class="before-txt">Your Current CRM — Memory & WhatsApp</span><span class="after-txt">Your Custom Clients Command Centre</span></span>
-        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+        <button class="sol-flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button>
       </div>
       <div class="sol-card-body">
         <div class="sol-before">
@@ -367,7 +369,7 @@
     <div class="sol-card reveal" id="fleetCard">
       <div class="sol-card-header">
         <span class="sol-card-title"><span class="before-txt">Your Current Fleet — Calls & Guesswork</span><span class="after-txt">Your Custom Fleet Command Centre</span></span>
-        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+        <button class="sol-flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button>
       </div>
       <div class="sol-card-body">
         <div class="sol-before">
@@ -417,7 +419,7 @@
     <div class="sol-card reveal" id="inventoryCard">
       <div class="sol-card-header">
         <span class="sol-card-title"><span class="before-txt">Your Current Inventory — Clipboard & Memory</span><span class="after-txt">Your Custom Inventory Command Centre</span></span>
-        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+        <button class="sol-flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button>
       </div>
       <div class="sol-card-body">
         <div class="sol-before">
@@ -465,7 +467,7 @@
     <div class="sol-card reveal" id="projectCard">
       <div class="sol-card-header">
         <span class="sol-card-title"><span class="before-txt">Your Current Projects — Emails & Notebooks</span><span class="after-txt">Your Custom Projects Command Centre</span></span>
-        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+        <button class="sol-flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button>
       </div>
       <div class="sol-card-body">
         <div class="sol-before">
@@ -513,7 +515,7 @@
     <div class="sol-card reveal" id="invoiceCard">
       <div class="sol-card-header">
         <span class="sol-card-title"><span class="before-txt">Your Current Invoicing — Word Docs & Hope</span><span class="after-txt">Your Custom Invoicing Command Centre</span></span>
-        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+        <button class="sol-flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button>
       </div>
       <div class="sol-card-body">
         <div class="sol-before">
@@ -561,7 +563,7 @@
     <div class="sol-card reveal" id="fieldCard">
       <div class="sol-card-header">
         <span class="sol-card-title"><span class="before-txt">Your Current Jobs — WhatsApp Voice Notes</span><span class="after-txt">Your Custom Field Service Command Centre</span></span>
-        <button class="sol-flip-btn"><span class="fb-txt">Transform →</span></button>
+        <button class="sol-flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button>
       </div>
       <div class="sol-card-body">
         <div class="sol-before">
@@ -677,10 +679,10 @@
 <!-- ============================================================ -->
 <section class="cta-sec" id="book">
   <h2>Let's build your<br><em>A.I. Command Centre.</em></h2>
-  <p>Tell me what your business runs on today — I'll show you what it could look like with A.I. automation on one screen. 30 minutes. No obligation. No pitch deck theatre.</p>
+  <p>Tell me what your business runs on today — I'll show you what it could look like with A.I. automation on one screen. 30 minutes. No obligation. If your main issue is spreadsheets, start with <a href="/services/replace-excel" data-event="service_internal_link_click">Replace Excel</a>; if you need one operating system, compare the <a href="/services/command-centre" data-event="service_internal_link_click">Command Centre</a>.</p>
   <div class="btns">
-    <a href="mailto:admin@appproguy.com?subject=Book a Pitch" class="btn p">Book a Free Pitch →</a>
-    <a href="mailto:admin@appproguy.com?subject=Send me a 2-min demo" class="btn g">Send me a 2-min demo</a>
+    <a href="mailto:admin@appproguy.com?subject=Book a Pitch" class="btn p" data-event="workflow_audit_click">Book a Free Pitch →</a>
+    <a href="mailto:admin@appproguy.com?subject=Send me a 2-min demo" class="btn g" data-event="email_click">Send me a 2-min demo</a>
   </div>
 </section>
 
@@ -691,6 +693,30 @@
 </footer>
 
 <!-- FAQ Schema Markup for Google Rich Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Custom Software Solutions",
+  "url": "https://www.appproguy.com/solutions",
+  "description": "Custom software solutions for HR, payroll, CRM, fleet, inventory, projects, invoicing, field service and AI automation.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Human Resources", "url": "https://www.appproguy.com/solutions#hr" },
+      { "@type": "ListItem", "position": 2, "name": "Payroll", "url": "https://www.appproguy.com/solutions#payroll" },
+      { "@type": "ListItem", "position": 3, "name": "CRM", "url": "https://www.appproguy.com/solutions#crm" },
+      { "@type": "ListItem", "position": 4, "name": "Fleet", "url": "https://www.appproguy.com/solutions#fleet" },
+      { "@type": "ListItem", "position": 5, "name": "Inventory", "url": "https://www.appproguy.com/solutions#inventory" },
+      { "@type": "ListItem", "position": 6, "name": "Projects", "url": "https://www.appproguy.com/solutions#projects" },
+      { "@type": "ListItem", "position": 7, "name": "Invoicing", "url": "https://www.appproguy.com/solutions#invoicing" },
+      { "@type": "ListItem", "position": 8, "name": "Field Service", "url": "https://www.appproguy.com/solutions#fieldservice" },
+      { "@type": "ListItem", "position": 9, "name": "AI Business Automation", "url": "https://www.appproguy.com/solutions#ai-business" }
+    ]
+  }
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -768,6 +794,7 @@
     btn.addEventListener('click',()=>{
       const flipped=card.classList.toggle('flipped');
       if(txt) txt.textContent=flipped?'← Undo':'Transform →';
+      btn.dataset.event=flipped?'demo_undo_click':'transform_demo_click';
     });
   });
 

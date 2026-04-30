@@ -14,6 +14,8 @@
     <meta name="twitter:title" content="Book a Custom Software Workflow Audit | App Pro Guy">
     <meta name="twitter:description" content="Book a workflow audit to map your business bottlenecks and see what a practical Phase 1 Command Centre could look like.">
 <link rel="canonical" href="https://www.appproguy.com/pitch">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -176,6 +178,32 @@
       .pitch-box{padding:32px}
     }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://www.appproguy.com/pitch#contactpage",
+      "url": "https://www.appproguy.com/pitch",
+      "name": "Book a Custom Software Workflow Audit",
+      "description": "Book a workflow audit to map your business bottlenecks and see what a practical Phase 1 Command Centre could look like.",
+      "about": { "@id": "https://www.appproguy.com/pitch#professionalservice" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.appproguy.com/pitch#professionalservice",
+      "name": "App Pro Guy",
+      "url": "https://www.appproguy.com/",
+      "email": "admin@appproguy.com",
+      "telephone": "+27810829487",
+      "areaServed": { "@type": "Country", "name": "South Africa" },
+      "serviceType": "Custom business software and workflow audit",
+      "description": "App Pro Guy builds custom digital operating systems for operations, finance, people, customers and assets."
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -184,12 +212,12 @@
   <div class="nav-right">
     <div class="nav-links" id="site-menu">
       <a href="/">Home</a>
-      <a href="/solutions">Solutions</a>
+      <a href="/solutions" data-event="solutions_nav_click">Solutions</a>
       <a href="#industries">Industries</a>
       <a href="#segments">The OS</a>
       <a href="#process">Process</a>
     </div>
-    <a href="#contact" class="nav-cta">Book a Pitch</a>
+    <a href="#contact" class="nav-cta" data-event="workflow_audit_click">Book a Pitch</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
   </div>
 </nav>
@@ -204,7 +232,7 @@
       Most companies run on instinct, WhatsApp, and spreadsheets. That works — until it doesn't. We build a custom digital operating system for your entire business: operations, finance, people, customers, assets. All connected. All live. In one place.
     </p>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Book a Pitch →</a>
+      <a href="#contact" class="btn btn-primary" data-event="workflow_audit_click">Book a Pitch →</a>
       <a href="#industries" class="btn btn-ghost">See Your Industry</a>
     </div>
   </div>
@@ -248,7 +276,7 @@
       <div class="ba" id="baBox">
         <div class="ba-header">
           <span class="ba-title"><span class="ba-before-txt">The Chaos</span><span class="ba-after-txt">Your Company OS</span></span>
-          <button class="ba-flip-btn" id="baFlipBtn"><span class="ba-btn-txt">Transform →</span></button>
+          <button class="ba-flip-btn" id="baFlipBtn" data-event="transform_demo_click"><span class="ba-btn-txt">Transform →</span></button>
         </div>
         <div class="ba-body">
           <div class="ba-card before">
@@ -317,11 +345,11 @@
       <div class="reveal">
         <span class="sec-label">06 — Book a Pitch</span>
         <h2>Let's see what your<br><em>Command Centre looks like.</em></h2>
-        <p style="margin-top:24px;font-size:17px;line-height:1.6;opacity:0.55;max-width:440px">Tell us about your business. We'll come back within 48 hours with a no-obligation walkthrough, tailored to your industry and your biggest headache.</p>
+        <p style="margin-top:24px;font-size:17px;line-height:1.6;opacity:0.55;max-width:440px">Tell us about your business. We'll come back within 48 hours with a no-obligation walkthrough, tailored to your industry and your biggest headache. You can also compare the <a href="/services/replace-excel" data-event="service_internal_link_click">Replace Excel service</a> or the <a href="/services/command-centre" data-event="service_internal_link_click">Command Centre service</a> first.</p>
         <div class="contact-meta">
-          <div class="item"><span class="lbl">Email</span><a class="val" href="mailto:admin@appproguy.com">admin@appproguy.com</a></div>
-          <div class="item"><span class="lbl">Phone</span><a class="val" href="tel:0810829487">081 082 9487</a></div>
-          <div class="item"><span class="lbl">WhatsApp</span><a class="val" href="https://wa.me/27810829487">Chat on WhatsApp</a></div>
+          <div class="item"><span class="lbl">Email</span><a class="val" href="mailto:admin@appproguy.com" data-event="email_click">admin@appproguy.com</a></div>
+          <div class="item"><span class="lbl">Phone</span><a class="val" href="tel:0810829487" data-event="phone_click">081 082 9487</a></div>
+          <div class="item"><span class="lbl">WhatsApp</span><a class="val" href="https://wa.me/27810829487" data-event="whatsapp_click">Chat on WhatsApp</a></div>
           <div class="item"><span class="lbl">Response</span><span class="val" style="opacity:.5">Within 48 hours</span></div>
         </div>
       </div>
@@ -342,7 +370,7 @@
           </select>
         </div>
         <div><label>Biggest Headache Right Now</label><textarea name="pain" placeholder="What keeps you up at night?"></textarea></div>
-        <button type="submit" class="btn btn-primary">Send → Book My Pitch</button>
+        <button type="submit" class="btn btn-primary" data-event="workflow_audit_click">Send → Book My Pitch</button>
       </form>
     </div>
   </div>
@@ -390,7 +418,7 @@
   ];
   const tabs=document.getElementById('indTabs'),indH=document.getElementById('indHeadline'),indS=document.getElementById('indSub'),bL=document.getElementById('beforeList'),aL=document.getElementById('afterList');
   const baBox=document.getElementById('baBox'),baFlipBtn=document.getElementById('baFlipBtn'),baBtnTxt=baFlipBtn?baFlipBtn.querySelector('.ba-btn-txt'):null;
-  INDUSTRIES.forEach((ind,i)=>{const b=document.createElement('button');b.className='ind-tab'+(i===0?' active':'');b.textContent=ind.label;b.onclick=()=>{document.querySelectorAll('.ind-tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');render(ind);};tabs.appendChild(b);});
+  INDUSTRIES.forEach((ind,i)=>{const b=document.createElement('button');b.className='ind-tab'+(i===0?' active':'');b.textContent=ind.label;b.dataset.event='pitch_industry_tab_click';b.onclick=()=>{document.querySelectorAll('.ind-tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');render(ind);};tabs.appendChild(b);});
   function render(ind){
     indH.textContent=ind.headline;indS.textContent=ind.sub;
     bL.innerHTML=ind.before.map(x=>`<li>${x}</li>`).join('');
@@ -402,6 +430,7 @@
     baFlipBtn.addEventListener('click',()=>{
       const flipped=baBox.classList.toggle('flipped');
       if(baBtnTxt)baBtnTxt.textContent=flipped?'← Undo':'Transform →';
+      baFlipBtn.dataset.event=flipped?'demo_undo_click':'transform_demo_click';
     });
   }
 
