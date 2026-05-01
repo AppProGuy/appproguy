@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Software Blog | App Pro Guy</title>
+<meta name="description" content="Practical guides for businesses replacing Excel, WhatsApp and manual admin with custom software, dashboards and AI automation.">
+<meta property="og:title" content="Business Software Blog | App Pro Guy">
+<meta property="og:description" content="Practical guides for businesses replacing Excel, WhatsApp and manual admin with custom software, dashboards and AI automation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.appproguy.com/blog">
+<meta property="og:site_name" content="App Pro Guy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Business Software Blog | App Pro Guy">
+<meta name="twitter:description" content="Practical guides for businesses replacing Excel, WhatsApp and manual admin with custom software, dashboards and AI automation.">
+<link rel="canonical" href="https://www.appproguy.com/blog">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--black:#080808;--white:#f7f6f2;--line:rgba(8,8,8,.12);--lime:#b8ff5c}
+  html{scroll-behavior:smooth}
+  body{background:var(--white);color:var(--black);font-family:'IBM Plex Mono',monospace;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  nav{position:fixed;top:0;left:0;right:0;z-index:500;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--white);border-bottom:2px solid var(--black)}
+  .logo{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;letter-spacing:-.02em}.logo em{font-style:italic}
+  .nav-right{display:flex;align-items:center;gap:32px}.nav-links{display:flex;gap:24px}
+  .nav-links a{font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.55;transition:opacity .2s}.nav-links a:hover,.nav-links a.active{opacity:1}
+  .cta{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);background:var(--black);padding:9px 18px;border:1px solid var(--black);box-shadow:3px 3px 0 var(--black)}
+  .menu-toggle{display:none;align-items:center;justify-content:center;border:1px solid var(--black);background:var(--white);color:var(--black);padding:9px 12px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;box-shadow:3px 3px 0 var(--black);cursor:pointer}
+  @media(max-width:860px){nav{padding:0 20px}.nav-right{gap:12px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-bottom:2px solid var(--black);padding:14px 20px;box-shadow:0 8px 0 rgba(8,8,8,.12)}.nav-links.is-open{display:flex}.nav-links a{padding:14px 0;border-bottom:1px solid var(--line);opacity:1}.nav-links a:last-child{border-bottom:0}.cta{padding:9px 14px}}
+  .hero{padding:130px 48px 70px;border-bottom:2px solid var(--black)}
+  .inner{max-width:1160px;margin:0 auto}.eyebrow{font-size:10px;letter-spacing:.35em;text-transform:uppercase;margin-bottom:22px;opacity:.55}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(44px,7vw,96px);font-weight:900;line-height:.92;letter-spacing:-.03em;max-width:980px}
+  h1 em{font-style:italic;color:transparent;-webkit-text-stroke:2px var(--black)}
+  .hero p{margin-top:26px;font-size:18px;line-height:1.65;max-width:680px;opacity:.6}
+  .posts{padding:70px 48px 110px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:2px solid var(--black);background:var(--white);box-shadow:6px 6px 0 var(--black);padding:26px;display:flex;flex-direction:column;min-height:360px}
+  .meta{font-size:9px;letter-spacing:.22em;text-transform:uppercase;opacity:.48;margin-bottom:18px}
+  .card h2{font-family:'Playfair Display',serif;font-size:30px;line-height:1.05;letter-spacing:-.02em;margin-bottom:16px}
+  .card p{font-size:14px;line-height:1.65;opacity:.65;margin-bottom:22px}
+  .card a.read{margin-top:auto;display:inline-flex;align-self:flex-start;background:var(--black);color:var(--white);padding:13px 18px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;box-shadow:3px 3px 0 var(--black);border:1px solid var(--black)}
+  .card a.read:hover{background:var(--lime);color:var(--black)}
+  .cta-band{border-top:2px solid var(--black);background:var(--black);color:var(--white);padding:70px 48px;text-align:center}
+  .cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.02em}
+  .cta-band p{max-width:620px;margin:20px auto 30px;opacity:.65;line-height:1.6}
+  .btn{display:inline-flex;background:var(--lime);color:var(--black);padding:15px 24px;border:1px solid var(--lime);box-shadow:4px 4px 0 rgba(255,255,255,.25);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+  footer{background:var(--black);color:var(--white);padding:28px 48px;display:flex;align-items:center;justify-content:space-between}
+  .f-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;opacity:.5}.f-mid{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;opacity:.3}.f-right{font-size:9px;letter-spacing:.15em;opacity:.2;text-transform:uppercase;text-align:right;line-height:1.9}
+  @media(max-width:960px){.grid{grid-template-columns:1fr}.hero,.posts,.cta-band{padding-left:20px;padding-right:20px}footer{padding:24px 20px;flex-direction:column;gap:14px;text-align:center}.f-right{text-align:center}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Business Software Blog",
+  "url": "https://www.appproguy.com/blog",
+  "description": "Practical guides for businesses replacing Excel, WhatsApp and manual admin with custom software, dashboards and AI automation.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "When Excel Starts Costing Your Business Money", "url": "https://www.appproguy.com/blog/when-excel-starts-costing-your-business-money" },
+      { "@type": "ListItem", "position": 2, "name": "How to Stop Losing Jobs Between WhatsApp and Excel", "url": "https://www.appproguy.com/blog/how-to-stop-losing-jobs-between-whatsapp-and-excel" },
+      { "@type": "ListItem", "position": 3, "name": "The 6-8 Week Phase 1 Software Build: What Actually Happens", "url": "https://www.appproguy.com/blog/the-6-8-week-phase-1-software-build-what-actually-happens" }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">App Pro <em>Guy</em></a>
+  <div class="nav-right">
+    <div class="nav-links" id="site-menu">
+      <a href="/solutions" data-event="solutions_nav_click">Solutions</a>
+      <a href="/blog" class="active">Blog</a>
+      <a href="/services/replace-excel" data-event="service_internal_link_click">Replace Excel</a>
+      <a href="/services/command-centre" data-event="service_internal_link_click">Command Centre</a>
+      <a href="/pitch" data-event="workflow_audit_click">Pitch</a>
+    </div>
+    <a href="/pitch#contact" class="cta" data-event="workflow_audit_click">Book Audit</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+  </div>
+</nav>
+<header class="hero">
+  <div class="inner">
+    <div class="eyebrow">Business Software Guides</div>
+    <h1>For businesses that know the spreadsheet is starting to <em>fight back.</em></h1>
+    <p>Practical articles on replacing Excel, WhatsApp and manual admin with custom software systems that actually match how the business runs.</p>
+  </div>
+</header>
+<main class="posts">
+  <div class="inner">
+    <div class="grid">
+      <article class="card">
+        <div class="meta">Excel · Operations · 7 min read</div>
+        <h2>When Excel Starts Costing Your Business Money</h2>
+        <p>Excel is useful until it becomes the place where jobs, invoices, people and decisions go to hide. Here are the signs that the spreadsheet is now costing more than software would.</p>
+        <a class="read" href="/blog/when-excel-starts-costing-your-business-money">Read article</a>
+      </article>
+      <article class="card">
+        <div class="meta">WhatsApp · Jobs · 6 min read</div>
+        <h2>How to Stop Losing Jobs Between WhatsApp and Excel</h2>
+        <p>Jobs get missed when chats, spreadsheets and verbal updates all pretend to be the system of record. This is how to close the gap.</p>
+        <a class="read" href="/blog/how-to-stop-losing-jobs-between-whatsapp-and-excel">Read article</a>
+      </article>
+      <article class="card">
+        <div class="meta">Phase 1 · Build Process · 8 min read</div>
+        <h2>The 6-8 Week Phase 1 Software Build: What Actually Happens</h2>
+        <p>A practical breakdown of what a Phase 1 custom software build includes, what it avoids, and how the first useful system gets live quickly.</p>
+        <a class="read" href="/blog/the-6-8-week-phase-1-software-build-what-actually-happens">Read article</a>
+      </article>
+    </div>
+  </div>
+</main>
+<section class="cta-band">
+  <div class="inner">
+    <h2>Want to see what Phase 1 could replace?</h2>
+    <p>Book a workflow audit and we will map the first useful system your business should build.</p>
+    <a class="btn" href="/pitch#contact" data-event="workflow_audit_click">Book a workflow audit</a>
+  </div>
+</section>
+<footer>
+  <div class="f-logo">App Pro Guy</div>
+  <div class="f-mid">The No.1 Bespoke AI Automation Company</div>
+  <div class="f-right">© 2026 App Pro Guy<br>Muthala Marketplace (Pty) Ltd</div>
+</footer>
+<script>
+document.querySelectorAll('.menu-toggle').forEach(btn=>{
+  const menu=document.getElementById(btn.getAttribute('aria-controls'));
+  if(!menu)return;
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded',String(open));
+  });
+  menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    menu.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+  }));
+});
+</script>
+</body>
+</html>
