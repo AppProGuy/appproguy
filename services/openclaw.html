@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw AI Command Agent Setup | App Pro Guy</title>
+<meta name="description" content="Set up OpenClaw as a private AI command agent for your business, with Telegram workflows, automations, briefings, reminders, searches, and operational support.">
+<meta property="og:title" content="OpenClaw AI Command Agent Setup | App Pro Guy">
+<meta property="og:description" content="Set up OpenClaw as a private AI command agent for your business, with Telegram workflows, automations, briefings, reminders, searches, and operational support.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.appproguy.com/services/openclaw">
+<meta property="og:site_name" content="App Pro Guy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenClaw AI Command Agent Setup | App Pro Guy">
+<meta name="twitter:description" content="Set up OpenClaw as a private AI command agent for your business, with Telegram workflows, automations, briefings, reminders, searches, and operational support.">
+<link rel="canonical" href="https://www.appproguy.com/services/openclaw">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,900&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root { --black:#080808; --white:#faf8f2; --lime:#b8ff5c; --cyan:#5cf0ff; --line:rgba(8,8,8,.12); }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--white); color:var(--black); font-family:'Inter',sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+a { color:inherit; text-decoration:none; }
+.block a:not(.cta-btn), .crumb a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; }
+.nav { padding:24px 48px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--white); z-index:100; }
+.logo { font-family:'Playfair Display',serif; font-weight:900; font-size:22px; letter-spacing:-.02em; }
+.logo em { font-style:italic; font-weight:400; }
+.nav-links { display:flex; gap:28px; align-items:center; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+.nav-cta { background:var(--black); color:var(--white); padding:10px 20px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; box-shadow:3px 3px 0 var(--black); transition:transform .2s; }
+.nav-cta:hover { transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--black); }
+.menu-toggle { display:none; align-items:center; justify-content:center; border:1px solid var(--black); background:var(--white); color:var(--black); padding:10px 12px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; box-shadow:3px 3px 0 var(--black); cursor:pointer; }
+.menu-toggle:hover { background:var(--lime); }
+@media (max-width:860px) { .nav{padding:16px 20px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-bottom:1px solid var(--line);padding:14px 20px;box-shadow:0 8px 0 rgba(8,8,8,.1)}.nav-links.is-open{display:flex}.nav-links a{padding:14px 0;border-bottom:1px solid var(--line)}.nav-links a:last-child{border-bottom:0} }
+.crumb { max-width:1100px; margin:0 auto; padding:24px 48px 0; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; opacity:.55; }
+.hero { max-width:1100px; margin:0 auto; padding:60px 48px 80px; }
+.eyebrow { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.3em; text-transform:uppercase; opacity:.6; margin-bottom:28px; padding-left:60px; position:relative; }
+.eyebrow::before { content:''; position:absolute; left:0; top:50%; width:48px; height:1px; background:var(--black); }
+h1 { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(40px,6vw,80px); line-height:.95; letter-spacing:-.02em; margin-bottom:28px; }
+h1 em { font-style:italic; color:transparent; -webkit-text-stroke:2px var(--black); }
+.hero-sub { font-size:18px; line-height:1.65; max-width:740px; opacity:.75; }
+.hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
+section.block { max-width:1100px; margin:0 auto; padding:60px 48px; border-top:2px solid var(--black); }
+section.block h2 { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(32px,4.2vw,52px); line-height:1; letter-spacing:-.02em; margin-bottom:32px; max-width:900px; }
+section.block h2 em { font-style:italic; color:transparent; -webkit-text-stroke:2px var(--black); }
+section.block h3 { font-family:'Playfair Display',serif; font-weight:700; font-size:22px; line-height:1.3; margin:28px 0 12px; }
+section.block p { font-size:17px; line-height:1.7; margin-bottom:20px; max-width:820px; opacity:.85; }
+section.block ul { list-style:none; margin-bottom:24px; }
+section.block ul li { padding:10px 0 10px 28px; border-bottom:1px dashed var(--line); font-size:16px; line-height:1.55; position:relative; max-width:820px; }
+section.block ul li::before { content:'▸'; position:absolute; left:0; color:var(--black); font-weight:700; }
+section.block.dark { background:var(--black); color:var(--white); max-width:none; padding:80px 48px; border:0; }
+section.block.dark .inner { max-width:1100px; margin:0 auto; }
+section.block.dark h2 em { -webkit-text-stroke:2px var(--white); }
+section.block.dark p { opacity:.72; }
+section.block.dark ul li { border-color:rgba(255,255,255,.16); }
+section.block.dark ul li::before { color:var(--lime); }
+.modules { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:32px 0 8px; }
+.mod { padding:24px; border:2px solid var(--black); box-shadow:4px 4px 0 var(--black); background:var(--white); }
+.mod h4 { font-family:'Playfair Display',serif; font-weight:900; font-size:20px; margin-bottom:10px; }
+.mod .tag { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; background:var(--lime); color:var(--black); padding:3px 8px; margin-bottom:14px; text-decoration:none; }
+.mod p { font-size:14px; line-height:1.55; opacity:.75; margin:0; }
+.faq-item { border-top:1px solid var(--line); padding:24px 0; }
+.faq-item:last-child { border-bottom:1px solid var(--line); }
+.faq-q { font-family:'Playfair Display',serif; font-weight:700; font-size:20px; margin-bottom:10px; }
+.faq-a { font-size:16px; line-height:1.65; opacity:.8; max-width:820px; }
+.cta-block { max-width:1100px; margin:80px auto; padding:60px 48px; border:2px solid var(--black); box-shadow:10px 10px 0 var(--black); text-align:center; }
+.cta-block h2 { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(32px,4.5vw,56px); line-height:1; letter-spacing:-.02em; margin-bottom:20px; }
+.cta-block p { max-width:620px; margin:0 auto 32px; font-size:17px; line-height:1.65; opacity:.7; }
+.cta-btn { display:inline-block; background:var(--black); color:var(--white); padding:18px 36px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.25em; text-transform:uppercase; box-shadow:4px 4px 0 var(--black); transition:transform .2s, box-shadow .2s; text-decoration:none; }
+.cta-btn:hover { transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--black); }
+.cta-btn.ghost { background:var(--white); color:var(--black); }
+footer { border-top:2px solid var(--black); padding:48px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; opacity:.55; }
+@media (max-width:860px) { .modules{grid-template-columns:1fr} }
+@media (max-width:760px) { .crumb{padding:16px 20px 0}.hero{padding:40px 20px 60px}.eyebrow{padding-left:0}.eyebrow::before{display:none}section.block{padding:48px 20px}section.block.dark{padding:60px 20px}.cta-block{margin:48px 20px;padding:40px 24px}.hero-actions .cta-btn{width:100%;text-align:center} }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "OpenClaw AI command agent setup",
+  "name": "OpenClaw AI Command Agent Setup",
+  "description": "Setup and configuration of OpenClaw as a private AI command agent for business owners and operators, including Telegram workflows, agent personas, automations, briefings, reminders, searches and operational support.",
+  "provider": {
+    "@type": "Organization",
+    "name": "App Pro Guy",
+    "legalName": "Muthala Marketplace (Pty) Ltd",
+    "url": "https://www.appproguy.com/",
+    "email": "admin@appproguy.com",
+    "areaServed": { "@type": "Country", "name": "South Africa" }
+  },
+  "areaServed": { "@type": "Country", "name": "South Africa" },
+  "url": "https://www.appproguy.com/services/openclaw",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "ZAR",
+    "description": "OpenClaw setup call, workflow design, Telegram bot configuration, agent setup and ongoing improvement support."
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is OpenClaw?", "acceptedAnswer": { "@type": "Answer", "text": "OpenClaw is an AI command agent layer that can be configured around your work, agents, reminders, searches, briefings and automations. App Pro Guy helps set it up for practical business use." } },
+    { "@type": "Question", "name": "Is this like having a private AI assistant?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The goal is to give you a private AI operator that can help watch, search, brief, remind, follow up and support operational work from a chat interface." } },
+    { "@type": "Question", "name": "Can it work through Telegram?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. App Pro Guy can help set up Telegram bot workflows so you can interact with your AI command agent from chat where practical." } },
+    { "@type": "Question", "name": "Can I have multiple agents?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Different agents can be designed for different roles such as daily briefings, lead follow-ups, grant searches, admin reminders, research or build support." } },
+    { "@type": "Question", "name": "Can App Pro Guy set it up for me?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. App Pro Guy can help with OpenClaw setup, Telegram bot setup, agent personas, prompt design, workflow planning, useful integrations, hosting or gateway setup and ongoing improvement." } },
+    { "@type": "Question", "name": "Is this different from ChatGPT?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A general chat tool waits for prompts. An OpenClaw setup is configured around your roles, routines, channels and workflows so it behaves more like an operational command layer." } },
+    { "@type": "Question", "name": "What should I automate first?", "acceptedAnswer": { "@type": "Answer", "text": "Start with a repeatable workflow that wastes attention every week: daily briefings, lead follow-ups, tender searches, document reminders, sales preparation, admin chasing or recurring reporting." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.appproguy.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.appproguy.com/#showcase" },
+    { "@type": "ListItem", "position": 3, "name": "OpenClaw", "item": "https://www.appproguy.com/services/openclaw" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="logo">App Pro <em>Guy</em></a>
+  <div class="nav-links" id="site-menu">
+    <a href="/services/ai-automation" data-event="service_internal_link_click">AI Automation</a>
+    <a href="/services/command-centre" data-event="service_internal_link_click">Command Centre</a>
+    <a href="/services/replace-excel" data-event="service_internal_link_click">Replace Excel</a>
+    <a href="/blog">Blog</a>
+    <a href="/pitch" data-event="workflow_audit_click">Pitch</a>
+    <a href="https://calendly.com/lufuno-appproguy/30min" target="_blank" rel="noopener" class="nav-cta" data-event="openclaw_setup_click">Book Setup</a>
+  </div>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+</nav>
+
+<div class="crumb">
+  <a href="/">Home</a> / <a href="/#showcase">Services</a> / OpenClaw
+</div>
+
+<header class="hero">
+  <div class="eyebrow">OpenClaw · Private AI Command Agent</div>
+  <h1>Your own private <em>AI command agent</em> for business.</h1>
+  <p class="hero-sub">OpenClaw gives you a chat-based AI control layer for your work, agents, reminders, searches, briefings, and automations — set up around how your business actually runs.</p>
+  <p class="hero-sub">App Pro Guy helps business owners and operators turn OpenClaw into a practical personal AI operator: connected to daily workflows, useful prompts, Telegram channels, repeatable briefings, and the tasks that usually live in your head.</p>
+  <div class="hero-actions">
+    <a href="https://calendly.com/lufuno-appproguy/30min" target="_blank" rel="noopener" class="cta-btn" data-event="openclaw_setup_click">Book an OpenClaw setup call</a>
+    <a href="/services/ai-automation" class="cta-btn ghost" data-event="service_internal_link_click">See AI Automation</a>
+  </div>
+</header>
+
+<section class="block">
+  <h2>What is <em>OpenClaw?</em></h2>
+  <p>OpenClaw is a way to run an AI command layer around your work. Instead of opening a blank chat and thinking of prompts, you can set up agents with roles, routines and workflows. They can help you watch, search, brief, remind, follow up and act from a chat-based interface.</p>
+  <p>For a business owner, that means your AI can become more than a question-answer tool. It can become a private operational assistant that knows what kind of work you care about, what should be checked every day, what needs a reminder, and what kind of information should be found before your team starts work.</p>
+  <p>If you need AI inside a broader system rather than a chat command layer, compare this with our <a href="/services/ai-automation" data-event="service_internal_link_click">AI Automation</a> and <a href="/services/command-centre" data-event="service_internal_link_click">Command Centre</a> services.</p>
+</section>
+
+<section class="block dark">
+  <div class="inner">
+    <h2>What can it <em>do?</em></h2>
+    <p>OpenClaw is most useful when it is configured for real work instead of generic conversation. App Pro Guy helps turn it into a business command agent with specific roles, prompts, channels and routines.</p>
+    <div class="modules">
+      <div class="mod"><span class="tag">Brief</span><h4>Daily business briefings</h4><p>Start the day with priorities, reminders, links, market notes, sales targets, open tasks and operational risks in one message.</p></div>
+      <div class="mod"><span class="tag">Search</span><h4>Grant and tender searches</h4><p>Have an agent search for useful opportunities, summarise fit, and flag what documents or deadlines matter.</p></div>
+      <div class="mod"><span class="tag">Follow</span><h4>Lead and admin follow-ups</h4><p>Draft polite follow-ups, chase missing details, remind you who needs a reply and keep prospects moving.</p></div>
+      <div class="mod"><span class="tag">Ops</span><h4>Operations reminders</h4><p>Keep recurring checks, supplier follow-ups, stock reminders, studio tasks or team routines from disappearing.</p></div>
+      <div class="mod"><span class="tag">Build</span><h4>Developer/build assistant</h4><p>Capture feature ideas, explain bugs, draft tickets, summarise technical notes and keep build work organised.</p></div>
+      <div class="mod"><span class="tag">Research</span><h4>Content and research support</h4><p>Collect research, summarise sources, prepare content angles and help creators keep ideas moving.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Example <em>agents</em></h2>
+  <div class="modules">
+    <div class="mod"><span class="tag">01</span><h4>Operations Commander</h4><p>Tracks recurring operational checks, reminders, open loops and daily business priorities.</p></div>
+    <div class="mod"><span class="tag">02</span><h4>Lead Hunter</h4><p>Searches for new opportunities, drafts outreach, summarises prospects and reminds you who needs follow-up.</p></div>
+    <div class="mod"><span class="tag">03</span><h4>Daily Briefing Agent</h4><p>Prepares a morning briefing from your priorities, reminders, searches, calendar notes and open tasks.</p></div>
+    <div class="mod"><span class="tag">04</span><h4>Admin Follow-up Agent</h4><p>Chases documents, drafts reminders, tracks missing information and keeps admin from becoming invisible.</p></div>
+    <div class="mod"><span class="tag">05</span><h4>Sales Assistant</h4><p>Prepares sales notes, drafts responses, keeps follow-ups visible and helps move conversations toward the next step.</p></div>
+    <div class="mod"><span class="tag">06</span><h4>Build Assistant</h4><p>Helps founders, developers and teams organise build notes, prompts, tickets, bugs and implementation ideas.</p></div>
+    <div class="mod"><span class="tag">07</span><h4>Research Agent</h4><p>Finds, summarises and structures useful information for decisions, content, client work or studio planning.</p></div>
+    <div class="mod"><span class="tag">08</span><h4>Studio Admin Assistant</h4><p>Tracks session notes, rehearsal admin, release tasks, content ideas and client follow-ups for creative teams.</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Who OpenClaw is <em>for</em></h2>
+  <p>OpenClaw is useful for people who carry too many workflows in their head: business owners, founders, agencies, creators, operators, managers and small teams drowning in admin, searches, reminders, follow-ups and disconnected tools.</p>
+  <ul>
+    <li>You want to run useful workflows from chat</li>
+    <li>You need different AI agents for different roles</li>
+    <li>You want Telegram-based workflows and reminders</li>
+    <li>You need daily briefings, searches or follow-ups without starting from scratch every time</li>
+    <li>You want a private AI operator that fits your business language and priorities</li>
+  </ul>
+</section>
+
+<section class="block dark">
+  <div class="inner">
+    <h2>How App Pro Guy <em>sets it up</em></h2>
+    <p>We do not just install a tool and leave you with a blank chat box. We design the setup around how you actually work.</p>
+    <ul>
+      <li>Map your workflows, routines and repeatable command patterns</li>
+      <li>Design your agents, roles, prompts and personalities</li>
+      <li>Set up the Telegram bot or channel workflow where practical</li>
+      <li>Plan useful automations, integrations, hosting and gateway setup</li>
+      <li>Test the agents against real daily work</li>
+      <li>Refine the prompts, handoffs and support model over time</li>
+    </ul>
+    <p>For businesses that need deeper system integration, OpenClaw can sit next to a <a href="/services/command-centre" data-event="service_internal_link_click">Command Centre</a> or form part of a wider <a href="/solutions" data-event="solutions_nav_click">custom software solution</a>.</p>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <h2>Frequently asked <em>questions</em></h2>
+  <div class="faq-item"><div class="faq-q">What is OpenClaw?</div><div class="faq-a">OpenClaw is an AI command agent layer that can be configured around your work, agents, reminders, searches, briefings and automations. App Pro Guy helps set it up for practical business use.</div></div>
+  <div class="faq-item"><div class="faq-q">Is this like having a private AI assistant?</div><div class="faq-a">Yes. The aim is to give you a private AI operator that can help watch, search, brief, remind, follow up and support operational work from a chat interface.</div></div>
+  <div class="faq-item"><div class="faq-q">Can it work through Telegram?</div><div class="faq-a">Yes. App Pro Guy can help set up Telegram bot workflows so you can interact with your AI command agent from chat where practical.</div></div>
+  <div class="faq-item"><div class="faq-q">Can I have multiple agents?</div><div class="faq-a">Yes. Different agents can be designed for different roles such as daily briefings, lead follow-ups, grant searches, admin reminders, research or build support.</div></div>
+  <div class="faq-item"><div class="faq-q">Can App Pro Guy set it up for me?</div><div class="faq-a">Yes. We can help with OpenClaw setup, Telegram bot setup, agent personas, prompt design, workflow planning, useful integrations, hosting or gateway setup and ongoing improvement.</div></div>
+  <div class="faq-item"><div class="faq-q">Is this different from ChatGPT?</div><div class="faq-a">Yes. A general chat tool waits for prompts. An OpenClaw setup is configured around your roles, routines, channels and workflows so it behaves more like an operational command layer.</div></div>
+  <div class="faq-item"><div class="faq-q">What should I automate first?</div><div class="faq-a">Start with a repeatable workflow that wastes attention every week: daily briefings, lead follow-ups, tender searches, document reminders, sales preparation, admin chasing or recurring reporting.</div></div>
+</section>
+
+<section class="cta-block">
+  <h2>Set up your <em>private AI command agent.</em></h2>
+  <p>Book a setup call and we will map the first useful OpenClaw agents, channels and workflows for your business.</p>
+  <a href="https://calendly.com/lufuno-appproguy/30min" target="_blank" rel="noopener" class="cta-btn" data-event="openclaw_setup_click">Book an OpenClaw setup call</a>
+</section>
+
+<footer>
+  App Pro Guy — OpenClaw Setup, AI Automation and Command Centre Software<br>
+  © 2026 App Pro Guy · Muthala Marketplace (Pty) Ltd
+</footer>
+
+<script>
+(function(){
+  document.querySelectorAll('.menu-toggle').forEach(btn=>{
+    const menu=document.getElementById(btn.getAttribute('aria-controls'));
+    if(!menu)return;
+    btn.addEventListener('click',()=>{
+      const open=menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded',String(open));
+    });
+    menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+      menu.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+    }));
+  });
+})();
+</script>
+</body>
+</html>
