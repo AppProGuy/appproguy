@@ -78,6 +78,29 @@
   .showcase-hint strong{opacity:1;color:var(--black);font-weight:700}
   .morph-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   @media(max-width:980px){.morph-grid{grid-template-columns:1fr}}
+  .live-work{padding:0 48px 120px;background:linear-gradient(180deg,var(--white),rgba(184,255,92,.08))}
+  .live-work-inner{max-width:1280px;margin:0 auto;border-top:2px solid var(--black);padding-top:56px}
+  .live-work-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,460px);gap:48px;align-items:end;margin-bottom:34px}
+  .live-work-kicker{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.5;margin-bottom:18px}
+  .live-work h2{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,74px);line-height:.94;letter-spacing:-.03em}
+  .live-work h2 em{font-style:italic;color:transparent;-webkit-text-stroke:2px var(--black)}
+  .live-work-intro{font-size:16px;line-height:1.7;opacity:.62}
+  .work-gallery{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .work-card{position:relative;display:block;color:inherit;border:2px solid var(--black);background:var(--white);box-shadow:8px 8px 0 var(--black);overflow:hidden;transition:transform .25s cubic-bezier(.2,.8,.3,1),box-shadow .25s}
+  .work-card:hover{transform:translate(-4px,-4px);box-shadow:13px 13px 0 var(--black)}
+  .work-card::before{content:attr(data-index);position:absolute;top:18px;left:18px;z-index:3;background:var(--lime);color:var(--black);border:1px solid var(--black);padding:5px 9px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em}
+  .work-frame{position:relative;aspect-ratio:16/11;background:var(--black);overflow:hidden}
+  .work-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,0) 52%,rgba(8,8,8,.68));pointer-events:none}
+  .work-frame img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);transition:transform .45s cubic-bezier(.2,.8,.3,1),filter .45s}
+  .work-card:hover .work-frame img{transform:scale(1.055);filter:saturate(1.05) contrast(1.03)}
+  .work-meta{padding:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end}
+  .work-meta h3{font-family:'Playfair Display',serif;font-size:30px;line-height:.96;letter-spacing:-.02em;margin-bottom:10px}
+  .work-meta p{font-size:13px;line-height:1.6;opacity:.62;max-width:520px}
+  .work-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .work-tags span{border:1px solid rgba(8,8,8,.18);padding:6px 8px;font-size:8px;letter-spacing:.16em;text-transform:uppercase;opacity:.62}
+  .work-visit{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;background:var(--black);color:var(--white);padding:12px 14px;white-space:nowrap}
+  .work-card:hover .work-visit{background:var(--lime);color:var(--black)}
+  @media(max-width:980px){.live-work{padding:0 20px 80px}.live-work-head,.work-gallery{grid-template-columns:1fr}.live-work-head{gap:20px}.work-meta{grid-template-columns:1fr}.work-visit{justify-self:start}}
   .morph{position:relative;height:580px;border:2px solid var(--black);background:var(--white);overflow:hidden}
   .morph::before{content:attr(data-n);position:absolute;bottom:-12px;left:24px;background:var(--white);padding:0 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.25em;z-index:20}
   .morph .label{position:absolute;top:0;left:0;right:0;min-height:92px;padding:16px 22px;background:var(--black);color:var(--white);display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:30px;align-items:center;z-index:15}
@@ -493,7 +516,7 @@
 
 <section class="showcase" id="showcase">
   <div class="showcase-inner">
-    <p class="showcase-hint">Click on <strong>TRANSFORM</strong> to see your future</p>
+    <p class="showcase-hint">Tap <strong>Transform</strong> to see the before and after.</p>
     <div class="morph-grid reveal-stagger">
 
       <!-- ============ CARD 1: EXCEL → OPS ============ -->
@@ -745,6 +768,55 @@
         <div class="label"><span class="name" data-before="Inbox Anxiety" data-after="Your Company OS">Inbox Anxiety</span><span class="state">Clients Pipeline</span><button class="flip-btn" data-event="transform_demo_click"><span class="fb-txt">Transform →</span></button></div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- LIVE BUILDS -->
+<section class="live-work" id="live-work" aria-labelledby="live-work-title">
+  <div class="live-work-inner">
+    <div class="live-work-head">
+      <div>
+        <div class="live-work-kicker">// Recent web builds</div>
+        <h2 id="live-work-title">Websites that feel like the <em>business.</em></h2>
+      </div>
+      <p class="live-work-intro">A small gallery of live sites built with the same approach: clear positioning, fast paths to action, and a visual system that matches the brand instead of another generic template.</p>
+    </div>
+    <div class="work-gallery">
+      <a class="work-card reveal" href="https://siennashea.co.za/" target="_blank" rel="noopener" data-event="portfolio_site_click" data-index="01">
+        <div class="work-frame">
+          <img src="/assets/showcase/sienna-shea.jpg" alt="Sienna Shea Butter website homepage screenshot" loading="lazy" width="1440" height="1200">
+        </div>
+        <div class="work-meta">
+          <div>
+            <h3>Sienna Shea Butter</h3>
+            <p>Natural hair-care storefront with warm product storytelling, WhatsApp ordering, customer proof, and a soft editorial feel.</p>
+            <div class="work-tags" aria-label="Project features">
+              <span>Product site</span>
+              <span>WhatsApp sales</span>
+              <span>Brand story</span>
+            </div>
+          </div>
+          <span class="work-visit">View site →</span>
+        </div>
+      </a>
+      <a class="work-card reveal" href="https://audioproguy.co.za/" target="_blank" rel="noopener" data-event="portfolio_site_click" data-index="02">
+        <div class="work-frame">
+          <img src="/assets/showcase/audio-pro-guy.jpg" alt="Audio Pro Guy website homepage screenshot" loading="lazy" width="1440" height="1200">
+        </div>
+        <div class="work-meta">
+          <div>
+            <h3>Audio Pro Guy</h3>
+            <p>Portfolio site for scores, voiceovers and music production, built around a bold visual identity and direct routes into the work.</p>
+            <div class="work-tags" aria-label="Project features">
+              <span>Portfolio</span>
+              <span>Creative services</span>
+              <span>Music brand</span>
+            </div>
+          </div>
+          <span class="work-visit">View site →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
