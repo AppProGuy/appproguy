@@ -16,6 +16,7 @@ For local testing, open:
 http://localhost:8000
 http://localhost:8000/pitch.html
 http://localhost:8000/solutions.html
+http://localhost:8000/pricing.html
 http://localhost:8000/services/replace-excel.html
 http://localhost:8000/services/command-centre.html
 ```
@@ -28,6 +29,7 @@ Production/Vercel uses clean URLs:
 ```text
 /pitch
 /solutions
+/pricing
 /services/replace-excel
 /services/command-centre
 ```
