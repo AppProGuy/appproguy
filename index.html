@@ -100,6 +100,14 @@
   .work-tags span{border:1px solid rgba(8,8,8,.18);padding:6px 8px;font-size:8px;letter-spacing:.16em;text-transform:uppercase;opacity:.62}
   .work-visit{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;background:var(--black);color:var(--white);padding:12px 14px;white-space:nowrap}
   .work-card:hover .work-visit{background:var(--lime);color:var(--black)}
+  .local-teaser{margin-top:44px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 32px;align-items:center;background:#ffd23f;border:2px solid var(--black);box-shadow:6px 6px 0 var(--black);padding:26px 28px}
+  .local-teaser h3{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,36px);line-height:1;letter-spacing:-.02em;margin-bottom:10px}
+  .local-teaser p{font-size:14px;line-height:1.6;max-width:640px}
+  .local-teaser strong{font-weight:700}
+  .local-teaser a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;background:var(--black);color:var(--white);border:1px solid var(--black);padding:16px 22px;min-height:48px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;box-shadow:3px 3px 0 var(--white);transition:background .2s,color .2s}
+  .local-teaser a:hover{background:var(--lime);color:var(--black)}
+  .local-teaser a:focus-visible{outline:3px solid var(--black);outline-offset:3px}
+  @media(max-width:760px){.local-teaser{grid-template-columns:1fr;padding:22px 20px;box-shadow:4px 4px 0 var(--black)}.local-teaser a{white-space:normal;text-align:center}}
   @media(max-width:980px){.live-work{padding:0 20px 80px}.live-work-head,.work-gallery{grid-template-columns:1fr}.live-work-head{gap:20px}.work-meta{grid-template-columns:1fr}.work-visit{justify-self:start}}
   .morph{position:relative;height:580px;border:2px solid var(--black);background:var(--white);overflow:hidden}
   .morph::before{content:attr(data-n);position:absolute;bottom:-12px;left:24px;background:var(--white);padding:0 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.25em;z-index:20}
@@ -479,6 +487,7 @@
       <a href="/blog">Blog</a>
       <a href="#why">Why APG</a>
       <a href="/pricing" data-event="pricing_nav_click">Pricing</a>
+      <a href="/local-websites" data-event="local_websites_nav_click">Local Websites</a>
       <a href="/pitch" data-event="workflow_audit_click">Pitch</a>
     </div>
     <a href="https://calendly.com/lufuno-appproguy/30min" target="_blank" rel="noopener" class="cta" data-event="workflow_audit_click">Book Audit</a>
@@ -819,6 +828,13 @@
         </div>
       </a>
     </div>
+    <aside class="local-teaser" aria-labelledby="local-teaser-title">
+      <div>
+        <h3 id="local-teaser-title">Local business with great Google reviews and no real website?</h3>
+        <p>Simple sites for salons, barbers, cleaners, plumbers, garden services, auto repair and pet groomers. <strong>From R3,500 once-off + R350/month.</strong></p>
+      </div>
+      <a href="/local-websites" data-event="local_websites_teaser_click">See local websites</a>
+    </aside>
   </div>
 </section>
 
