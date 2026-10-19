@@ -82,6 +82,8 @@
   .dark .card{border-color:rgba(247,246,242,.22);box-shadow:7px 7px 0 rgba(184,255,92,.25)}
   .card.flagship{background:linear-gradient(145deg,#0a0a0a,#151515);color:var(--white);border-color:var(--lime);box-shadow:9px 9px 0 var(--lime);overflow:hidden}
   .card.flagship::before{content:'';position:absolute;inset:-30% -10% auto auto;width:220px;height:220px;border-radius:50%;background:rgba(184,255,92,.18);filter:blur(10px)}
+  .cards.four{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:1280px){.cards.four{grid-template-columns:repeat(2,1fr)}}
   .card-top{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
   .card h3{font-family:'Playfair Display',serif;font-size:30px;line-height:1;letter-spacing:-.02em}
   .badge{font-size:8px;letter-spacing:.18em;text-transform:uppercase;background:var(--lime);color:var(--black);border:1px solid var(--black);padding:5px 8px;white-space:nowrap}
@@ -97,7 +99,7 @@
   .flagship .good-for li::before{color:var(--lime)}
   .card .btn{margin-top:auto;align-self:flex-start;padding:13px 18px;font-size:9px;box-shadow:3px 3px 0 var(--black)}
   .flagship .btn{background:var(--lime);color:var(--black);border-color:var(--lime);box-shadow:3px 3px 0 rgba(247,246,242,.25)}
-  @media(max-width:980px){.cards,.cards.two{grid-template-columns:1fr}.card h3{font-size:28px}.card .btn{width:100%}}
+  @media(max-width:980px){.cards,.cards.two,.cards.four{grid-template-columns:1fr}.card h3{font-size:28px}.card .btn{width:100%}}
 
   .addon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .addon{border:2px solid var(--black);background:var(--white);box-shadow:5px 5px 0 var(--black);padding:22px}
@@ -192,6 +194,7 @@
       <a href="/">Home</a>
       <a href="/solutions" data-event="solutions_nav_click">Solutions</a>
       <a href="/pricing" class="active" data-event="pricing_nav_click">Pricing</a>
+      <a href="/local-websites" data-event="local_websites_nav_click">Local Websites</a>
       <a href="/services/ai-automation" data-event="service_internal_link_click">AI Automation</a>
       <a href="/blog">Blog</a>
       <a href="/pitch" data-event="workflow_audit_click">Pitch</a>
@@ -224,26 +227,35 @@
   <div class="section-inner">
     <div class="section-head">
       <div><div class="kicker">Step 01</div><h2>Websites</h2></div>
-      <p class="section-intro">Professional websites built for real businesses - fast, mobile-friendly and easy for your customers to use.</p>
+      <p class="section-intro">Professional websites built for real businesses - fast, mobile-friendly and easy for your customers to use. Each website package is a once-off build fee plus a monthly fee that includes your domain, hosting and security.</p>
     </div>
-    <div class="cards">
+    <div class="cards four">
       <article class="card">
-        <div class="card-top"><h3>Single-Page Website</h3></div>
-        <div class="price">R3,500 <small>once-off</small></div>
-        <p>A clean professional website that gives customers everything they need on one page. Includes design and build of one responsive webpage.</p>
+        <div class="card-top"><h3>Starter</h3><span class="badge">Domain included</span></div>
+        <div class="price">R3,500 <small>once-off + R350 / month</small></div>
+        <p>A one-page site for a local business, with your domain, hosting and security covered by the monthly fee.</p>
         <ul class="good-for">
-          <li>Small businesses</li><li>Personal brands</li><li>New businesses</li><li>A simple online presence</li><li>Services with only a few offerings</li>
+          <li>One-page site</li><li>WhatsApp and call button</li><li>Map and opening hours</li><li>Your real Google reviews</li><li>Domain, hosting and security</li>
         </ul>
-        <a class="btn primary" href="https://calendly.com/lufuno-appproguy/30min" target="_blank" rel="noopener" data-event="workflow_audit_click">Get Started</a>
+        <a class="btn primary" href="/local-websites#packages" data-event="local_websites_pricing_click">See Starter</a>
       </article>
       <article class="card">
-        <div class="card-top"><h3>Business Website</h3></div>
-        <div class="price">R6,000 <small>once-off</small></div>
-        <p>A larger website for businesses that need multiple pages to explain their company, services and offerings properly.</p>
+        <div class="card-top"><h3>Standard</h3><span class="badge">Domain included</span></div>
+        <div class="price">R4,500 <small>once-off + R500 / month</small></div>
+        <p>Everything in Starter plus bookings and local search. The monthly fee covers your domain, hosting, security and keeping the site running.</p>
         <ul class="good-for">
-          <li>Established businesses</li><li>Multiple services</li><li>About, Services, Contact and other pages</li><li>Businesses that need room to grow</li>
+          <li>Everything in Starter</li><li>Booking link (Booksy, Fresha or Timely)</li><li>Price list</li><li>Your Google profile link fixed</li><li>Basic local SEO</li>
         </ul>
-        <a class="btn primary" href="https://calendly.com/lufuno-appproguy/30min" target="_blank" rel="noopener" data-event="workflow_audit_click">Get Started</a>
+        <a class="btn primary" href="/local-websites#packages" data-event="local_websites_pricing_click">See Standard</a>
+      </article>
+      <article class="card">
+        <div class="card-top"><h3>Premium</h3><span class="badge">Domain included</span></div>
+        <div class="price">R8,500 <small>once-off + R950 / month</small></div>
+        <p>Everything in Standard plus a multi-page site, enquiry forms and the Google review-reply agent. The monthly fee covers your domain, hosting, security and keeping the site running.</p>
+        <ul class="good-for">
+          <li>Everything in Standard</li><li>Services, gallery, team and FAQ pages</li><li>Enquiry forms</li><li>Google review-reply agent included</li><li>1 small update a month</li><li>Domain, hosting, security and keeping the site running</li>
+        </ul>
+        <a class="btn primary" href="/local-websites#packages" data-event="local_websites_pricing_click">See Premium</a>
       </article>
       <article class="card">
         <div class="card-top"><h3>Large / Custom Website</h3></div>
@@ -329,7 +341,7 @@
   <div class="section-inner">
     <div class="section-head">
       <div><div class="kicker">After Launch</div><h2>Ongoing Support</h2></div>
-      <p class="section-intro">We can also look after the system after it launches.</p>
+      <p class="section-intro">We can also look after the system after it launches. These care plans are for business systems, automations and custom or large websites; website packages already include domain, hosting and security in their monthly fee.</p>
     </div>
     <div class="cards">
       <article class="card"><div class="card-top"><h3>Essential Care</h3></div><div class="price">R299 <small>/ month</small></div><p>For straightforward websites.</p><ul class="good-for"><li>Hosting management</li><li>Backups</li><li>Basic maintenance</li><li>Security and software updates where applicable</li></ul></article>
