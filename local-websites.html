@@ -143,6 +143,12 @@
   .tag li{font-size:13px;line-height:1.5;padding-left:20px;position:relative}
   .tag li::before{content:'+';position:absolute;left:0;font-weight:700}
   .tag .btn{margin-top:auto;box-shadow:3px 3px 0 var(--black)}
+  /* Premium: the fullest tag. Black header band, lime tint and a deeper shadow, but quieter than the sun-yellow Recommended tag */
+  .tag-shadow.full{filter:drop-shadow(9px 9px 0 var(--black))}
+  .tag.full{background:linear-gradient(var(--black) 0 10px,#eef9dc 10px)}
+  .tag.full .tag-label{background:var(--lime);color:var(--black);border:2px solid var(--black);padding:3px 8px}
+  .tag.full li.lead{padding-left:0;font-weight:700;font-size:14px}
+  .tag.full li.lead::before{content:none}
   @media(min-width:980px){.tags{grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}.tag-shadow{display:flex}.tag-shadow .tag{width:100%}.tag-shadow.lift{transform:translateY(-14px)}}
 
   /* Bundles */
@@ -218,7 +224,7 @@
   "itemListElement": [
     { "@type": "Offer", "name": "Starter Local Website", "price": "3500", "priceCurrency": "ZAR", "description": "One-page site with WhatsApp/call button, map, hours and real reviews. R350/month for domain, hosting and security." },
     { "@type": "Offer", "name": "Standard Local Website", "price": "4500", "priceCurrency": "ZAR", "description": "Starter plus booking link, price list, Google profile link fixed and basic local SEO. R500/month for domain, hosting, security and keeping the site running." },
-    { "@type": "Offer", "name": "Premium Local Website", "price": "8500", "priceCurrency": "ZAR", "description": "Multi-page site with enquiry forms, review-reply agent and 1 small update a month. R950/month including domain, hosting and security." }
+    { "@type": "Offer", "name": "Premium Local Website", "price": "8500", "priceCurrency": "ZAR", "description": "Everything in Standard plus a multi-page site (services, gallery, team and FAQ pages), enquiry forms, the Google review-reply agent and 1 small update a month. R950/month including domain, hosting, security and keeping the site running." }
   ],
   "provider": {
     "@type": "Organization",
@@ -354,18 +360,24 @@
           <a class="btn primary" href="mailto:admin@appproguy.com?subject=Standard%20website%20package" data-event="local_package_click">Ask about Standard</a>
         </article>
       </div>
-      <div class="tag-shadow">
-        <article class="tag">
+      <div class="tag-shadow full">
+        <article class="tag full">
+          <span class="tag-label">Most complete</span>
           <h3>Premium</h3>
           <div class="price">R8,500 <small>once-off</small></div>
           <div class="monthly">R950 <small>/ month</small></div>
           <p class="incl">Domain included</p>
           <ul>
-            <li>Multi-page site: services, gallery, team and FAQ</li>
+            <li class="lead">Everything in Standard, plus:</li>
+            <li>Multi-page site, not just one page</li>
+            <li>Services page</li>
+            <li>Photo gallery page</li>
+            <li>Team page</li>
+            <li>FAQ page</li>
             <li>Enquiry forms</li>
-            <li>Google review-reply agent included</li>
+            <li>Google review-reply agent included (worth R650/m)</li>
             <li>1 small update a month</li>
-            <li>Domain, hosting and security</li>
+            <li>Domain, hosting, security and keeping the site running</li>
           </ul>
           <a class="btn secondary" href="mailto:admin@appproguy.com?subject=Premium%20website%20package" data-event="local_package_click">Ask about Premium</a>
         </article>
