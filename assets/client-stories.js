@@ -37,7 +37,10 @@ window.CLIENT_STORIES = [
     ],
     ordersFrom: "PLACEHOLDER: where orders come from now (WhatsApp, Instagram, Google, referrals, salons)",
     quote: { text: "PLACEHOLDER: short quote from Mashudu (needs her permission)", by: "Mashudu, founder of Sienna Shea Butter" },
-    image: "PLACEHOLDER: photo of Mashudu or her products (needs her permission)",
+    photos: [
+      { key: "sienna-mashudu", alt: "Mashudu, founder of Sienna Shea Butter", w: 640, h: 800 },
+      { key: "sienna-product", alt: "A jar of Sienna Hibiscus Infused Shea Butter", w: 533, h: 800 }
+    ],
     services: ["Website", "WhatsApp ordering", "Google profile", "Content", "Promos", "Marketing"]
   },
   {
@@ -66,7 +69,10 @@ window.CLIENT_STORIES = [
     ],
     ordersFrom: "",
     quote: { text: "PLACEHOLDER: short quote from Lutendo (needs his permission)", by: "King Lutendo" },
-    image: "PLACEHOLDER: press photo of King Lutendo (needs his permission)",
+    photos: [
+      { key: "king-lutendo-1", alt: "King Lutendo press photo", w: 530, h: 800 },
+      { key: "king-lutendo-2", alt: "King Lutendo portrait", w: 798, h: 800 }
+    ],
     services: ["Marketing plan", "Content", "Radio and blog pitching", "Royalties"]
   }
   /* Next: Lufuno's mother's business. Copy an entry above. */
