@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results: Client Stories | App Pro Guy</title>
+<meta name="description" content="Real stories from small businesses we help grow: websites, Google profiles, WhatsApp ordering, content, promos and marketing.">
+<meta property="og:title" content="Results: Client Stories | App Pro Guy">
+<meta property="og:description" content="How we help small businesses get found, get orders and grow.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.appproguy.com/results">
+<link rel="canonical" href="https://www.appproguy.com/results">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--black:#080808;--white:#f7f6f2;--cream:#f1eee6;--line:rgba(8,8,8,.12);--lime:#b8ff5c;--muted:rgba(8,8,8,.68);--sun:#ffd23f}
+  body{background:var(--white);color:var(--black);font-family:'IBM Plex Mono',monospace;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid var(--black);outline-offset:3px}
+  nav{position:fixed;top:0;left:0;right:0;z-index:500;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:var(--white);border-bottom:2px solid var(--black)}
+  .logo{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;letter-spacing:-.02em}.logo em{font-style:italic}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .nav-links{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;background:var(--white);border-bottom:2px solid var(--black);padding:14px 20px}
+  .nav-links.is-open{display:flex}
+  .nav-links a{font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:14px 0;min-height:44px;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+  .nav-links a:last-child{border-bottom:0}.nav-links a.active{font-weight:700}
+  .cta{display:none;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);background:var(--black);padding:9px 14px;border:1px solid var(--black);box-shadow:3px 3px 0 var(--black)}
+  .cta:hover{background:var(--lime);color:var(--black)}
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:64px;border:1px solid var(--black);background:var(--white);padding:9px 12px;font-family:inherit;font-size:9px;letter-spacing:.2em;text-transform:uppercase;box-shadow:3px 3px 0 var(--black);cursor:pointer}
+  @media(min-width:521px){.cta{display:inline-flex}}
+  @media(min-width:981px){nav{padding:0 40px}.nav-right{gap:32px}.menu-toggle{display:none}
+    .nav-links{display:flex;position:static;flex-direction:row;gap:24px;padding:0;border:0;background:none}
+    .nav-links a{padding:0;min-height:0;border:0;opacity:.55}.nav-links a:hover,.nav-links a.active{opacity:1}}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .hero{padding:110px 0 48px;border-bottom:2px solid var(--black)}
+  .kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(38px,7vw,76px);line-height:1.02;letter-spacing:-.02em;margin:14px 0 18px}
+  h1 em{font-style:italic;background:var(--lime);padding:0 .12em}
+  .lead{max-width:640px;font-size:15px;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .chip{font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--black);padding:6px 10px;background:var(--white)}
+  .story{padding:56px 0;border-bottom:2px solid var(--black)}
+  .story:nth-child(even){background:var(--cream)}
+  .s-head{display:grid;gap:10px;margin-bottom:28px}
+  .s-num{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+  h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(30px,5vw,48px);line-height:1.05}
+  .meta{font-size:12px;color:var(--muted)}
+  .meta a{text-decoration:underline;text-underline-offset:3px}
+  h3{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;margin-bottom:12px}
+  .grid{display:grid;gap:28px}
+  @media(min-width:900px){.grid{grid-template-columns:1.1fr 1fr}}
+  .card{border:1px solid var(--black);background:var(--white);padding:22px;box-shadow:5px 5px 0 var(--black)}
+  .card p{font-size:14px}
+  ul.did{list-style:none;display:grid;gap:10px;font-size:13px}
+  ul.did li{padding-left:22px;position:relative}
+  ul.did li::before{content:'→';position:absolute;left:0}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
+  .stat{border:1px solid var(--black);background:var(--white);padding:16px}
+  .stat b{display:block;font-family:'Playfair Display',serif;font-size:36px;line-height:1;margin-bottom:8px}
+  .stat span{font-size:11px;color:var(--muted);display:block}
+  .ph{border:2px dashed #c0392b !important;background:#fff6f4 !important;color:#8a1f12}
+  .ph-tag{display:inline-block;font-size:9px;letter-spacing:.15em;text-transform:uppercase;background:#c0392b;color:#fff;padding:2px 6px;margin-bottom:6px}
+  .stat.ph b{font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.35}
+  blockquote{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;margin-top:20px;padding:18px;border-left:6px solid var(--lime);background:var(--white)}
+  blockquote cite{display:block;font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:11px;margin-top:8px;color:var(--muted)}
+  .extra{margin-top:14px;padding:12px;font-size:12px}
+  .end{padding:64px 0;text-align:center}
+  .btn{display:inline-flex;font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:16px 22px;border:1px solid var(--black);background:var(--black);color:var(--white);box-shadow:4px 4px 0 var(--black);margin-top:18px}
+  .btn:hover{background:var(--lime);color:var(--black)}
+  footer{border-top:2px solid var(--black);padding:28px 20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:11px}
+  .f-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:18px}.f-logo em{font-style:italic}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ219LQSGH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JJ219LQSGH');</script>
+<script src="/analytics.js" defer></script>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">App Pro <em>Guy</em></a>
+  <div class="nav-right">
+    <div class="nav-links" id="site-menu">
+      <a href="/">Home</a>
+      <a href="/local-websites">Local Websites</a>
+      <a href="/results" class="active" aria-current="page">Results</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <a href="https://calendly.com/lufuno-appproguy/30min" target="_blank" rel="noopener" class="cta" data-event="results_call_click">Book Call</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+  </div>
+</nav>
+<main>
+  <header class="hero"><div class="wrap">
+    <p class="kicker">Results · Client stories</p>
+    <h1>Small businesses, <em>growing.</em></h1>
+    <p class="lead">Real people, real numbers. We become a small business's growth team: we get you found, make ordering easy and keep customers coming back, while you keep making what you're great at.</p>
+    <div class="chips"><span class="chip">Websites</span><span class="chip">Google profiles</span><span class="chip">WhatsApp ordering</span><span class="chip">Content</span><span class="chip">Promos</span><span class="chip">Marketing</span></div>
+  </div></header>
+  <div id="stories"></div>
+  <section class="end"><div class="wrap">
+    <h2>Your business could be next.</h2>
+    <p class="lead" style="margin:12px auto 0">Start with a free check of your Google profile and WhatsApp set-up.</p>
+    <a class="btn" href="https://calendly.com/lufuno-appproguy/30min" target="_blank" rel="noopener" data-event="results_call_click">Book a free 30-minute call</a>
+  </div></section>
+</main>
+<footer>
+  <div class="f-logo">App Pro <em>Guy</em></div>
+  <div>Websites, Google profiles, WhatsApp ordering and marketing</div>
+  <div>Muthala Marketplace (Pty) Ltd · South Africa</div>
+</footer>
+<script src="/assets/client-stories.js"></script>
+<script>
+(function(){
+  var PH='PLACEHOLDER:';
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function isPh(v){return typeof v==='string'&&v.indexOf(PH)===0}
+  function phText(v){return esc(v.slice(PH.length).trim())}
+  var html=(window.CLIENT_STORIES||[]).map(function(c,i){
+    var stats=c.results.map(function(r){
+      return isPh(r.value)
+        ? '<div class="stat ph"><span class="ph-tag">Coming soon</span><b>'+phText(r.value)+'</b><span>'+esc(r.label)+'</span></div>'
+        : '<div class="stat"><b>'+esc(r.value)+'</b><span>'+esc(r.label)+'</span></div>';
+    }).join('');
+    var quote=c.quote&&c.quote.text?(isPh(c.quote.text)
+      ? '<blockquote class="ph"><span class="ph-tag">Coming soon</span><br>'+phText(c.quote.text)+'<cite>'+esc(c.quote.by)+'</cite></blockquote>'
+      : '<blockquote>“'+esc(c.quote.text)+'”<cite>'+esc(c.quote.by)+'</cite></blockquote>'):'';
+    var extras=[c.ordersFrom,c.image].filter(isPh).map(function(v){return '<div class="extra ph"><span class="ph-tag">Coming soon</span><br>'+phText(v)+'</div>'}).join('');
+    return '<section class="story" id="'+esc(c.id)+'"><div class="wrap">'+
+      '<div class="s-head"><span class="s-num">Story '+String(i+1).padStart(2,'0')+' · '+esc(c.type)+'</span>'+
+      '<h2>'+esc(c.name)+'</h2><p class="meta">'+esc(c.owner)+' · '+esc(c.place)+' · '+esc(c.since)+(c.link?' · <a href="'+esc(c.link.url)+'" target="_blank" rel="noopener">'+esc(c.link.label)+'</a>':'')+'</p></div>'+
+      '<div class="grid"><div><h3>'+esc(c.headline)+'</h3><div class="card"><p>'+esc(c.challenge)+'</p></div>'+
+      '<h3 style="margin-top:26px">What we did</h3><ul class="did">'+c.did.map(function(d){return '<li>'+esc(d)+'</li>'}).join('')+'</ul>'+
+      '<div class="chips">'+c.services.map(function(s){return '<span class="chip">'+esc(s)+'</span>'}).join('')+'</div></div>'+
+      '<div><h3>The results</h3><div class="stats">'+stats+'</div>'+quote+extras+'</div></div>'+
+      '</div></section>';
+  }).join('');
+  document.getElementById('stories').innerHTML=html;
+  document.querySelectorAll('.menu-toggle').forEach(function(btn){
+    var m=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){var o=m.classList.toggle('is-open');btn.setAttribute('aria-expanded',String(o))});
+  });
+})();
+</script>
+</body>
+</html>
